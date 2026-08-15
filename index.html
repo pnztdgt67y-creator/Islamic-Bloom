@@ -10,955 +10,1037 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Naskh+Arabic:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Naskh+Arabic:wght@500;600&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --rose:#d98696;
-  --deep:#ad6271;
-  --ink:#5f4d48;
-  --muted:#9a8177;
-  --gold:#caa56b;
-  --line:#ead6d1;
-  --page:#fff9f5;
-  --card:#fffdf9;
+--r:#d98696;
+--d:#ad6271;
+--i:#5f4d48;
+--m:#9a8177;
+--g:#caa56b;
+--l:#ead6d1;
 }
 
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+*{
+box-sizing:border-box;
+-webkit-tap-highlight-color:transparent
+}
 
 html,body{
-  margin:0;
-  min-height:100%;
-  background:var(--page);
-  color:var(--ink);
+margin:0;
+min-height:100%;
 }
 
 body{
-  font-family:"Cormorant Garamond",Georgia,serif;
-  background:
-    radial-gradient(circle at 5% 1%,#f8dfe3 0,transparent 28%),
-    radial-gradient(circle at 98% 18%,#f8eddc 0,transparent 28%),
-    linear-gradient(#fff8f3,#fffdfa);
+font-family:"Cormorant Garamond",Georgia,serif;
+color:var(--i);
+background:
+radial-gradient(circle at 5% 1%,#f8dfe3 0,transparent 28%),
+radial-gradient(circle at 98% 18%,#f8eddc 0,transparent 28%),
+linear-gradient(#fff8f3,#fffdfa);
 }
 
-body[data-theme="blue"]{
-  --rose:#6688a8;
-  --deep:#496b8c;
-  --ink:#465563;
-  --muted:#788895;
-  --gold:#b69a69;
-  --line:#cfdae4;
-  --page:#f6fafc;
-  --card:#fbfdff;
-
-  background:
-    radial-gradient(circle at 5% 1%,#dfeaf3 0,transparent 28%),
-    radial-gradient(circle at 98% 18%,#edf2e8 0,transparent 28%),
-    linear-gradient(#f8fbfd,#fffdfa);
+body[data-theme="masculine"]{
+--r:#6688a8;
+--d:#496b8c;
+--i:#465563;
+--m:#788895;
+--g:#b69a69;
+--l:#cfdae4;
+background:
+radial-gradient(circle at 5% 1%,#dfeaf3 0,transparent 28%),
+radial-gradient(circle at 98% 18%,#edf2e8 0,transparent 28%),
+linear-gradient(#f8fbfd,#fffdfa);
 }
 
 body[data-theme="kids"]{
-  --rose:#ef82b3;
-  --deep:#8868bb;
-  --ink:#5e5671;
-  --muted:#8d84a0;
-  --gold:#efbc63;
-  --line:#e8d9ef;
-  --page:#fffafd;
-  --card:#fffefe;
-
-  background:
-    radial-gradient(circle at 8% 5%,#ffd9e9 0,transparent 24%),
-    radial-gradient(circle at 95% 10%,#d7efff 0,transparent 24%),
-    radial-gradient(circle at 12% 92%,#fff0b8 0,transparent 23%),
-    radial-gradient(circle at 92% 88%,#ddf4d7 0,transparent 23%),
-    linear-gradient(#fffafd,#fffef7);
+--r:#ef82b3;
+--d:#8868bb;
+--i:#5e5671;
+--m:#8d84a0;
+--g:#efbc63;
+--l:#e8d9ef;
+font-family:"Fredoka",Arial,sans-serif;
+background:
+radial-gradient(circle at 8% 5%,#ffd9e9 0,transparent 24%),
+radial-gradient(circle at 95% 10%,#d7efff 0,transparent 24%),
+radial-gradient(circle at 12% 92%,#fff0b8 0,transparent 23%),
+radial-gradient(circle at 92% 88%,#ddf4d7 0,transparent 23%),
+linear-gradient(#fffafd,#fffef7);
 }
 
-button,input{font:inherit}
-button{touch-action:manipulation}
-.hidden{display:none!important}
+body[data-theme="kids"]::before{
+content:"🌈   😊   ⭐   😄   🌈   ✨   🙂   ⭐   🌈   😍   ✨   😊   🌈   ⭐   😄   ✨   🌈   🙂   ⭐   😊   🌈   ✨   😄   ⭐   🌈   😊   💖   🌈   ⭐   🙂   ✨   🌈   😄   ⭐   😊   🌈";
+position:fixed;
+inset:-20px;
+z-index:0;
+pointer-events:none;
+overflow:hidden;
+white-space:normal;
+word-spacing:25px;
+line-height:3.4;
+font-size:29px;
+opacity:.115;
+transform:rotate(-5deg) scale(1.08);
+}
+
+button,input{
+font:inherit
+}
+
+button{
+touch-action:manipulation;
+cursor:pointer
+}
+
+.hidden{
+display:none!important
+}
 
 .app{
-  width:min(100%,500px);
-  min-height:100dvh;
-  margin:auto;
-  padding:max(18px,env(safe-area-inset-top)) 16px
-          max(30px,env(safe-area-inset-bottom));
+width:min(100%,500px);
+min-height:100dvh;
+margin:auto;
+padding:max(18px,env(safe-area-inset-top)) 16px max(30px,env(safe-area-inset-bottom));
+position:relative;
+z-index:1;
 }
 
 .script{
-  font-family:"Allura","Snell Roundhand",cursive;
-  color:var(--rose);
+font-family:"Allura","Snell Roundhand",cursive;
+color:var(--r)
+}
+
+body[data-theme="kids"] .script,
+body[data-theme="kids"] .hero,
+body[data-theme="kids"] .choose,
+body[data-theme="kids"] .modalTitle,
+body[data-theme="kids"] .growTitle{
+font-family:"Fredoka",Arial,sans-serif;
+font-weight:600;
+letter-spacing:-.6px
+}
+
+body[data-theme="kids"] .hero{
+font-size:42px!important;
+line-height:1.05
 }
 
 .brand{
-  text-align:center;
-  margin:4px 0 16px;
+text-align:center;
+margin:4px 0 16px
 }
 
 .brandline{
-  font-size:11px;
-  letter-spacing:4.7px;
-  color:var(--deep);
-  font-weight:600;
+font-size:11px;
+letter-spacing:4.7px;
+color:var(--d);
+font-weight:600
 }
 
 .hero{
-  font-size:53px;
-  line-height:.92;
-  margin:7px 0 5px;
+font-size:53px;
+line-height:.92;
+margin:7px 0 5px
 }
 
 .subtitle{
-  color:var(--muted);
-  font-size:15px;
-  font-style:italic;
-  line-height:1.45;
+color:var(--m);
+font-size:15px;
+font-style:italic;
+line-height:1.45
 }
 
 .panel{
-  background:rgba(255,253,249,.95);
-  border:1px solid var(--line);
-  border-radius:29px;
-  padding:16px;
-  box-shadow:0 18px 50px rgba(110,70,80,.1);
+background:rgba(255,253,249,.95);
+border:1px solid var(--l);
+border-radius:29px;
+padding:16px;
+box-shadow:0 18px 50px rgba(110,70,80,.1)
 }
 
-body[data-theme="blue"] .panel,
-body[data-theme="blue"] .source,
-body[data-theme="blue"] .adhCard{
-  background:rgba(251,253,255,.96);
-}
-
-body[data-theme="kids"] .panel,
-body[data-theme="kids"] .source,
-body[data-theme="kids"] .adhCard{
-  background:rgba(255,255,255,.95);
+body[data-theme="kids"] .panel{
+background:rgba(255,255,255,.94)
 }
 
 .top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:8px;
-  margin-bottom:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:8px;
+margin-bottom:10px
 }
 
 .pill{
-  border:1px solid var(--line);
-  background:#fffaf7;
-  color:var(--deep);
-  border-radius:999px;
-  padding:9px 13px;
-  font-size:12px;
+border:1px solid var(--l);
+background:#fffaf7;
+color:var(--d);
+border-radius:999px;
+padding:9px 13px;
+font-size:12px
 }
 
-body[data-theme="blue"] .pill,
-body[data-theme="kids"] .pill{
-  background:#fff;
+.settingsRow{
+text-align:right
 }
-
-.settingsRow{text-align:right;margin-bottom:2px}
 
 .overall{
-  padding:13px 14px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:rgba(255,250,247,.9);
-  text-align:center;
-  margin-bottom:15px;
+padding:13px 14px;
+border:1px solid var(--l);
+border-radius:20px;
+background:rgba(255,250,247,.9);
+text-align:center;
+margin-bottom:15px
 }
 
 .bar{
-  height:8px;
-  background:#eee1e3;
-  border-radius:99px;
-  overflow:hidden;
-  margin-top:8px;
+height:8px;
+background:#eee1e3;
+border-radius:99px;
+overflow:hidden;
+margin-top:8px
 }
 
 .bar i{
-  display:block;
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg,var(--rose),#efc5cd);
-  transition:.25s;
-}
-
-body[data-theme="blue"] .bar i{
-  background:linear-gradient(90deg,#6688a8,#a8c1d6);
+display:block;
+height:100%;
+width:0;
+background:linear-gradient(90deg,var(--r),#efc5cd);
+transition:.25s
 }
 
 body[data-theme="kids"] .bar i{
-  background:linear-gradient(90deg,#ef82b3,#a38bd6,#74bee9,#90d19d,#f0bc65);
+background:linear-gradient(90deg,#ef82b3,#a38bd6,#74bee9,#90d19d,#f0bc65)
 }
 
-.chooseTitle{
-  font-size:41px;
-  line-height:.95;
-  text-align:center;
-  margin:7px 0 15px;
+.choose{
+font-size:41px;
+line-height:.95;
+text-align:center;
+margin:7px 0 15px
+}
+
+body[data-theme="kids"] .choose{
+font-size:30px
 }
 
 .cards{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px
 }
 
 .card{
-  border:1px solid var(--line);
-  background:linear-gradient(#fffdfb,#fff7f4);
-  border-radius:23px;
-  padding:14px 9px;
-  min-height:143px;
-  text-align:center;
-  cursor:pointer;
-  box-shadow:0 7px 18px rgba(100,70,80,.05);
-}
-
-body[data-theme="blue"] .card{
-  background:linear-gradient(#fff,#f4f8fb);
+border:1px solid var(--l);
+background:linear-gradient(#fffdfb,#fff7f4);
+border-radius:23px;
+padding:14px 9px;
+min-height:143px;
+text-align:center;
+box-shadow:0 7px 18px rgba(100,70,80,.05)
 }
 
 body[data-theme="kids"] .card{
-  background:linear-gradient(145deg,#fff7fb,#f4fbff,#fffbed);
-  min-height:133px;
+background:linear-gradient(145deg,#fff7fb,#f4fbff,#fffbed);
+min-height:133px
 }
 
-.card:active{transform:scale(.98)}
-
-.icon{font-size:29px}
+.icon{
+font-size:29px
+}
 
 .name{
-  font-family:"Cormorant Garamond",Georgia,serif;
-  color:#8d746c;
-  font-size:20px;
-  line-height:1.1;
-  font-style:italic;
-  font-weight:400;
-  margin:6px 0 4px;
+color:#8d746c;
+font-size:20px;
+line-height:1.1;
+font-style:italic;
+margin:6px 0 4px
 }
 
-body[data-theme="blue"] .name{color:#63798c}
-body[data-theme="kids"] .name{color:#78659b;font-weight:600}
+body[data-theme="kids"] .name{
+font-family:"Fredoka",Arial,sans-serif;
+font-style:normal;
+font-weight:600;
+font-size:18px;
+color:#78659b
+}
 
 .sub{
-  color:var(--muted);
-  font-size:11px;
-  line-height:1.4;
-  font-style:italic;
-  min-height:30px;
+color:var(--m);
+font-size:11px;
+line-height:1.4;
+font-style:italic;
+min-height:30px
 }
 
 .mini{
-  color:var(--deep);
-  font-size:10px;
-  margin-top:7px;
+color:var(--d);
+font-size:10px;
+margin-top:7px
 }
 
-/* JAR */
+body[data-theme="kids"] .sub,
+body[data-theme="kids"] .mini{
+font-family:"Fredoka",Arial,sans-serif;
+font-style:normal
+}
 
 .gardenHeader{
-  text-align:center;
-  margin:5px 0 10px;
+text-align:center;
+margin:5px 0 10px
 }
 
 .gardenName{
-  font-size:30px;
-  font-weight:400;
-  font-style:italic;
-  color:var(--muted);
-  margin:0;
+font-size:30px;
+font-weight:400;
+font-style:italic;
+color:var(--m);
+margin:0
 }
 
 .gardenSub{
-  color:var(--muted);
-  font-size:13px;
-  font-style:italic;
+color:var(--m);
+font-size:13px;
+font-style:italic
 }
 
 .jar{
-  width:min(94%,355px);
-  height:555px;
-  margin:8px auto 12px;
-  position:relative;
-  overflow:hidden;
-
-  border:3px solid rgba(180,145,135,.28);
-  border-top:16px solid var(--gold);
-  border-radius:38px 38px 64px 64px;
-
-  background:linear-gradient(
-    rgba(255,255,255,.85),
-    rgba(255,239,242,.76)
-  );
-
-  box-shadow:
-    inset 20px 0 30px rgba(255,255,255,.7),
-    0 14px 28px rgba(137,85,94,.08);
-}
-
-body[data-theme="blue"] .jar{
-  background:linear-gradient(rgba(255,255,255,.9),rgba(235,244,250,.8));
+width:min(94%,355px);
+height:555px;
+margin:8px auto 12px;
+position:relative;
+overflow:hidden;
+border:3px solid rgba(180,145,135,.28);
+border-top:16px solid var(--g);
+border-radius:38px 38px 64px 64px;
+background:linear-gradient(rgba(255,255,255,.85),rgba(255,239,242,.76));
+box-shadow:
+inset 20px 0 30px rgba(255,255,255,.7),
+0 14px 28px rgba(137,85,94,.08)
 }
 
 body[data-theme="kids"] .jar{
-  background:linear-gradient(rgba(255,255,255,.92),rgba(248,240,255,.84));
+background:linear-gradient(rgba(255,255,255,.92),rgba(248,240,255,.84))
+}
+
+body[data-theme="kids"] .jar::after{
+content:"🌈  😊  ⭐  😄  🌈  ✨";
+position:absolute;
+left:22px;
+right:22px;
+bottom:18px;
+text-align:center;
+font-size:21px;
+letter-spacing:5px;
+opacity:.16;
+pointer-events:none
 }
 
 .jar:before{
-  content:"";
-  position:absolute;
-  left:27px;
-  top:18px;
-  width:17px;
-  height:235px;
-  border-radius:20px;
-  background:linear-gradient(rgba(255,255,255,.8),transparent);
+content:"";
+position:absolute;
+left:27px;
+top:18px;
+width:17px;
+height:235px;
+border-radius:20px;
+background:linear-gradient(rgba(255,255,255,.8),transparent)
 }
 
 .jarLabel{
-  position:absolute;
-  z-index:20;
-  top:30px;
-  left:50%;
-  transform:translateX(-50%);
-  width:210px;
-  padding:10px;
-  background:rgba(255,251,248,.97);
-  border:1px solid var(--line);
-  border-radius:20px;
-  text-align:center;
+position:absolute;
+z-index:20;
+top:30px;
+left:50%;
+transform:translateX(-50%);
+width:210px;
+padding:10px;
+background:rgba(255,251,248,.97);
+border:1px solid var(--l);
+border-radius:20px;
+text-align:center
 }
 
 .jarLabel .script{
-  font-size:42px;
-  line-height:.85;
+font-size:42px;
+line-height:.85
 }
 
 .jarLabel small{
-  font-size:8px;
-  letter-spacing:2.5px;
-  color:var(--deep);
+font-size:8px;
+letter-spacing:2.5px;
+color:var(--d)
 }
 
 .zone{
-  position:absolute;
-  left:12px;
-  right:12px;
-  top:112px;
-  bottom:25px;
+position:absolute;
+left:12px;
+right:12px;
+top:112px;
+bottom:25px
 }
 
 .petal{
-  position:absolute;
-  width:47px;
-  height:47px;
-  border:0;
-  background:transparent;
-  padding:0;
-  cursor:pointer;
-  animation:floaty var(--duration) ease-in-out infinite alternate;
-  animation-delay:var(--delay);
+position:absolute;
+width:47px;
+height:47px;
+border:0;
+background:transparent;
+padding:0;
+animation:floaty var(--duration) ease-in-out infinite alternate;
+animation-delay:var(--delay)
 }
 
-.petal svg{width:100%;height:100%}
+.petal svg{
+width:100%;
+height:100%
+}
 
 .petal span{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#aa606e;
-  font-size:14px;
-  font-weight:600;
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#aa606e;
+font-size:14px;
+font-weight:600
 }
 
-.petal.done{opacity:.5;filter:saturate(.5)}
-.petal.done span{font-size:0}
-.petal.done span:after{content:"✓";font-size:17px;color:#796b69}
+.kidFace{
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+width:47px;
+height:47px;
+border-radius:50%;
+font-size:35px;
+background:rgba(255,255,255,.54);
+border:2px solid rgba(255,255,255,.72);
+box-shadow:0 4px 10px rgba(115,80,140,.10)
+}
+
+body[data-theme="kids"] .petal span{
+width:21px;
+height:21px;
+inset:auto -3px -3px auto;
+border-radius:50%;
+background:#fff;
+color:#8063aa;
+border:1px solid #dcccef;
+font-size:11px
+}
+
+.petal.done{
+opacity:.55
+}
+
+.petal.done span{
+font-size:0
+}
+
+.petal.done span:after{
+content:"✓";
+font-size:13px;
+color:#66835e
+}
 
 @keyframes floaty{
-  from{transform:translate(-3px,-4px) rotate(-2deg)}
-  to{transform:translate(4px,5px) rotate(3deg)}
+from{transform:translate(-3px,-4px) rotate(-2deg)}
+to{transform:translate(4px,5px) rotate(3deg)}
 }
 
 .progressText{
-  text-align:center;
-  color:var(--muted);
-  font-size:12px;
-  font-style:italic;
-  margin-top:6px;
+text-align:center;
+color:var(--m);
+font-size:12px;
+font-style:italic;
+margin-top:6px
 }
 
 .actions{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:9px;
-  margin-top:10px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:9px;
+margin-top:10px
 }
 
 .btn{
-  width:100%;
-  border:0;
-  border-radius:18px;
-  padding:13px 11px;
-  font-weight:600;
-  cursor:pointer;
+width:100%;
+border:0;
+border-radius:18px;
+padding:13px 11px;
+font-weight:600
 }
 
 .primary{
-  color:#fff;
-  background:linear-gradient(#e4a0ac,#d68190);
-  box-shadow:0 7px 17px rgba(180,100,115,.18);
+color:#fff;
+background:linear-gradient(#e4a0ac,#d68190)
 }
 
-body[data-theme="blue"] .primary{
-  background:linear-gradient(#88a8c5,#6688a8);
+body[data-theme="masculine"] .primary{
+background:linear-gradient(#88a8c5,#6688a8)
 }
 
 body[data-theme="kids"] .primary{
-  background:linear-gradient(90deg,#ef82b3,#9e88d4,#76bce7,#8fcf9d,#efbb62);
+background:linear-gradient(90deg,#ef82b3,#9e88d4,#76bce7,#8fcf9d,#efbb62)
 }
 
 .secondary{
-  background:#fffaf7;
-  color:var(--deep);
-  border:1px solid var(--line);
+background:#fffaf7;
+color:var(--d);
+border:1px solid var(--l)
 }
 
-/* GROWING GARDEN */
-
 .growing{
-  margin-top:12px;
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:var(--card);
-  padding:12px;
+margin-top:12px;
+border:1px solid var(--l);
+border-radius:24px;
+background:#fffdf9;
+padding:12px
 }
 
 .growTitle{
-  font-size:37px;
-  text-align:center;
-  line-height:.95;
+font-size:37px;
+text-align:center;
+line-height:.95
 }
 
 .growSub{
-  font-size:12px;
-  text-align:center;
-  color:var(--muted);
-  font-style:italic;
-  margin-bottom:8px;
+font-size:12px;
+text-align:center;
+color:var(--m);
+font-style:italic;
+margin-bottom:8px
 }
 
 .scene{
-  height:150px;
-  position:relative;
-  overflow:hidden;
-  border-radius:18px;
-  border:1px solid var(--line);
-  background:linear-gradient(#fffaf5 0 66%,#e9ecd9 66% 100%);
+height:150px;
+position:relative;
+overflow:hidden;
+border-radius:18px;
+border:1px solid var(--l);
+background:linear-gradient(#fffaf5 0 66%,#e9ecd9 66% 100%)
 }
 
 .ground{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:48px;
-  background:linear-gradient(#e1e5cf,#d3dbc0);
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+height:48px;
+background:linear-gradient(#e1e5cf,#d3dbc0)
 }
 
 .empty{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-  font-style:italic;
-  padding:18px;
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:var(--m);
+font-size:13px;
+font-style:italic;
+padding:18px
 }
 
 .plant{
-  position:absolute;
-  bottom:31px;
-  width:25px;
-  height:62px;
+position:absolute;
+bottom:31px;
+width:25px;
+height:62px
 }
 
 .stem{
-  position:absolute;
-  left:11px;
-  bottom:0;
-  height:38px;
-  width:3px;
-  background:#96a987;
+position:absolute;
+left:11px;
+bottom:0;
+height:38px;
+width:3px;
+background:#96a987
 }
 
 .leaf{
-  position:absolute;
-  bottom:16px;
-  width:12px;
-  height:7px;
-  background:#a7b798;
-  border-radius:100% 0 100% 0;
+position:absolute;
+bottom:16px;
+width:12px;
+height:7px;
+background:#a7b798;
+border-radius:100% 0 100% 0
 }
 
-.leaf.left{left:1px;transform:rotate(-28deg)}
-.leaf.right{right:0;transform:scaleX(-1) rotate(-28deg)}
-.flower{position:absolute;top:0;left:0;font-size:23px}
+.leaf.left{
+left:1px;
+transform:rotate(-28deg)
+}
 
-/* BLOOM DETAIL */
+.leaf.right{
+right:0;
+transform:scaleX(-1) rotate(-28deg)
+}
+
+.flower{
+position:absolute;
+top:0;
+left:0;
+font-size:23px
+}
 
 .deedTitle{
-  font-size:59px;
-  text-align:center;
-  line-height:.9;
-  margin:8px 0 13px;
+font-size:59px;
+text-align:center;
+line-height:.9;
+margin:8px 0 13px
 }
 
 .deedCard{
-  text-align:center;
-  background:linear-gradient(#fff8f8,#fae7e9);
-  border:1px solid var(--line);
-  border-radius:27px;
-  padding:21px 17px;
+text-align:center;
+background:linear-gradient(#fff8f8,#fae7e9);
+border:1px solid var(--l);
+border-radius:27px;
+padding:21px 17px
 }
 
 .tag{
-  display:inline-block;
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:999px;
-  padding:6px 11px;
-  font-size:10px;
-  color:var(--deep);
+display:inline-block;
+border:1px solid var(--l);
+background:#fff;
+border-radius:999px;
+padding:6px 11px;
+font-size:10px;
+color:var(--d)
 }
 
 .deedText{
-  font-size:26px;
-  line-height:1.25;
-  margin-top:14px;
+font-size:26px;
+line-height:1.25;
+margin-top:14px
 }
 
 .source{
-  margin-top:12px;
-  text-align:center;
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:17px;
+margin-top:12px;
+text-align:center;
+background:#fffdf9;
+border:1px solid var(--l);
+border-radius:24px;
+padding:17px
 }
 
 .sourceType{
-  color:var(--deep);
-  font-size:9px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  font-weight:600;
+color:var(--d);
+font-size:9px;
+text-transform:uppercase;
+letter-spacing:2px;
+font-weight:600
+}
+
+.arabic,
+.adhArabic{
+font-family:"Noto Naskh Arabic","Geeza Pro",serif!important;
+direction:rtl;
+white-space:pre-line
 }
 
 .arabic{
-  font-family:"Noto Naskh Arabic","Geeza Pro",serif;
-  direction:rtl;
-  font-size:27px;
-  line-height:1.75;
-  margin:10px 0;
+font-size:27px;
+line-height:1.75;
+margin:10px 0
 }
 
 .reflection{
-  font-size:37px;
-  line-height:.95;
+font-size:37px;
+line-height:.95
 }
 
 .meaning{
-  font-size:15px;
-  line-height:1.5;
-  font-style:italic;
-  margin:8px 0;
+font-size:15px;
+line-height:1.5;
+font-style:italic;
+margin:8px 0
 }
 
 .reference{
-  color:var(--deep);
-  font-size:12px;
-  font-weight:600;
+color:var(--d);
+font-size:12px;
+font-weight:600
 }
 
 .twoButtons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:10px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:10px
 }
 
 .backScript{
-  font-family:"Allura","Snell Roundhand",cursive;
-  font-size:34px;
-  margin-top:9px;
+font-family:"Allura","Snell Roundhand",cursive;
+font-size:34px;
+margin-top:9px
 }
 
-/* ADHKAR + KIDS DUA LIST */
-
 .listHeader{
-  text-align:center;
-  margin:6px 0 14px;
+text-align:center;
+margin:6px 0 14px
 }
 
 .listHeader .script{
-  font-size:51px;
-  line-height:.9;
+font-size:51px;
+line-height:.9
 }
 
 .listHeader p{
-  margin:5px 15px;
-  color:var(--muted);
-  font-size:13px;
-  font-style:italic;
+margin:5px 15px;
+color:var(--m);
+font-size:13px;
+font-style:italic
 }
 
 .listProgress{
-  background:#fffaf7;
-  border:1px solid var(--line);
-  border-radius:21px;
-  padding:12px 14px;
-  margin-bottom:12px;
-  text-align:center;
+background:#fffaf7;
+border:1px solid var(--l);
+border-radius:21px;
+padding:12px 14px;
+margin-bottom:12px;
+text-align:center
 }
 
 .adhkarList{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+display:flex;
+flex-direction:column;
+gap:12px
 }
 
 .adhCard{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:16px;
-  box-shadow:0 8px 21px rgba(100,70,80,.05);
+background:#fffdf9;
+border:1px solid var(--l);
+border-radius:24px;
+padding:16px;
+box-shadow:0 8px 21px rgba(100,70,80,.05)
+}
+
+body[data-theme="kids"] .adhCard{
+background:rgba(255,255,255,.96)
 }
 
 .adhCard.complete{
-  background:linear-gradient(#fffdf9,#fff7f4);
+background:linear-gradient(#fffdf9,#fff7f4)
 }
 
 .adhTop{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
+display:flex;
+align-items:flex-start;
+gap:10px
 }
 
-.adhNumber{
-  width:31px;
-  height:31px;
-  border-radius:50%;
-  flex:0 0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#f5e2e5;
-  color:var(--deep);
-  font-weight:600;
-}
-
-body[data-theme="kids"] .adhNumber{
-  background:#f2e6ff;
+.adhNum{
+width:31px;
+height:31px;
+border-radius:50%;
+flex:0 0 auto;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f5e2e5;
+color:var(--d);
+font-weight:600
 }
 
 .adhName{
-  flex:1;
-  font-size:20px;
-  font-weight:600;
-  color:var(--ink);
+flex:1;
+font-size:20px;
+font-weight:600
 }
 
 .adhArabic{
-  font-family:"Noto Naskh Arabic","Geeza Pro",serif;
-  direction:rtl;
-  text-align:center;
-  font-size:25px;
-  line-height:1.9;
-  margin:13px 0 7px;
+text-align:center;
+font-size:25px;
+line-height:1.9;
+margin:13px 0 7px
 }
 
-.translit{
-  text-align:center;
-  color:#987168;
-  font-size:13px;
-  line-height:1.5;
-  font-style:italic;
-  margin:7px 0 10px;
+.adhTranslit{
+white-space:pre-line;
+text-align:center;
+color:#987168;
+font-size:13px;
+line-height:1.55;
+font-style:italic;
+margin:7px 0 10px
 }
 
-.translit:before{
-  content:"Transliteration";
-  display:block;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  font-size:8px;
-  font-style:normal;
-  color:#b4868d;
-  margin-bottom:3px;
+.adhTranslit:before{
+content:"Transliteration";
+display:block;
+text-transform:uppercase;
+letter-spacing:1.5px;
+font-size:8px;
+font-style:normal;
+color:#b4868d;
+margin-bottom:3px
+}
+
+body[data-theme="kids"] .adhTranslit,
+body[data-theme="kids"] .adhMeaning,
+body[data-theme="kids"] .adhName{
+font-family:"Fredoka",Arial,sans-serif
 }
 
 .adhMeaning{
-  text-align:center;
-  color:#6e5d57;
-  font-size:14px;
-  line-height:1.5;
-  font-style:italic;
+text-align:center;
+color:#6e5d57;
+font-size:14px;
+line-height:1.5;
+font-style:italic
 }
 
 .adhRef{
-  text-align:center;
-  color:var(--deep);
-  font-size:11px;
-  font-weight:600;
-  margin-top:7px;
+text-align:center;
+color:var(--d);
+font-size:11px;
+font-weight:600;
+margin-top:7px
 }
 
 .adhControls{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:12px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:12px
 }
 
 .counterBox{
-  border:1px solid var(--line);
-  background:#fffaf7;
-  border-radius:15px;
-  padding:7px;
+border:1px solid var(--l);
+background:#fffaf7;
+border-radius:15px;
+padding:7px
 }
 
 .counter{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px
 }
 
 .counter button{
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  border:1px solid var(--line);
-  background:#fff;
-  color:var(--deep);
-  font-size:18px;
+width:34px;
+height:34px;
+border-radius:50%;
+border:1px solid var(--l);
+background:#fff;
+color:var(--d);
+font-size:18px
 }
 
 .count{
-  min-width:26px;
-  text-align:center;
-  color:var(--deep);
-  font-size:17px;
-  font-weight:600;
+min-width:26px;
+text-align:center;
+color:var(--d);
+font-size:17px;
+font-weight:600
 }
 
 .repeat{
-  text-align:center;
-  font-size:10px;
-  color:var(--muted);
-  margin-top:3px;
+text-align:center;
+font-size:10px;
+color:var(--m);
+margin-top:3px
 }
 
-.completeBtn{
-  border:0;
-  border-radius:15px;
-  color:#fff;
-  background:linear-gradient(#e4a0ac,#d68190);
-  font-weight:600;
+.adhAction{
+border:0;
+border-radius:15px;
+color:#fff;
+background:linear-gradient(#e4a0ac,#d68190);
+font-weight:600
 }
 
-.completeBtn.done{background:#9caf91}
-
-.favouriteBtn{
-  width:100%;
-  border:1px solid var(--line);
-  background:#fffaf7;
-  border-radius:15px;
-  color:var(--deep);
-  padding:9px;
-  margin-top:8px;
+.adhAction.done{
+background:#9caf91
 }
 
-.favouriteBtn.on{
-  background:#f4d7dc;
+.adhFav{
+width:100%;
+border:1px solid var(--l);
+background:#fffaf7;
+border-radius:15px;
+color:var(--d);
+padding:9px;
+margin-top:8px
+}
+
+.adhFav.favOn{
+background:#f4d7dc
 }
 
 .listFooter{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:13px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:13px
 }
-
-/* SETUP */
 
 .setup{
-  position:fixed;
-  inset:0;
-  z-index:300;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:22px;
-  background:linear-gradient(#fff8f3,#fffdf9);
-}
-
-body[data-theme="blue"] .setup{
-  background:linear-gradient(#eef5fa,#fffdf9);
+position:fixed;
+inset:0;
+z-index:300;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:22px;
+background:linear-gradient(#fff8f3,#fffdf9)
 }
 
 body[data-theme="kids"] .setup{
-  background:
-    radial-gradient(circle at 10% 10%,#ffd8e8 0,transparent 25%),
-    radial-gradient(circle at 90% 10%,#d9efff 0,transparent 25%),
-    radial-gradient(circle at 10% 90%,#fff0b8 0,transparent 25%),
-    radial-gradient(circle at 90% 90%,#ddf4d7 0,transparent 25%),
-    #fffdfb;
+background:
+radial-gradient(circle at 10% 10%,#ffd8e8 0,transparent 25%),
+radial-gradient(circle at 90% 10%,#d9efff 0,transparent 25%),
+radial-gradient(circle at 10% 90%,#fff0b8 0,transparent 25%),
+radial-gradient(circle at 90% 90%,#ddf4d7 0,transparent 25%),
+#fffdfb
 }
 
 .setupCard{
-  width:min(100%,440px);
-  background:rgba(255,255,255,.96);
-  border:1px solid var(--line);
-  border-radius:33px;
-  padding:26px 18px;
-  text-align:center;
-  box-shadow:0 24px 80px rgba(90,60,70,.13);
+width:min(100%,440px);
+background:rgba(255,255,255,.96);
+border:1px solid var(--l);
+border-radius:33px;
+padding:26px 18px;
+text-align:center;
+box-shadow:0 24px 80px rgba(90,60,70,.13)
 }
 
 .setupTitle{
-  font-size:53px;
-  line-height:.9;
-  margin:7px 0;
+font-size:53px;
+line-height:.9;
+margin:7px 0
 }
 
 .setupText{
-  color:var(--muted);
-  font-style:italic;
-  margin:9px 0 14px;
+color:var(--m);
+font-style:italic;
+margin:9px 0 14px
 }
 
 .nameInput{
-  width:100%;
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:17px;
-  padding:13px 14px;
-  text-align:center;
-  color:var(--ink);
-  font-size:18px;
-  outline:none;
+width:100%;
+border:1px solid var(--l);
+background:#fff;
+border-radius:17px;
+padding:13px 14px;
+text-align:center;
+color:var(--i);
+font-size:18px;
+outline:none
 }
 
 .formLabel{
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:1.3px;
-  font-size:10px;
-  margin:13px 0 6px;
+color:var(--m);
+text-transform:uppercase;
+letter-spacing:1.3px;
+font-size:10px;
+margin:13px 0 6px
 }
 
 .themeGrid{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:7px;
-  margin:10px 0 13px;
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:7px;
+margin:10px 0 13px
 }
 
 .themeChoice{
-  border:2px solid var(--line);
-  background:#fff;
-  border-radius:19px;
-  padding:12px 6px;
-  cursor:pointer;
-  color:var(--ink);
+border:2px solid var(--l);
+background:#fff;
+border-radius:19px;
+padding:12px 6px;
+color:var(--i)
 }
 
 .themeChoice.active{
-  border-color:var(--rose);
-  box-shadow:0 0 0 3px rgba(220,130,160,.1);
+border-color:var(--r);
+box-shadow:0 0 0 3px rgba(220,130,160,.1)
 }
 
-.themeChoice span{font-size:27px}
-.themeChoice b{display:block;font-size:14px;margin-top:3px}
-.themeChoice small{display:block;color:var(--muted);font-size:9px}
+.themeChoice span{
+font-size:27px
+}
+
+.themeChoice b{
+display:block;
+font-size:14px;
+margin-top:3px
+}
+
+.themeChoice small{
+display:block;
+color:var(--m);
+font-size:9px
+}
 
 .rainbow{
-  font-size:22px;
-  letter-spacing:4px;
-  margin:7px 0;
+font-size:22px;
+letter-spacing:4px;
+margin:7px 0
 }
 
-/* MODALS */
-
 .modal{
-  position:fixed;
-  inset:0;
-  z-index:250;
-  background:rgba(70,50,50,.28);
-  backdrop-filter:blur(5px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+position:fixed;
+inset:0;
+z-index:250;
+background:rgba(70,50,50,.28);
+backdrop-filter:blur(5px);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px
 }
 
 .modalCard{
-  width:min(100%,420px);
-  background:#fffdf9;
-  border:1px solid var(--line);
-  border-radius:29px;
-  padding:23px 18px;
-  text-align:center;
+width:min(100%,420px);
+background:#fffdf9;
+border:1px solid var(--l);
+border-radius:29px;
+padding:23px 18px;
+text-align:center
 }
 
 .modalTitle{
-  font-size:50px;
-  line-height:.9;
+font-size:50px;
+line-height:.9
 }
 
 .toast{
-  position:fixed;
-  z-index:500;
-  left:50%;
-  bottom:25px;
-  transform:translate(-50%,20px);
-  background:#5e504c;
-  color:#fff;
-  padding:9px 13px;
-  border-radius:999px;
-  font-size:12px;
-  opacity:0;
-  pointer-events:none;
-  transition:.2s;
-  white-space:nowrap;
+position:fixed;
+z-index:500;
+left:50%;
+bottom:25px;
+transform:translate(-50%,20px);
+background:#5e504c;
+color:#fff;
+padding:9px 13px;
+border-radius:999px;
+font-size:12px;
+opacity:0;
+pointer-events:none;
+transition:.2s;
+white-space:nowrap
 }
 
 .toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
+opacity:1;
+transform:translate(-50%,0)
 }
 
 @media(max-width:390px){
-  .hero{font-size:47px}
-  .cards{gap:8px}
-  .card{padding:12px 7px}
-  .name{font-size:19px}
-  .jar{height:525px}
-  .petal{width:43px;height:43px}
-  .themeChoice b{font-size:12px}
-  .themeChoice small{font-size:8px}
+.hero{font-size:47px}
+.jar{height:525px}
+.petal{width:43px;height:43px}
+.kidFace{width:43px;height:43px;font-size:32px}
 }
 </style>
 </head>
@@ -967,8 +1049,7 @@ body[data-theme="kids"] .setup{
 
 <div class="app">
 
-<!-- HOME -->
-<main id="homeView">
+<main id="choose">
 
 <div class="settingsRow">
 <button class="pill" id="settingsBtn">⚙ Settings</button>
@@ -976,22 +1057,18 @@ body[data-theme="kids"] .setup{
 
 <header class="brand">
 <div class="brandline">ISLAMIC BLOOM</div>
-<div class="script hero" id="personalTitle">Your Daily Deen Companion</div>
-<div class="subtitle" id="homeSubtitle">
-One petal. One reminder. One step closer.
-</div>
+<div class="script hero" id="personalHero">Your Daily Deen Companion</div>
+<div class="subtitle" id="homeSub">One petal. One reminder. One step closer.</div>
 </header>
 
 <section class="panel">
 
 <div class="overall">
-<strong id="overallText">Overall Bloom Progress: 0 / 180</strong>
+<strong id="overallText"></strong>
 <div class="bar"><i id="overallBar"></i></div>
 </div>
 
-<div class="script chooseTitle" id="chooseTitle">
-Choose Your Garden
-</div>
+<div class="script choose" id="chooseHeading">Choose Your Garden</div>
 
 <div class="cards" id="cards"></div>
 
@@ -999,17 +1076,16 @@ Choose Your Garden
 </main>
 
 
-<!-- FLOWER JAR -->
-<main id="jarView" class="hidden">
+<main id="gardenView" class="hidden">
 
 <div class="top">
-<button class="pill" id="jarHomeBtn">← Home</button>
-<button class="pill" id="shareProgressBtn">♡ Share</button>
+<button class="pill" id="gardenBack">← Home</button>
+<button class="pill" id="gardenShare">♡ Share</button>
 </div>
 
 <div class="gardenHeader">
-<h2 class="gardenName" id="gardenName"></h2>
-<div class="gardenSub" id="gardenSub"></div>
+<h2 class="gardenName" id="gardenTitle"></h2>
+<div class="gardenSub" id="gardenSubtitle"></div>
 </div>
 
 <section class="panel">
@@ -1018,22 +1094,20 @@ Choose Your Garden
 
 <div class="jarLabel">
 <div class="script">Bloom</div>
-<small id="jarLabelSmall">ONE DEED AT A TIME</small>
+<small id="jarSmall">ONE DEED AT A TIME</small>
 </div>
 
-<div class="zone" id="flowerZone"></div>
+<div class="zone" id="zone"></div>
 
 </div>
 
 <div class="progressText" id="gardenProgress"></div>
 
-<div class="bar">
-<i id="gardenBar"></i>
-</div>
+<div class="bar"><i id="gardenBar"></i></div>
 
 <div class="actions">
-<button class="btn primary" id="surpriseBtn">✨ Surprise Me</button>
-<button class="btn secondary" id="resetGardenBtn">Reset Garden</button>
+<button class="btn primary" id="surprise">✨ Surprise Me</button>
+<button class="btn secondary" id="resetGarden">Reset Garden</button>
 </div>
 
 </section>
@@ -1041,100 +1115,110 @@ Choose Your Garden
 <section class="growing">
 
 <div class="script growTitle" id="growTitle">My Growing Garden</div>
-<div class="growSub" id="growSubtitle">
+
+<div class="growSub" id="growSub">
 Every completed bloom plants another flower.
 </div>
 
 <div class="scene" id="scene">
 <div class="ground"></div>
-<div class="empty" id="emptyGarden">
-Your first bloom is waiting 🌱
-</div>
+<div class="empty" id="emptyGarden">Your first bloom is waiting 🌱</div>
 </div>
 
 </section>
-
 </main>
 
 
-<!-- BLOOM DETAIL -->
 <main id="bloomView" class="hidden">
 
 <div class="top">
-<button class="pill" id="detailBackTop">← Jar</button>
-<span class="pill" id="bloomNumber">BLOOM 01</span>
+<button class="pill" id="bloomBackTop">← Jar</button>
+<span class="pill" id="bloomNumber"></span>
 </div>
 
-<div class="script deedTitle" id="detailHeading">
-Today's Bloom
-</div>
+<div class="script deedTitle" id="bloomHeading">Today's Bloom</div>
 
 <section class="deedCard">
-<div class="tag" id="detailTag"></div>
-<div class="deedText" id="detailDeed"></div>
+<div class="tag" id="bloomTag"></div>
+<div class="deedText" id="bloomDeed"></div>
 </section>
 
 <section class="source">
 
-<div class="sourceType" id="detailSourceType"></div>
-<div class="arabic" id="detailArabic"></div>
+<div class="sourceType" id="bloomSource"></div>
 
-<div class="script reflection">
-Reflection
-</div>
+<div class="arabic" id="bloomArabic"></div>
 
-<div class="meaning" id="detailMeaning"></div>
-<div class="reference" id="detailReference"></div>
+<div class="script reflection">Reflection</div>
+
+<div class="meaning" id="bloomMeaning"></div>
+
+<div class="reference" id="bloomReference"></div>
 
 </section>
 
 <div class="twoButtons">
-<button class="btn primary" id="completeBloomBtn">
+
+<button class="btn primary" id="bloomComplete">
 ✓ I Bloomed This
 </button>
 
-<button class="btn secondary" id="shareBloomBtn">
+<button class="btn secondary" id="bloomShare">
 ♡ Share
 </button>
+
 </div>
 
-<button class="btn secondary" id="favouriteBloomBtn" style="margin-top:8px">
+<button class="btn secondary" id="bloomFavourite" style="margin-top:8px">
 ♡ Add to Favourites
 </button>
 
-<button class="btn primary backScript" id="detailBackBtn">
+<button class="btn primary backScript" id="bloomBack">
 Back to Jar
 </button>
 
 </main>
 
 
-<!-- ADHKAR / KIDS DUAS -->
-<main id="listView" class="hidden">
+<main id="adhkarView" class="hidden">
 
 <div class="top">
-<button class="pill" id="listHomeBtn">← Home</button>
-<button class="pill" id="listResetBtn">Reset Today</button>
+<button class="pill" id="adhBack">← Home</button>
+<button class="pill" id="adhReset">Reset Today</button>
 </div>
 
 <header class="listHeader">
+
 <div class="brandline">ISLAMIC BLOOM</div>
-<div class="script" id="listTitle"></div>
-<p id="listSubtitle"></p>
+
+<div class="script" id="adhTitle"></div>
+
+<p id="adhSub"></p>
+
 </header>
 
 <div class="listProgress">
-<strong id="listProgressText"></strong>
+
+<strong id="adhProgText"></strong>
+
 <div class="bar">
-<i id="listProgressBar"></i>
-</div>
+<i id="adhBar"></i>
 </div>
 
-<div class="adhkarList" id="adhkarList"></div>
+</div>
+
+<div class="adhkarList" id="adhList"></div>
 
 <div class="listFooter">
-<button class="btn secondary" id="listShareBtn">♡ Share</button>
-<button class="btn primary" id="markAllBtn">✓ Mark All Done</button>
+
+<button class="btn secondary" id="adhShare">
+♡ Share
+</button>
+
+<button class="btn primary" id="adhAll">
+✓ Mark All Done
+</button>
+
 </div>
 
 </main>
@@ -1142,14 +1226,11 @@ Back to Jar
 </div>
 
 
-<!-- FIRST TIME SETUP -->
 <div class="setup hidden" id="setup">
 
 <div class="setupCard">
 
-<div class="brandline">
-ISLAMIC BLOOM
-</div>
+<div class="brandline">ISLAMIC BLOOM</div>
 
 <div class="script setupTitle">
 Welcome to Islamic Bloom
@@ -1170,9 +1251,8 @@ What should we call you?
 <input
 class="nameInput"
 id="setupName"
-placeholder="Your name"
 maxlength="24"
-autocomplete="given-name"
+placeholder="Your name"
 >
 
 <div class="formLabel">
@@ -1181,19 +1261,19 @@ Choose your Bloom style
 
 <div class="themeGrid">
 
-<button class="themeChoice active" data-setup-theme="blush">
+<button class="themeChoice active" id="feminineChoice">
 <span>🌸</span>
 <b>Blush Bloom</b>
 <small>Pink · cream · gold</small>
 </button>
 
-<button class="themeChoice" data-setup-theme="blue">
+<button class="themeChoice" id="masculineChoice">
 <span>🌿</span>
 <b>Blue Bloom</b>
 <small>Dusty blue · cream</small>
 </button>
 
-<button class="themeChoice" data-setup-theme="kids">
+<button class="themeChoice" id="kidsChoice">
 <span>🌈</span>
 <b>Kids Bloom</b>
 <small>Colours · stars · smiles</small>
@@ -1201,7 +1281,7 @@ Choose your Bloom style
 
 </div>
 
-<button class="btn primary" id="startBtn">
+<button class="btn primary" id="beginBloom">
 Begin My Bloom
 </button>
 
@@ -1209,14 +1289,11 @@ Begin My Bloom
 </div>
 
 
-<!-- SETTINGS -->
 <div class="modal hidden" id="settingsModal">
 
 <div class="modalCard">
 
-<div class="brandline">
-ISLAMIC BLOOM
-</div>
+<div class="brandline">ISLAMIC BLOOM</div>
 
 <div class="script modalTitle">
 My Settings
@@ -1224,72 +1301,35 @@ My Settings
 
 <div class="formLabel">Name</div>
 
-<input
-class="nameInput"
-id="settingsName"
-maxlength="24"
->
+<input class="nameInput" id="settingsName" maxlength="24">
 
-<div class="formLabel">
-Style
-</div>
+<div class="formLabel">Style</div>
 
 <div class="themeGrid">
 
-<button class="themeChoice" data-settings-theme="blush">
+<button class="themeChoice" id="settingsFeminine">
 🌸
 <b>Blush</b>
 </button>
 
-<button class="themeChoice" data-settings-theme="blue">
+<button class="themeChoice" id="settingsMasculine">
 🌿
 <b>Blue</b>
 </button>
 
-<button class="themeChoice" data-settings-theme="kids">
+<button class="themeChoice" id="settingsKids">
 🌈
 <b>Kids</b>
 </button>
 
 </div>
 
-<button class="btn primary" id="saveSettingsBtn">
+<button class="btn primary" id="saveSettings">
 Save Changes
 </button>
 
-<button class="btn secondary" id="cancelSettingsBtn" style="margin-top:8px">
+<button class="btn secondary" id="closeSettings" style="margin-top:8px">
 Cancel
-</button>
-
-</div>
-</div>
-
-
-<!-- CELEBRATION -->
-<div class="modal hidden" id="celebration">
-
-<div class="modalCard">
-
-<div class="brandline">
-ISLAMIC BLOOM
-</div>
-
-<div class="script modalTitle" id="celebrationTitle">
-MashaAllah
-</div>
-
-<div style="font-size:33px;margin:12px 0">
-🌸 🌷 ⭐ 🌼 🌈
-</div>
-
-<div id="celebrationText"></div>
-
-<button
-class="btn primary"
-id="closeCelebrationBtn"
-style="margin-top:15px"
->
-Continue
 </button>
 
 </div>
@@ -1297,223 +1337,186 @@ Continue
 
 <div class="toast" id="toast"></div>
 
-
 <script>
 
-/* ===============================
-   HELPERS
-================================ */
+const $=id=>document.getElementById(id);
 
-const $ = id => document.getElementById(id);
+const PROFILE_KEY="ibProfile";
 
-const PROFILE_KEY = "islamicBloom_profile";
-
-let currentGarden = "mixed";
-let currentBloom = 0;
-let currentMode = "garden";
-let pendingTheme = "blush";
+let pendingTheme="feminine";
+let garden="mixed";
+let bloomIndex=0;
+let mode="garden";
 
 
-function getProfile(){
-  try{
-    return JSON.parse(
-      localStorage.getItem(PROFILE_KEY) || "null"
-    );
-  }catch(e){
-    return null;
-  }
+function toast(text){
+
+$("toast").textContent=text;
+$("toast").classList.add("show");
+
+setTimeout(
+()=>$("toast").classList.remove("show"),
+1600
+);
+
 }
 
 
-function saveProfile(profile){
-  localStorage.setItem(
-    PROFILE_KEY,
-    JSON.stringify(profile)
-  );
+function profile(){
 
-  applyProfile();
-  renderHome();
+try{
+return JSON.parse(
+localStorage.getItem(PROFILE_KEY)||"null"
+);
+}catch(e){
+return null
+}
+
+}
+
+
+function saveProfile(p){
+
+localStorage.setItem(
+PROFILE_KEY,
+JSON.stringify(p)
+);
+
+applyProfile();
+renderMenu();
+
 }
 
 
 function activeTheme(){
-  const p=getProfile();
 
-  if(!p){
-    return "blush";
-  }
+const p=profile();
 
-  return ["blush","blue","kids"].includes(p.theme)
-    ? p.theme
-    : "blush";
+return p &&
+["feminine","masculine","kids"].includes(p.theme)
+?p.theme
+:"feminine";
+
 }
 
 
 function isKids(){
-  return activeTheme()==="kids";
+return activeTheme()==="kids"
 }
 
 
 function applyProfile(){
 
-  const p=getProfile();
-  const theme=activeTheme();
+const p=profile();
+const theme=activeTheme();
 
-  document.body.dataset.theme =
-    theme==="blush" ? "" : theme;
+document.body.dataset.theme=theme;
 
-  if(p?.name){
+if(p&&p.name){
 
-    if(theme==="kids"){
-      $("personalTitle").textContent =
-        `${p.name}'s Happy Bloom`;
+$("personalHero").textContent=
+theme==="kids"
+?p.name+"'s Happy Bloom"
+:p.name+"'s Islamic Bloom";
 
-      $("homeSubtitle").textContent =
-        "Learn, smile, make dua & grow 🌈";
-    }else{
-      $("personalTitle").textContent =
-        `${p.name}'s Islamic Bloom`;
+document.title=
+p.name+"'s Islamic Bloom";
 
-      $("homeSubtitle").textContent =
-        "One petal. One reminder. One step closer.";
-    }
+}else{
 
-    document.title =
-      `${p.name}'s Islamic Bloom`;
+$("personalHero").textContent=
+"Your Daily Deen Companion";
 
-  }else{
+}
 
-    $("personalTitle").textContent =
-      "Your Daily Deen Companion";
-  }
+$("homeSub").textContent=
+theme==="kids"
+?"Learn, smile, make dua & grow 🌈"
+:"One petal. One reminder. One step closer.";
 
-  $("chooseTitle").textContent =
-    isKids()
-      ? "What Shall We Do Today?"
-      : "Choose Your Garden";
+$("chooseHeading").textContent=
+theme==="kids"
+?"What Shall We Do Today?"
+:"Choose Your Garden";
 
 }
 
 
-function show(view){
+function show(id){
 
-  [
-    "homeView",
-    "jarView",
-    "bloomView",
-    "listView"
-  ]
-  .forEach(id=>{
+["choose","gardenView","bloomView","adhkarView"]
+.forEach(x=>$(x).classList.toggle("hidden",x!==id));
 
-    $(id).classList.toggle(
-      "hidden",
-      id!==view
-    );
+window.scrollTo(0,0);
 
-  });
-
-  window.scrollTo(0,0);
 }
 
 
-function toast(message){
+function share(text,title="Islamic Bloom"){
 
-  $("toast").textContent=message;
-  $("toast").classList.add("show");
+if(navigator.share){
 
-  setTimeout(()=>{
-    $("toast").classList.remove("show");
-  },1600);
+navigator.share({title,text}).catch(()=>{});
+
+}else if(navigator.clipboard){
+
+navigator.clipboard.writeText(text);
+
+toast("Copied — ready to share ♡");
+
+}
+
 }
 
 
-/* ===============================
-   BLOOM DATA
-================================ */
+/* ===========================
+   BLOOMS
+=========================== */
 
-const REFERENCES = {
+const G={
 
-Sadaqah:[
-{
-a:"كُلُّ مَعْرُوفٍ صَدَقَةٌ",
-m:"Every act of goodness is charity.",
-r:"Sahih Muslim 1005"
+mixed:{
+name:"Mixed Garden",
+icon:"🌸",
+sub:"A little of everything"
 },
-{
-a:"وَالْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ",
-m:"A good word is charity.",
-r:"Sahih al-Bukhari 2891"
-},
-{
-a:"لَن تَنَالُوا۟ ٱلْبِرَّ حَتَّىٰ تُنفِقُوا۟ مِمَّا تُحِبُّونَ",
-m:"Righteousness includes giving from what you love.",
-r:"Qur'an 3:92"
-}
-],
 
-Dhikr:[
-{
-a:"أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ",
-m:"Hearts find rest in the remembrance of Allah.",
-r:"Qur'an 13:28"
+sadaqah:{
+name:"Sadaqah Garden",
+icon:"🤍",
+sub:"Give, help & spread goodness"
 },
-{
-a:"فَٱذْكُرُونِىٓ أَذْكُرْكُمْ",
-m:"Remember Allah, and He will remember you.",
-r:"Qur'an 2:152"
-},
-{
-a:"إِنَّ بِكُلِّ تَسْبِيحَةٍ صَدَقَةً",
-m:"Every tasbih is charity.",
-r:"Sahih Muslim 1006"
-}
-],
 
-Gratitude:[
-{
-a:"لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",
-m:"Allah promises increase for gratitude.",
-r:"Qur'an 14:7"
+dhikr:{
+name:"Dhikr Garden",
+icon:"✨",
+sub:"Remember Allah throughout your day"
 },
-{
-a:"وَإِن تَعُدُّوا۟ نِعْمَةَ ٱللَّهِ لَا تُحْصُوهَآ",
-m:"Allah's blessings are beyond counting.",
-r:"Qur'an 16:18"
-}
-],
 
-Character:[
-{
-a:"وَٱلْكَٰظِمِينَ ٱلْغَيْظَ وَٱلْعَافِينَ عَنِ ٱلنَّاسِ",
-m:"Allah praises those who restrain anger and pardon others.",
-r:"Qur'an 3:134"
+gratitude:{
+name:"Gratitude Garden",
+icon:"🌷",
+sub:"Notice, thank & appreciate"
 },
-{
-a:"يَقُولُوا۟ ٱلَّتِى هِىَ أَحْسَنُ",
-m:"Say that which is best.",
-r:"Qur'an 17:53"
-}
-],
 
-Family:[
-{
-a:"وَقُل لَّهُمَا قَوْلًا كَرِيمًا",
-m:"Speak to your parents with gracious words.",
-r:"Qur'an 17:23"
+character:{
+name:"Character Garden",
+icon:"🌿",
+sub:"Grow beautiful character"
 },
-{
-a:"وَقُل رَّبِّ ٱرْحَمْهُمَا كَمَا رَبَّيَانِى صَغِيرًا",
-m:"Ask Allah to have mercy upon your parents.",
-r:"Qur'an 17:24"
+
+family:{
+name:"Family & Kindness",
+icon:"💗",
+sub:"Bring goodness into your home"
 }
-]
 
 };
 
 
-const DEEDS = {
+const DEEDS={
 
-Sadaqah:[
+sadaqah:[
 "Give a small amount of sadaqah quietly.",
 "Offer someone a kind word.",
 "Give water to someone.",
@@ -1546,7 +1549,7 @@ Sadaqah:[
 "Do one good deed only Allah knows about."
 ],
 
-Dhikr:[
+dhikr:[
 "Say SubhanAllah slowly.",
 "Say Alhamdulillah mindfully.",
 "Say Allahu Akbar.",
@@ -1579,7 +1582,7 @@ Dhikr:[
 "Remember Allah with your heart, not only your tongue."
 ],
 
-Gratitude:[
+gratitude:[
 "Write three blessings.",
 "Thank Allah for your health.",
 "Thank Allah for your family.",
@@ -1612,7 +1615,7 @@ Gratitude:[
 "Turn one complaint into gratitude."
 ],
 
-Character:[
+character:[
 "Pause before responding when annoyed.",
 "Forgive one small mistake.",
 "Speak gently.",
@@ -1645,7 +1648,7 @@ Character:[
 "Do one thing today with ihsan."
 ],
 
-Family:[
+family:[
 "Speak softly to your parents.",
 "Make dua for your parents.",
 "Help prepare a meal.",
@@ -1681,132 +1684,283 @@ Family:[
 };
 
 
-function buildBlooms(category){
+DEEDS.mixed=[];
 
-  return DEEDS[category].map((deed,index)=>{
+for(let i=0;i<6;i++){
 
-    const ref =
-      REFERENCES[category][
-        index %
-        REFERENCES[category].length
-      ];
+DEEDS.mixed.push(
+DEEDS.sadaqah[i],
+DEEDS.dhikr[i],
+DEEDS.gratitude[i],
+DEEDS.character[i],
+DEEDS.family[i]
+);
 
-    return {
-      category:
-        category==="Family"
-          ? "Family & Kindness"
-          : category,
-
-      deed,
-
-      arabic:ref.a,
-      meaning:ref.m,
-      reference:ref.r,
-
-      sourceType:
-        ref.r.startsWith("Qur'an")
-          ? "Qur'an Reminder"
-          : "Authentic Hadith"
-    };
-  });
 }
 
 
-const GARDENS={
-
-sadaqah:{
-  name:"Sadaqah Garden",
-  icon:"🤍",
-  subtitle:"Give, help & spread goodness",
-  blooms:buildBlooms("Sadaqah")
-},
-
-dhikr:{
-  name:"Dhikr Garden",
-  icon:"✨",
-  subtitle:"Remember Allah throughout your day",
-  blooms:buildBlooms("Dhikr")
-},
-
-gratitude:{
-  name:"Gratitude Garden",
-  icon:"🌷",
-  subtitle:"Notice, thank & appreciate",
-  blooms:buildBlooms("Gratitude")
-},
-
-character:{
-  name:"Character Garden",
-  icon:"🌿",
-  subtitle:"Grow patience, mercy & beautiful character",
-  blooms:buildBlooms("Character")
-},
-
-family:{
-  name:"Family & Kindness",
-  icon:"💗",
-  subtitle:"Bring goodness into your home",
-  blooms:buildBlooms("Family")
-}
-
-};
-
-
-GARDENS.mixed={
-  name:"Mixed Garden",
-  icon:"🌸",
-  subtitle:"A little of everything",
-  blooms:[]
-};
-
-
-[
+const K=[
+"mixed",
 "sadaqah",
 "dhikr",
 "gratitude",
 "character",
 "family"
-]
-.forEach(key=>{
-
-  GARDENS.mixed.blooms.push(
-    ...GARDENS[key].blooms.slice(0,6)
-  );
-
-});
-
-
-const GARDEN_KEYS=[
-  "mixed",
-  "sadaqah",
-  "dhikr",
-  "gratitude",
-  "character",
-  "family"
 ];
 
 
-/* ===============================
-   ADULT MORNING ADHKAR
-================================ */
+const BLOOM_REFERENCES={
+
+sadaqah:[
+{
+arabic:"كُلُّ مَعْرُوفٍ صَدَقَةٌ",
+meaning:"Every act of goodness is charity.",
+ref:"Sahih Muslim 1005"
+},
+{
+arabic:"وَالْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ",
+meaning:"A good word is charity.",
+ref:"Sahih al-Bukhari 2891"
+},
+{
+arabic:"لَن تَنَالُوا۟ ٱلْبِرَّ حَتَّىٰ تُنفِقُوا۟ مِمَّا تُحِبُّونَ",
+meaning:"Righteousness includes giving from what you love.",
+ref:"Qur'an 3:92"
+}
+],
+
+dhikr:[
+{
+arabic:"أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ",
+meaning:"Hearts find rest in the remembrance of Allah.",
+ref:"Qur'an 13:28"
+},
+{
+arabic:"فَٱذْكُرُونِىٓ أَذْكُرْكُمْ",
+meaning:"Remember Allah, and He will remember you.",
+ref:"Qur'an 2:152"
+}
+],
+
+gratitude:[
+{
+arabic:"لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",
+meaning:"Allah promises increase for gratitude.",
+ref:"Qur'an 14:7"
+},
+{
+arabic:"وَإِن تَعُدُّوا۟ نِعْمَةَ ٱللَّهِ لَا تُحْصُوهَآ",
+meaning:"Allah's blessings are beyond counting.",
+ref:"Qur'an 16:18"
+}
+],
+
+character:[
+{
+arabic:"وَٱلْكَٰظِمِينَ ٱلْغَيْظَ وَٱلْعَافِينَ عَنِ ٱلنَّاسِ",
+meaning:"Allah praises those who restrain anger and pardon others.",
+ref:"Qur'an 3:134"
+},
+{
+arabic:"يَقُولُوا۟ ٱلَّتِى هِىَ أَحْسَنُ",
+meaning:"Say that which is best.",
+ref:"Qur'an 17:53"
+}
+],
+
+family:[
+{
+arabic:"وَقُل لَّهُمَا قَوْلًا كَرِيمًا",
+meaning:"Speak to your parents with gracious words.",
+ref:"Qur'an 17:23"
+},
+{
+arabic:"وَقُل رَّبِّ ٱرْحَمْهُمَا كَمَا رَبَّيَانِى صَغِيرًا",
+meaning:"Ask Allah to have mercy upon your parents.",
+ref:"Qur'an 17:24"
+}
+]
+
+};
+
+
+function referenceFor(key,index){
+
+let sourceKey=key;
+
+if(key==="mixed"){
+
+const types=[
+"sadaqah",
+"dhikr",
+"gratitude",
+"character",
+"family"
+];
+
+sourceKey=
+types[index%5];
+
+}
+
+const refs=
+BLOOM_REFERENCES[sourceKey];
+
+return refs[index%refs.length];
+
+}
+
+
+function lp(key){
+
+try{
+
+return JSON.parse(
+localStorage.getItem(
+"ibGarden_"+key
+)||"[]"
+);
+
+}catch(e){
+
+return [];
+
+}
+
+}
+
+
+function sp(key,value){
+
+localStorage.setItem(
+"ibGarden_"+key,
+JSON.stringify(value)
+);
+
+}
+
+
+function favs(){
+
+try{
+
+return JSON.parse(
+localStorage.getItem("ibFavs")
+||"[]"
+);
+
+}catch(e){
+
+return [];
+
+}
+
+}
+
+
+function sf(a){
+
+localStorage.setItem(
+"ibFavs",
+JSON.stringify(a)
+);
+
+}
+
+
+function total(){
+
+return K.reduce(
+(a,k)=>a+lp(k).length,
+0
+);
+
+}
+
+
+/* ===========================
+   MORNING ADHKAR
+=========================== */
+
+const THREE_QULS_ARABIC=
+`بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+قُلْ هُوَ اللَّهُ أَحَدٌ
+اللَّهُ الصَّمَدُ
+لَمْ يَلِدْ وَلَمْ يُولَدْ
+وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ
+
+بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ
+مِن شَرِّ مَا خَلَقَ
+وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ
+وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ
+وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ
+
+بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+قُلْ أَعُوذُ بِرَبِّ النَّاسِ
+مَلِكِ النَّاسِ
+إِلَٰهِ النَّاسِ
+مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ
+الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ
+مِنَ الْجِنَّةِ وَالنَّاسِ`;
+
+
+const THREE_QULS_TRANSLIT=
+`Bismillahir-Rahmanir-Rahim.
+Qul Huwallahu Ahad.
+Allahus-Samad.
+Lam yalid wa lam yulad.
+Wa lam yakun lahu kufuwan ahad.
+
+Bismillahir-Rahmanir-Rahim.
+Qul a'udhu bi Rabbil-falaq.
+Min sharri ma khalaq.
+Wa min sharri ghasiqin idha waqab.
+Wa min sharrin-naffathati fil-'uqad.
+Wa min sharri hasidin idha hasad.
+
+Bismillahir-Rahmanir-Rahim.
+Qul a'udhu bi Rabbin-nas.
+Malikin-nas.
+Ilahin-nas.
+Min sharril-waswasil-khannas.
+Alladhi yuwaswisu fi sudurin-nas.
+Minal-jinnati wan-nas.`;
+
 
 const MORNING=[
 
 {
 title:"Ayat al-Kursi",
-arabic:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ",
-translit:"Allahu la ilaha illa Huwa, al-Hayyul-Qayyum. La ta'khudhuhu sinatun wa la nawm...",
+arabic:`اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ
+لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ
+لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ
+مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ
+يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ
+وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ
+وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ
+وَلَا يَئُودُهُ حِفْظُهُمَا
+وَهُوَ الْعَلِيُّ الْعَظِيمُ`,
+translit:`Allahu la ilaha illa Huwal-Hayyul-Qayyum.
+La ta'khudhuhu sinatun wa la nawm.
+Lahu ma fis-samawati wa ma fil-ard.
+Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih.
+Ya'lamu ma bayna aydihim wa ma khalfahum.
+Wa la yuhituna bi shay'in min 'ilmihi illa bima sha'.
+Wasi'a kursiyyuhus-samawati wal-ard.
+Wa la ya'uduhu hifzuhuma.
+Wa Huwal-'Aliyyul-'Azim.`,
 meaning:"Allah is the Ever-Living and Sustainer of all.",
-reference:"Qur'an 2:255",
+ref:"Qur'an 2:255",
 repeat:1
 },
 
 {
 title:"Al-Ikhlas, Al-Falaq & An-Nas",
-arabic:"قُلْ هُوَ اللَّهُ أَحَدٌ • قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ • قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
-translit:"Qul Huwallahu Ahad… • Qul a'udhu bi Rabbil-falaq… • Qul a'udhu bi Rabbin-nas…",
-meaning:"Recite the three protecting surahs three times each.",
-reference:"Abu Dawud 5082",
+arabic:THREE_QULS_ARABIC,
+translit:THREE_QULS_TRANSLIT,
+meaning:"Recite Surah Al-Ikhlas, Al-Falaq and An-Nas three times each.",
+ref:"Qur'an 112–114 • Hisn al-Muslim 76 • Abu Dawud 5082",
 repeat:3
 },
 
@@ -1815,7 +1969,7 @@ title:"We have reached the morning",
 arabic:"أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ",
 translit:"Asbahna wa asbahal-mulku lillah, walhamdu lillah.",
 meaning:"We enter the morning acknowledging Allah's dominion and praise.",
-reference:"Hisn al-Muslim 77",
+ref:"Hisn al-Muslim 77",
 repeat:1
 },
 
@@ -1824,43 +1978,43 @@ title:"By You we enter the morning",
 arabic:"اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ",
 translit:"Allahumma bika asbahna, wa bika amsayna, wa bika nahya, wa bika namut, wa ilaykan-nushur.",
 meaning:"O Allah, by You we enter the morning and evening, live and die.",
-reference:"Hisn al-Muslim 78",
+ref:"Hisn al-Muslim 78",
 repeat:1
 },
 
 {
 title:"Sayyid al-Istighfar",
-arabic:"اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ",
-translit:"Allahumma Anta Rabbi la ilaha illa Ant. Khalaqtani wa ana 'abduk, wa ana 'ala 'ahdika wa wa'dika mastata't...",
+arabic:"اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي، فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+translit:"Allahumma Anta Rabbi la ilaha illa Ant, khalaqtani wa ana 'abduk, wa ana 'ala 'ahdika wa wa'dika mastata't. A'udhu bika min sharri ma sana't. Abu'u laka bini'matika 'alayya, wa abu'u bidhanbi, faghfir li fa innahu la yaghfirudh-dhunuba illa Ant.",
 meaning:"The foremost supplication for seeking Allah's forgiveness.",
-reference:"Sahih al-Bukhari 6306",
+ref:"Sahih al-Bukhari 6306",
 repeat:1
 },
 
 {
 title:"Testimony of Tawhid",
-arabic:"اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ وَأُشْهِدُ حَمَلَةَ عَرْشِكَ وَمَلَائِكَتَكَ وَجَمِيعَ خَلْقِكَ أَنَّكَ أَنْتَ اللَّهُ",
-translit:"Allahumma inni asbahtu ush-hiduka, wa ush-hidu hamalata 'arshik, wa mala'ikataka wa jami'a khalqik...",
+arabic:"اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",
+translit:"Allahumma inni asbahtu ush-hiduka, wa ush-hidu hamalata 'arshik, wa mala'ikataka, wa jami'a khalqik, annaka Antallahu la ilaha illa Anta wahdaka la sharika lak, wa anna Muhammadan 'abduka wa rasuluk.",
 meaning:"Bear witness to Allah's oneness and Muhammad's messengership.",
-reference:"Hisn al-Muslim 80",
+ref:"Hisn al-Muslim 80",
 repeat:4
 },
 
 {
 title:"Thank Allah for every blessing",
-arabic:"اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ",
-translit:"Allahumma ma asbaha bi min ni'matin aw bi ahadin min khalqik, fa minka wahdaka la sharika lak.",
+arabic:"اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
+translit:"Allahumma ma asbaha bi min ni'matin aw bi ahadin min khalqik, fa minka wahdaka la sharika lak, falakal-hamdu wa lakash-shukr.",
 meaning:"Whatever blessing I received this morning is from You alone.",
-reference:"Hisn al-Muslim 81",
+ref:"Hisn al-Muslim 81",
 repeat:1
 },
 
 {
 title:"Health, hearing & sight",
-arabic:"اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي",
-translit:"Allahumma 'afini fi badani. Allahumma 'afini fi sam'i. Allahumma 'afini fi basari.",
+arabic:"اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَهَ إِلَّا أَنْتَ",
+translit:"Allahumma 'afini fi badani. Allahumma 'afini fi sam'i. Allahumma 'afini fi basari. La ilaha illa Ant.",
 meaning:"Ask Allah for well-being in your body, hearing and sight.",
-reference:"Hisn al-Muslim 82",
+ref:"Hisn al-Muslim 82",
 repeat:3
 },
 
@@ -1869,7 +2023,7 @@ title:"Allah is sufficient for me",
 arabic:"حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ، عَلَيْهِ تَوَكَّلْتُ، وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
 translit:"Hasbiyallahu la ilaha illa Huwa, 'alayhi tawakkaltu, wa Huwa Rabbul-'Arshil-'Azim.",
 meaning:"Allah is sufficient for me and I place my trust in Him.",
-reference:"Hisn al-Muslim 83",
+ref:"Hisn al-Muslim 83",
 repeat:7
 },
 
@@ -1878,16 +2032,16 @@ title:"Forgiveness & well-being",
 arabic:"اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ",
 translit:"Allahumma inni as'alukal-'afwa wal-'afiyata fid-dunya wal-akhirah.",
 meaning:"O Allah, I ask You for pardon and well-being in this world and the next.",
-reference:"Hisn al-Muslim 84",
+ref:"Hisn al-Muslim 84",
 repeat:1
 },
 
 {
 title:"Knower of the unseen",
-arabic:"اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ، فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ",
-translit:"Allahumma 'alimal-ghaybi wash-shahadah, Fatiras-samawati wal-ard...",
+arabic:"اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ، فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ",
+translit:"Allahumma 'alimal-ghaybi wash-shahadah, Fatiras-samawati wal-ard, Rabba kulli shay'in wa malikah. Ash-hadu an la ilaha illa Ant. A'udhu bika min sharri nafsi wa min sharrish-shaytani wa shirkih.",
 meaning:"Ask Allah for protection from the evil of yourself and Shaytan.",
-reference:"Hisn al-Muslim 85",
+ref:"Hisn al-Muslim 85",
 repeat:1
 },
 
@@ -1896,7 +2050,7 @@ title:"Protection in Allah's Name",
 arabic:"بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
 translit:"Bismillahil-ladhi la yadurru ma'a ismihi shay'un fil-ardi wa la fis-sama', wa Huwas-Sami'ul-'Alim.",
 meaning:"In Allah's Name, with which nothing can cause harm.",
-reference:"Hisn al-Muslim 86",
+ref:"Hisn al-Muslim 86",
 repeat:3
 },
 
@@ -1905,25 +2059,25 @@ title:"Pleased with Allah as Lord",
 arabic:"رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا",
 translit:"Raditu billahi Rabban, wa bil-Islami dinan, wa bi Muhammadin ﷺ nabiyyan.",
 meaning:"I am pleased with Allah as Lord, Islam as religion and Muhammad ﷺ as Prophet.",
-reference:"Hisn al-Muslim 87",
+ref:"Hisn al-Muslim 87",
 repeat:3
 },
 
 {
 title:"O Ever-Living, O Sustainer",
-arabic:"يَا حَيُّ يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ",
-translit:"Ya Hayyu ya Qayyum, bi rahmatika astaghith. Aslih li sha'ni kullahu.",
+arabic:"يَا حَيُّ يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ",
+translit:"Ya Hayyu ya Qayyum, bi rahmatika astaghith. Aslih li sha'ni kullahu, wa la takilni ila nafsi tarfata 'ayn.",
 meaning:"O Ever-Living, O Sustainer, by Your mercy I seek help.",
-reference:"Hisn al-Muslim 88",
+ref:"Hisn al-Muslim 88",
 repeat:1
 },
 
 {
 title:"Upon the natural way of Islam",
-arabic:"أَصْبَحْنَا عَلَى فِطْرَةِ الْإِسْلَامِ، وَعَلَى كَلِمَةِ الْإِخْلَاصِ",
-translit:"Asbahna 'ala fitratil-Islam, wa 'ala kalimatil-ikhlas.",
+arabic:"أَصْبَحْنَا عَلَى فِطْرَةِ الْإِسْلَامِ، وَعَلَى كَلِمَةِ الْإِخْلَاصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ ﷺ",
+translit:"Asbahna 'ala fitratil-Islam, wa 'ala kalimatil-ikhlas, wa 'ala dini Nabiyyina Muhammadin ﷺ.",
 meaning:"We enter the morning upon the natural way of Islam.",
-reference:"Hisn al-Muslim 90",
+ref:"Hisn al-Muslim 90",
 repeat:1
 },
 
@@ -1932,16 +2086,16 @@ title:"SubhanAllahi wa bihamdih",
 arabic:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
 translit:"SubhanAllahi wa bihamdih.",
 meaning:"Glory and praise are to Allah.",
-reference:"Hisn al-Muslim 91",
+ref:"Hisn al-Muslim 91",
 repeat:100
 },
 
 {
 title:"Tawhid dhikr",
-arabic:"لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ",
-translit:"La ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamd.",
+arabic:"لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+translit:"La ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamd, wa Huwa 'ala kulli shay'in Qadir.",
 meaning:"None has the right to be worshipped but Allah alone.",
-reference:"Hisn al-Muslim 92",
+ref:"Hisn al-Muslim 92",
 repeat:10
 },
 
@@ -1950,7 +2104,7 @@ title:"Praise by the measure of creation",
 arabic:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ",
 translit:"SubhanAllahi wa bihamdih, 'adada khalqih, wa rida nafsih, wa zinata 'arshih, wa midada kalimatih.",
 meaning:"Glory and praise to Allah by the measure of His creation.",
-reference:"Sahih Muslim 2726",
+ref:"Sahih Muslim 2726",
 repeat:3
 },
 
@@ -1959,7 +2113,7 @@ title:"Beneficial knowledge & good provision",
 arabic:"اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا",
 translit:"Allahumma inni as'aluka 'ilman nafi'an, wa rizqan tayyiban, wa 'amalan mutaqabbalan.",
 meaning:"Ask Allah for beneficial knowledge, good provision and accepted deeds.",
-reference:"Ibn Majah 925",
+ref:"Ibn Majah 925",
 repeat:1
 },
 
@@ -1968,46 +2122,44 @@ title:"Seek forgiveness",
 arabic:"أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ",
 translit:"Astaghfirullaha wa atubu ilayh.",
 meaning:"I seek Allah's forgiveness and repent to Him.",
-reference:"Hisn al-Muslim 96",
+ref:"Hisn al-Muslim 96",
 repeat:100
 }
 
 ];
 
 
-/* ===============================
-   EVENING
-================================ */
+/* EVENING */
 
-const EVENING = MORNING
-.filter(item=>
-  ![
-    "Beneficial knowledge & good provision",
-    "Praise by the measure of creation"
-  ].includes(item.title)
+const EVENING=MORNING
+.filter(x=>
+![
+"Praise by the measure of creation",
+"Beneficial knowledge & good provision"
+].includes(x.title)
 )
-.map(item=>({...item}));
+.map(x=>({...x}));
 
 
-function updateEvening(
-  oldTitle,
-  changes
-){
+function eveningChange(title,data){
 
-  const i=EVENING.findIndex(
-    x=>x.title===oldTitle
-  );
+const i=EVENING.findIndex(
+x=>x.title===title
+);
 
-  if(i>=0){
-    EVENING[i]={
-      ...EVENING[i],
-      ...changes
-    };
-  }
+if(i>=0){
+
+EVENING[i]={
+...EVENING[i],
+...data
+};
+
+}
+
 }
 
 
-updateEvening(
+eveningChange(
 "We have reached the morning",
 {
 title:"We have reached the evening",
@@ -2018,7 +2170,7 @@ meaning:"We enter the evening acknowledging Allah's dominion and praise."
 );
 
 
-updateEvening(
+eveningChange(
 "By You we enter the morning",
 {
 title:"By You we enter the evening",
@@ -2029,30 +2181,30 @@ meaning:"O Allah, by You we enter the evening and morning."
 );
 
 
-updateEvening(
+eveningChange(
 "Testimony of Tawhid",
 {
-arabic:"اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ وَأُشْهِدُ حَمَلَةَ عَرْشِكَ وَمَلَائِكَتَكَ وَجَمِيعَ خَلْقِكَ أَنَّكَ أَنْتَ اللَّهُ",
-translit:"Allahumma inni amsaytu ush-hiduka, wa ush-hidu hamalata 'arshik, wa mala'ikataka wa jami'a khalqik..."
+arabic:"اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",
+translit:"Allahumma inni amsaytu ush-hiduka, wa ush-hidu hamalata 'arshik, wa mala'ikataka, wa jami'a khalqik, annaka Antallahu la ilaha illa Anta wahdaka la sharika lak, wa anna Muhammadan 'abduka wa rasuluk."
 }
 );
 
 
-updateEvening(
+eveningChange(
 "Thank Allah for every blessing",
 {
-arabic:"اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ",
-translit:"Allahumma ma amsa bi min ni'matin aw bi ahadin min khalqik, fa minka wahdaka la sharika lak.",
+arabic:"اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
+translit:"Allahumma ma amsa bi min ni'matin aw bi ahadin min khalqik, fa minka wahdaka la sharika lak, falakal-hamdu wa lakash-shukr.",
 meaning:"Whatever blessing I received this evening is from You alone."
 }
 );
 
 
-updateEvening(
+eveningChange(
 "Upon the natural way of Islam",
 {
-arabic:"أَمْسَيْنَا عَلَى فِطْرَةِ الْإِسْلَامِ، وَعَلَى كَلِمَةِ الْإِخْلَاصِ",
-translit:"Amsayna 'ala fitratil-Islam, wa 'ala kalimatil-ikhlas.",
+arabic:"أَمْسَيْنَا عَلَى فِطْرَةِ الْإِسْلَامِ، وَعَلَى كَلِمَةِ الْإِخْلَاصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ ﷺ",
+translit:"Amsayna 'ala fitratil-Islam, wa 'ala kalimatil-ikhlas, wa 'ala dini Nabiyyina Muhammadin ﷺ.",
 meaning:"We enter the evening upon the natural way of Islam."
 }
 );
@@ -2062,26 +2214,22 @@ EVENING.push({
 
 title:"Refuge in Allah's perfect words",
 
-arabic:
-"أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+arabic:"أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
 
-translit:
-"A'udhu bi kalimatillahit-tammati min sharri ma khalaq.",
+translit:"A'udhu bi kalimatillahit-tammati min sharri ma khalaq.",
 
-meaning:
-"I seek refuge in Allah's perfect words from the evil of what He created.",
+meaning:"I seek refuge in Allah's perfect words from the evil of what He created.",
 
-reference:
-"Hisn al-Muslim 97",
+ref:"Hisn al-Muslim 97",
 
 repeat:3
 
 });
 
 
-/* ===============================
+/* ===========================
    KIDS EASY DUAS
-================================ */
+=========================== */
 
 const KIDS_DUAS=[
 
@@ -2090,7 +2238,7 @@ title:"When I wake up 🌞",
 arabic:"الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
 translit:"Alhamdu lillahil-ladhi ahyana ba'da ma amatana wa ilayhin-nushur.",
 meaning:"Praise Allah for giving us a new day.",
-reference:"Sahih al-Bukhari 6324"
+ref:"Sahih al-Bukhari 6324"
 },
 
 {
@@ -2098,7 +2246,7 @@ title:"Before I eat 🍎",
 arabic:"بِسْمِ اللَّهِ",
 translit:"Bismillah.",
 meaning:"In the Name of Allah.",
-reference:"Abu Dawud / At-Tirmidhi"
+ref:"Abu Dawud / At-Tirmidhi"
 },
 
 {
@@ -2106,7 +2254,7 @@ title:"After I eat 🍽️",
 arabic:"الْحَمْدُ لِلَّهِ",
 translit:"Alhamdulillah.",
 meaning:"All praise belongs to Allah.",
-reference:"Sunnah of praising Allah after eating"
+ref:"Sunnah"
 },
 
 {
@@ -2114,7 +2262,7 @@ title:"Before I sleep 🌙",
 arabic:"بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
 translit:"Bismika Allahumma amutu wa ahya.",
 meaning:"In Your Name, O Allah, I die and I live.",
-reference:"Sahih al-Bukhari 6324"
+ref:"Sahih al-Bukhari 6324"
 },
 
 {
@@ -2122,7 +2270,7 @@ title:"When I leave home 🏡",
 arabic:"بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
 translit:"Bismillah, tawakkaltu 'alallah, wa la hawla wa la quwwata illa billah.",
 meaning:"In Allah's Name. I trust Allah. All strength comes from Him.",
-reference:"Abu Dawud / At-Tirmidhi"
+ref:"Abu Dawud / At-Tirmidhi"
 },
 
 {
@@ -2130,7 +2278,7 @@ title:"Before the bathroom 🚪",
 arabic:"اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",
 translit:"Allahumma inni a'udhu bika minal-khubthi wal-khaba'ith.",
 meaning:"O Allah, protect me from evil.",
-reference:"Sahih al-Bukhari 6322"
+ref:"Sahih al-Bukhari 6322"
 },
 
 {
@@ -2138,7 +2286,7 @@ title:"After the bathroom 💧",
 arabic:"غُفْرَانَكَ",
 translit:"Ghufranak.",
 meaning:"O Allah, I ask Your forgiveness.",
-reference:"Abu Dawud / At-Tirmidhi"
+ref:"Abu Dawud / At-Tirmidhi"
 },
 
 {
@@ -2146,7 +2294,7 @@ title:"Dua for my parents 💗",
 arabic:"رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
 translit:"Rabbir-hamhuma kama rabbayani saghira.",
 meaning:"My Lord, have mercy on my parents as they cared for me when I was little.",
-reference:"Qur'an 17:24"
+ref:"Qur'an 17:24"
 },
 
 {
@@ -2154,7 +2302,7 @@ title:"When I sneeze 😊",
 arabic:"الْحَمْدُ لِلَّهِ",
 translit:"Alhamdulillah.",
 meaning:"Praise Allah.",
-reference:"Sahih al-Bukhari"
+ref:"Sahih al-Bukhari"
 },
 
 {
@@ -2162,1957 +2310,1771 @@ title:"When it rains 🌧️",
 arabic:"اللَّهُمَّ صَيِّبًا نَافِعًا",
 translit:"Allahumma sayyiban nafi'an.",
 meaning:"O Allah, make this beneficial rain.",
-reference:"Sahih al-Bukhari 1032"
+ref:"Sahih al-Bukhari 1032"
 }
 
 ];
 
 
-/* ===============================
-   STORAGE
-================================ */
-
-function gardenProgress(key){
-
-  try{
-    return JSON.parse(
-      localStorage.getItem(
-        "islamicBloom_garden_"+key
-      ) || "[]"
-    );
-  }catch(e){
-    return [];
-  }
-}
-
-
-function saveGardenProgress(
-  key,
-  progress
-){
-  localStorage.setItem(
-    "islamicBloom_garden_"+key,
-    JSON.stringify(progress)
-  );
-}
-
-
-function favourites(){
-
-  try{
-    return JSON.parse(
-      localStorage.getItem(
-        "islamicBloom_favourites"
-      ) || "[]"
-    );
-  }catch(e){
-    return [];
-  }
-}
-
-
-function saveFavourites(items){
-
-  localStorage.setItem(
-    "islamicBloom_favourites",
-    JSON.stringify(items)
-  );
-}
-
+/* ===========================
+   DAILY STORAGE
+=========================== */
 
 function dateKey(){
 
-  const d=new Date();
+const d=new Date();
 
-  return [
-    d.getFullYear(),
-    String(d.getMonth()+1).padStart(2,"0"),
-    String(d.getDate()).padStart(2,"0")
-  ].join("-");
+return [
+d.getFullYear(),
+String(d.getMonth()+1).padStart(2,"0"),
+String(d.getDate()).padStart(2,"0")
+].join("-");
+
 }
 
 
-function loadDaily(type){
+function sessionKey(type){
 
-  try{
-    return JSON.parse(
-      localStorage.getItem(
-        `islamicBloom_${type}_${dateKey()}`
-      ) || "{}"
-    );
-  }catch(e){
-    return {};
-  }
+return "ib_"+
+type+"_"+
+dateKey();
+
 }
 
 
-function saveDaily(type,data){
+function ls(type){
 
-  localStorage.setItem(
-    `islamicBloom_${type}_${dateKey()}`,
-    JSON.stringify(data)
-  );
+try{
+
+return JSON.parse(
+localStorage.getItem(
+sessionKey(type)
+)||"{}"
+);
+
+}catch(e){
+
+return {};
+
+}
+
 }
 
 
-/* ===============================
-   USER-SPECIFIC PETAL LAYOUT
-================================ */
+function ss(type,value){
+
+localStorage.setItem(
+sessionKey(type),
+JSON.stringify(value)
+);
+
+}
+
+
+/* ===========================
+   HOME
+=========================== */
+
+function renderMenu(){
+
+const c=$("cards");
+c.innerHTML="";
+
+
+if(isKids()){
+
+const n=lp("mixed").length;
+
+$("overallText").textContent=
+`My Good Deeds: ${n} / 30`;
+
+$("overallBar").style.width=
+(n/30*100)+"%";
+
+
+[
+{
+type:"garden",
+key:"mixed",
+icon:"🌈",
+name:"My Good Deeds",
+sub:"Pick a smiley and do something kind 🌈",
+status:`${n} / 30 done`
+},
+
+{
+type:"kids",
+icon:"🤲",
+name:"My Easy Duas",
+sub:"Little duas for everyday moments",
+status:`${KIDS_DUAS.length} easy duas`
+},
+
+{
+type:"favourites",
+icon:"💖",
+name:"My Favourites",
+sub:"My favourite reminders and duas",
+status:`${favs().length} saved`
+}
+
+]
+.forEach(addCard);
+
+return;
+
+}
+
+
+const n=total();
+
+$("overallText").textContent=
+`Overall Bloom Progress: ${n} / 180`;
+
+$("overallBar").style.width=
+(n/180*100)+"%";
+
+
+K.forEach(key=>{
+
+addCard({
+
+type:"garden",
+key,
+
+icon:G[key].icon,
+
+name:G[key].name,
+
+sub:G[key].sub,
+
+status:
+`${lp(key).length} / 30 bloomed`
+
+});
+
+});
+
+
+addCard({
+type:"morning",
+icon:"🌅",
+name:"Morning Adhkar",
+sub:"Authentic morning remembrance",
+status:`${MORNING.length} verified adhkar`
+});
+
+
+addCard({
+type:"evening",
+icon:"🌙",
+name:"Evening Adhkar",
+sub:"Authentic evening remembrance",
+status:`${EVENING.length} verified adhkar`
+});
+
+
+addCard({
+type:"favourites",
+icon:"♡",
+name:"My Favourites",
+sub:"Your personally saved blooms",
+status:`${favs().length} saved`
+});
+
+}
+
+
+function addCard(x){
+
+const b=document.createElement("button");
+
+b.className="card";
+
+b.innerHTML=`
+<div class="icon">${x.icon}</div>
+<div class="name">${x.name}</div>
+<div class="sub">${x.sub}</div>
+<div class="mini">${x.status}</div>
+`;
+
+b.onclick=()=>{
+
+if(x.type==="garden"){
+openGarden(x.key)
+}
+
+if(x.type==="morning"){
+openAdhkar("morning")
+}
+
+if(x.type==="evening"){
+openAdhkar("evening")
+}
+
+if(x.type==="kids"){
+openKidsDuas()
+}
+
+if(x.type==="favourites"){
+openFavourites()
+}
+
+};
+
+$("cards").appendChild(b);
+
+}
+
+
+/* ===========================
+   PETALS
+=========================== */
 
 function getSeed(){
 
-  let seed=
-    localStorage.getItem(
-      "islamicBloom_seed"
-    );
+let s=
+localStorage.getItem("ibSeed");
 
-  if(!seed){
+if(!s){
 
-    seed=
-      String(
-        Math.floor(
-          Math.random()*2000000000
-        )+1
-      );
+s=String(
+Math.floor(
+Math.random()*2000000000
+)+1
+);
 
-    localStorage.setItem(
-      "islamicBloom_seed",
-      seed
-    );
-  }
+localStorage.setItem(
+"ibSeed",
+s
+);
 
-  return Number(seed);
+}
+
+return Number(s);
+
 }
 
 
 const USER_SEED=getSeed();
 
 
-function seeded(n){
+function rnd(n){
 
-  const x=
-    Math.sin(n)*10000;
+const x=
+Math.sin(n)*10000;
 
-  return x-Math.floor(x);
-}
-
-
-function positions(count){
-
-  const result=[];
-
-  const cols=
-    count>20 ? 5 : 4;
-
-  const rows=
-    Math.ceil(
-      count/cols
-    );
-
-  for(
-    let i=0;
-    i<count;
-    i++
-  ){
-
-    const row=
-      Math.floor(i/cols);
-
-    const col=
-      i%cols;
-
-    const x=
-      4+
-      col*(88/(cols-1))+
-      (seeded(USER_SEED+i*31)-.5)*4;
-
-    const y=
-      4+
-      row*(84/Math.max(rows-1,1))+
-      (seeded(USER_SEED+i*47)-.5)*3;
-
-    result.push([
-      Math.max(1,Math.min(90,x)),
-      Math.max(1,Math.min(88,y))
-    ]);
-  }
-
-  return result;
-}
-
-
-function flowerSVG(i){
-
-  const colors=[
-    ["#ebb0ba","#f6d4d9"],
-    ["#f1c4ca","#fae2e5"],
-    ["#f0cfbe","#f8e5d9"],
-    ["#e8bac5","#f4d9df"],
-    ["#efc3d5","#f8e3eb"]
-  ];
-
-  const c=colors[i%colors.length];
-
-  return `
-  <svg viewBox="0 0 100 100">
-
-  <g fill="${c[0]}" stroke="${c[1]}">
-
-  <ellipse cx="50" cy="20" rx="15" ry="26"/>
-
-  <ellipse
-  cx="77"
-  cy="36"
-  rx="15"
-  ry="26"
-  transform="rotate(60 77 36)"
-  />
-
-  <ellipse
-  cx="77"
-  cy="66"
-  rx="15"
-  ry="26"
-  transform="rotate(120 77 66)"
-  />
-
-  <ellipse cx="50" cy="80" rx="15" ry="26"/>
-
-  <ellipse
-  cx="23"
-  cy="66"
-  rx="15"
-  ry="26"
-  transform="rotate(60 23 66)"
-  />
-
-  <ellipse
-  cx="23"
-  cy="36"
-  rx="15"
-  ry="26"
-  transform="rotate(120 23 36)"
-  />
-
-  </g>
-
-  <circle
-  cx="50"
-  cy="50"
-  r="21"
-  fill="#fffaf6"
-  stroke="#d3b176"
-  />
-
-  </svg>
-  `;
-}
-
-
-/* ===============================
-   HOME
-================================ */
-
-function totalProgress(){
-
-  return GARDEN_KEYS.reduce(
-    (total,key)=>
-      total+
-      gardenProgress(key).length,
-    0
-  );
-}
-
-
-function renderHome(){
-
-  applyProfile();
-
-  const container=$("cards");
-  container.innerHTML="";
-
-  if(isKids()){
-
-    const mixedCount=
-      gardenProgress("mixed").length;
-
-    $("overallText").textContent=
-      `My Good Deeds: ${mixedCount} / 30`;
-
-    $("overallBar").style.width=
-      `${mixedCount/30*100}%`;
-
-    const kidsCards=[
-
-    {
-      type:"garden",
-      key:"mixed",
-      icon:"🌈",
-      name:"My Good Deeds",
-      sub:"Pick a colourful flower and do something kind",
-      status:`${mixedCount} / 30 done`
-    },
-
-    {
-      type:"kids",
-      icon:"🤲",
-      name:"My Easy Duas",
-      sub:"Little duas for everyday moments",
-      status:`${KIDS_DUAS.length} easy duas`
-    },
-
-    {
-      type:"favourites",
-      icon:"💖",
-      name:"My Favourites",
-      sub:"My favourite reminders and duas",
-      status:`${favourites().length} saved`
-    }
-
-    ];
-
-    kidsCards.forEach(addHomeCard);
-
-    return;
-  }
-
-
-  const total=
-    totalProgress();
-
-  $("overallText").textContent=
-    `Overall Bloom Progress: ${total} / 180`;
-
-  $("overallBar").style.width=
-    `${total/180*100}%`;
-
-
-  GARDEN_KEYS.forEach(key=>{
-
-    addHomeCard({
-
-      type:"garden",
-      key,
-
-      icon:
-        GARDENS[key].icon,
-
-      name:
-        GARDENS[key].name,
-
-      sub:
-        GARDENS[key].subtitle,
-
-      status:
-        `${gardenProgress(key).length} / 30 bloomed`
-
-    });
-
-  });
-
-
-  addHomeCard({
-    type:"morning",
-    icon:"🌅",
-    name:"Morning Adhkar",
-    sub:"Authentic morning remembrance",
-    status:`${MORNING.length} adhkar`
-  });
-
-
-  addHomeCard({
-    type:"evening",
-    icon:"🌙",
-    name:"Evening Adhkar",
-    sub:"Authentic evening remembrance",
-    status:`${EVENING.length} adhkar`
-  });
-
-
-  addHomeCard({
-    type:"favourites",
-    icon:"♡",
-    name:"My Favourites",
-    sub:"Your personally saved blooms",
-    status:`${favourites().length} saved`
-  });
+return x-Math.floor(x);
 
 }
 
 
-function addHomeCard(item){
+function pos(count){
 
-  const button=
-    document.createElement(
-      "button"
-    );
+const result=[];
+const cols=count>20?5:4;
+const rows=Math.ceil(count/cols);
 
-  button.className="card";
+for(let i=0;i<count;i++){
 
-  button.innerHTML=`
+const row=Math.floor(i/cols);
+const col=i%cols;
 
-  <div class="icon">
-  ${item.icon}
-  </div>
+const x=
+4+
+col*(88/(cols-1))+
+(rnd(USER_SEED+i*31)-.5)*4;
 
-  <div class="name">
-  ${item.name}
-  </div>
+const y=
+4+
+row*(84/Math.max(rows-1,1))+
+(rnd(USER_SEED+i*47)-.5)*3;
 
-  <div class="sub">
-  ${item.sub}
-  </div>
+result.push([
+Math.max(1,Math.min(90,x)),
+Math.max(1,Math.min(88,y))
+]);
 
-  <div class="mini">
-  ${item.status}
-  </div>
+}
 
-  `;
+return result;
 
-
-  button.onclick=()=>{
-
-    if(item.type==="garden"){
-      openGarden(item.key);
-    }
-
-    if(item.type==="morning"){
-      openAdhkar("morning");
-    }
-
-    if(item.type==="evening"){
-      openAdhkar("evening");
-    }
-
-    if(item.type==="kids"){
-      openKidsDuas();
-    }
-
-    if(item.type==="favourites"){
-      openFavourites();
-    }
-
-  };
-
-
-  $("cards").appendChild(button);
 }
 
 
-/* ===============================
-   GARDEN JARS
-================================ */
+function fsvg(i){
+
+const colors=[
+["#ebb0ba","#f6d4d9"],
+["#f1c4ca","#fae2e5"],
+["#f0cfbe","#f8e5d9"],
+["#e8bac5","#f4d9df"],
+["#efc3d5","#f8e3eb"]
+];
+
+const c=colors[i%colors.length];
+
+return `
+<svg viewBox="0 0 100 100">
+
+<g fill="${c[0]}" stroke="${c[1]}">
+
+<ellipse cx="50" cy="20" rx="15" ry="26"/>
+
+<ellipse cx="77" cy="36" rx="15" ry="26" transform="rotate(60 77 36)"/>
+
+<ellipse cx="77" cy="66" rx="15" ry="26" transform="rotate(120 77 66)"/>
+
+<ellipse cx="50" cy="80" rx="15" ry="26"/>
+
+<ellipse cx="23" cy="66" rx="15" ry="26" transform="rotate(60 23 66)"/>
+
+<ellipse cx="23" cy="36" rx="15" ry="26" transform="rotate(120 23 36)"/>
+
+</g>
+
+<circle cx="50" cy="50" r="21" fill="#fffaf6" stroke="#d3b176"/>
+
+</svg>
+`;
+
+}
+
+
+function flowers(items,done,callback){
+
+const z=$("zone");
+const p=pos(items.length);
+
+const kidIcons=[
+"😊","😄","🙂","😁","🥰",
+"🌈","⭐","✨","💖","🌟"
+];
+
+z.innerHTML="";
+
+items.forEach((_,i)=>{
+
+const b=
+document.createElement("button");
+
+b.className=
+"petal"+
+(done&&done.includes(i)
+?" done"
+:"");
+
+b.style.left=p[i][0]+"%";
+b.style.top=p[i][1]+"%";
+
+b.style.setProperty(
+"--duration",
+(2.7+(i%6)*.25)+"s"
+);
+
+b.style.setProperty(
+"--delay",
+(-i*.18)+"s"
+);
+
+b.innerHTML=
+isKids()
+?`<div class="kidFace">${kidIcons[i%kidIcons.length]}</div><span>${i+1}</span>`
+:fsvg(i)+`<span>${i+1}</span>`;
+
+b.onclick=()=>callback(i);
+
+z.appendChild(b);
+
+});
+
+}
+
+
+/* ===========================
+   GARDENS
+=========================== */
 
 function openGarden(key){
 
-  currentMode="garden";
-  currentGarden=key;
+mode="garden";
+garden=key;
 
-  $("gardenName").textContent=
-    isKids()
-      ? "My Good Deeds"
-      : GARDENS[key].name;
+$("gardenTitle").textContent=
+isKids()
+?"My Good Deeds"
+:G[key].name;
 
-  $("gardenSub").textContent=
-    isKids()
-      ? "Pick a flower and make someone smile 🌈"
-      : GARDENS[key].subtitle;
+$("gardenSubtitle").textContent=
+isKids()
+?"Pick a smiley and make someone smile 🌈"
+:G[key].sub;
 
-  $("jarLabelSmall").textContent=
-    isKids()
-      ? "ONE HAPPY DEED AT A TIME"
-      : "ONE DEED AT A TIME";
+$("jarSmall").textContent=
+isKids()
+?"ONE HAPPY DEED AT A TIME"
+:"ONE DEED AT A TIME";
 
-  $("growTitle").textContent=
-    isKids()
-      ? "My Happy Garden"
-      : "My Growing Garden";
+$("growTitle").textContent=
+isKids()
+?"My Happy Garden"
+:"My Growing Garden";
 
-  $("growSubtitle").textContent=
-    isKids()
-      ? "Every good deed grows another flower ⭐"
-      : "Every completed bloom plants another flower.";
+$("growSub").textContent=
+isKids()
+?"Every good deed grows another happy flower ⭐"
+:"Every completed bloom plants another flower.";
 
-  renderGarden();
+$("surprise").classList.remove("hidden");
+$("resetGarden").classList.remove("hidden");
 
-  show("jarView");
+renderGarden();
+
+show("gardenView");
+
 }
 
 
 function renderGarden(){
 
-  const blooms=
-    GARDENS[currentGarden].blooms;
+const items=DEEDS[garden];
+const done=lp(garden);
 
-  const done=
-    gardenProgress(currentGarden);
+flowers(
+items,
+done,
+openBloom
+);
 
-  const zone=
-    $("flowerZone");
+$("gardenProgress").textContent=
+isKids()
+?`${done.length} of 30 good deeds done`
+:`${done.length} of 30 petals bloomed`;
 
-  const pos=
-    positions(blooms.length);
+$("gardenBar").style.width=
+(done.length/30*100)+"%";
 
-  zone.innerHTML="";
-
-
-  blooms.forEach((item,index)=>{
-
-    const flower=
-      document.createElement(
-        "button"
-      );
-
-    flower.className=
-      "petal"+
-      (
-        done.includes(index)
-          ? " done"
-          : ""
-      );
-
-    flower.style.left=
-      `${pos[index][0]}%`;
-
-    flower.style.top=
-      `${pos[index][1]}%`;
-
-    flower.style.setProperty(
-      "--duration",
-      `${2.7+(index%6)*.24}s`
-    );
-
-    flower.style.setProperty(
-      "--delay",
-      `${-index*.18}s`
-    );
-
-    flower.innerHTML=
-      flowerSVG(index)+
-      `<span>${index+1}</span>`;
-
-    flower.onclick=
-      ()=>openBloom(index);
-
-    zone.appendChild(flower);
-
-  });
-
-
-  $("gardenProgress").textContent=
-    isKids()
-      ? `${done.length} of 30 good deeds done`
-      : `${done.length} of 30 petals bloomed`;
-
-  $("gardenBar").style.width=
-    `${done.length/30*100}%`;
-
-  $("surpriseBtn")
-    .classList
-    .remove("hidden");
-
-  $("resetGardenBtn")
-    .classList
-    .remove("hidden");
-
-  renderGrowingGarden(done);
-}
-
-
-function renderGrowingGarden(done){
-
-  const scene=$("scene");
-
-  scene
-    .querySelectorAll(".plant")
-    .forEach(x=>x.remove());
-
-  $("emptyGarden").style.display=
-    done.length
-      ? "none"
-      : "flex";
-
-  $("emptyGarden").textContent=
-    isKids()
-      ? "Do your first good deed and grow a flower! 🌱"
-      : "Your first bloom is waiting 🌱";
-
-
-  const flowers=
-    isKids()
-      ? ["🌸","🌼","🌈","⭐","🌷","😊"]
-      : ["🌸","🌷","🌼","🌺","🌹"];
-
-
-  done.forEach((index,n)=>{
-
-    const plant=
-      document.createElement(
-        "div"
-      );
-
-    plant.className="plant";
-
-    plant.style.left=
-      `${3+(n%10)*9.4+(Math.floor(n/10)%2)*2}%`;
-
-    plant.style.bottom=
-      `${29+Math.floor(n/10)*4}px`;
-
-    plant.innerHTML=`
-
-    <span class="stem"></span>
-
-    <span class="leaf left"></span>
-
-    <span class="leaf right"></span>
-
-    <span class="flower">
-    ${flowers[index%flowers.length]}
-    </span>
-
-    `;
-
-    scene.appendChild(plant);
-  });
+renderGrowing(done);
 
 }
 
 
-/* ===============================
-   BLOOM DETAIL
-================================ */
+function renderGrowing(done){
+
+const scene=$("scene");
+
+scene.querySelectorAll(".plant")
+.forEach(x=>x.remove());
+
+$("emptyGarden").style.display=
+done.length?"none":"flex";
+
+$("emptyGarden").textContent=
+isKids()
+?"Do your first good deed and grow something happy! 🌱"
+:"Your first bloom is waiting 🌱";
+
+
+const adultFlowers=[
+"🌸","🌷","🌼","🌺","🌹"
+];
+
+const kidFlowers=[
+"🌸","🌼","🌈","⭐","🌷","😊","💖"
+];
+
+
+done.forEach((index,n)=>{
+
+const plant=
+document.createElement("div");
+
+plant.className="plant";
+
+plant.style.left=
+(3+(n%10)*9.4+
+(Math.floor(n/10)%2)*2)+"%";
+
+plant.style.bottom=
+(29+Math.floor(n/10)*4)+"px";
+
+const arr=
+isKids()
+?kidFlowers
+:adultFlowers;
+
+plant.innerHTML=`
+<span class="stem"></span>
+<span class="leaf left"></span>
+<span class="leaf right"></span>
+<span class="flower">${arr[index%arr.length]}</span>
+`;
+
+scene.appendChild(plant);
+
+});
+
+}
+
 
 function openBloom(index){
 
-  currentMode="garden";
-  currentBloom=index;
+mode="garden";
+bloomIndex=index;
 
-  const item=
-    GARDENS[currentGarden]
-      .blooms[index];
+const deed=
+DEEDS[garden][index];
 
-  $("bloomNumber").textContent=
-    `BLOOM ${String(index+1).padStart(2,"0")}`;
+const ref=
+referenceFor(garden,index);
 
-  $("detailHeading").textContent=
-    isKids()
-      ? "My Good Deed"
-      : "Today's Bloom";
+$("bloomNumber").textContent=
+"BLOOM "+
+String(index+1).padStart(2,"0");
 
-  $("detailTag").textContent=
-    isKids()
-      ? "🌈 GOOD DEED"
-      : item.category;
+$("bloomHeading").textContent=
+isKids()
+?"My Good Deed"
+:"Today's Bloom";
 
-  $("detailDeed").textContent=
-    item.deed;
+$("bloomTag").textContent=
+isKids()
+?"🌈 GOOD DEED"
+:G[garden].name;
 
-  $("detailSourceType").textContent=
-    item.sourceType;
+$("bloomDeed").textContent=
+deed;
 
-  $("detailArabic").textContent=
-    item.arabic;
+$("bloomSource").textContent=
+ref.ref.startsWith("Qur'an")
+?"Qur'an Reminder"
+:"Authentic Hadith";
 
-  $("detailMeaning").textContent=
-    item.meaning;
+$("bloomArabic").textContent=
+ref.arabic;
 
-  $("detailReference").textContent=
-    item.reference;
+$("bloomMeaning").textContent=
+ref.meaning;
 
-  $("completeBloomBtn").textContent=
-    isKids()
-      ? "⭐ I Did This!"
-      : "✓ I Bloomed This";
+$("bloomReference").textContent=
+ref.ref;
 
-  updateDetailFavourite();
+$("bloomComplete").textContent=
+isKids()
+?"⭐ I Did This!"
+:"✓ I Bloomed This";
 
-  show("bloomView");
+$("bloomComplete").classList.remove("hidden");
+
+updateBloomFavourite();
+
+show("bloomView");
+
 }
 
 
-function bloomFavouriteKey(){
+function bloomKey(){
 
-  return `garden:${currentGarden}:${currentBloom}`;
+return "garden:"+
+garden+":"+
+bloomIndex;
+
 }
 
 
-function currentBloomFavourite(){
+function updateBloomFavourite(){
 
-  const item=
-    GARDENS[currentGarden]
-      .blooms[currentBloom];
+const on=
+favs().some(
+x=>x.key===bloomKey()
+);
 
-  return {
-    key:bloomFavouriteKey(),
-    category:item.category,
-    deed:item.deed,
-    sourceType:item.sourceType,
-    arabic:item.arabic,
-    meaning:item.meaning,
-    reference:item.reference
-  };
+$("bloomFavourite").textContent=
+on
+?"♥ Saved to Favourites"
+:"♡ Add to Favourites";
+
 }
 
 
-function updateDetailFavourite(){
+$("bloomComplete").onclick=()=>{
 
-  const key=
-    bloomFavouriteKey();
+const done=lp(garden);
 
-  const saved=
-    favourites()
-      .some(x=>x.key===key);
+if(!done.includes(bloomIndex)){
 
-  $("favouriteBloomBtn").textContent=
-    saved
-      ? "♥ Saved to Favourites"
-      : "♡ Add to Favourites";
+done.push(bloomIndex);
 
-  $("favouriteBloomBtn")
-    .classList
-    .toggle("on",saved);
+sp(garden,done);
+
+toast(
+isKids()
+?"MashaAllah! ⭐"
+:"Added to your garden 🌸"
+);
+
+}else{
+
+toast(
+isKids()
+?"You already did this one 😊"
+:"Already bloomed 🌷"
+);
+
 }
 
+renderGarden();
+renderMenu();
 
-$("completeBloomBtn").onclick=()=>{
+setTimeout(
+()=>show("gardenView"),
+350
+);
 
-  const progress=
-    gardenProgress(currentGarden);
-
-  if(
-    !progress.includes(currentBloom)
-  ){
-
-    progress.push(currentBloom);
-
-    saveGardenProgress(
-      currentGarden,
-      progress
-    );
-
-    toast(
-      isKids()
-        ? "MashaAllah! ⭐"
-        : "Added to your garden 🌸"
-    );
-
-  }else{
-
-    toast(
-      isKids()
-        ? "You already did this one 😊"
-        : "Already bloomed 🌷"
-    );
-  }
-
-  renderGarden();
-
-  setTimeout(()=>{
-    show("jarView");
-  },450);
 };
 
 
-$("favouriteBloomBtn").onclick=()=>{
+$("bloomFavourite").onclick=()=>{
 
-  const item=
-    currentBloomFavourite();
+let a=favs();
 
-  let saved=
-    favourites();
+const key=bloomKey();
 
-  const index=
-    saved.findIndex(
-      x=>x.key===item.key
-    );
+const i=
+a.findIndex(
+x=>x.key===key
+);
 
-  if(index>=0){
+if(i>=0){
 
-    saved.splice(index,1);
+a.splice(i,1);
 
-    toast(
-      "Removed from favourites"
-    );
+toast(
+"Removed from favourites"
+);
 
-  }else{
+}else{
 
-    saved.push(item);
+const ref=
+referenceFor(
+garden,
+bloomIndex
+);
 
-    toast(
-      isKids()
-        ? "Saved to favourites 💖"
-        : "Saved to favourites ♡"
-    );
-  }
+a.push({
 
-  saveFavourites(saved);
+key,
 
-  updateDetailFavourite();
+cat:
+G[garden].name,
 
-  renderHome();
+deed:
+DEEDS[garden][bloomIndex],
+
+type:
+ref.ref.startsWith("Qur'an")
+?"Qur'an Reminder"
+:"Authentic Hadith",
+
+arabic:
+ref.arabic,
+
+meaning:
+ref.meaning,
+
+ref:
+ref.ref
+
+});
+
+toast(
+isKids()
+?"Saved to favourites 💖"
+:"Saved to favourites ♡"
+);
+
+}
+
+sf(a);
+
+updateBloomFavourite();
+
+renderMenu();
+
 };
 
 
-/* ===============================
-   FAVOURITES JAR
-================================ */
+/* ===========================
+   FAVOURITES
+=========================== */
 
 function openFavourites(){
 
-  currentMode="favourites";
-  currentGarden="favourites";
+mode="favourites";
+garden="favourites";
 
-  $("gardenName").textContent=
-    "My Favourites";
+const a=favs();
 
-  $("gardenSub").textContent=
-    isKids()
-      ? "My favourite things 💖"
-      : "Blooms and reminders you saved";
+$("gardenTitle").textContent=
+"My Favourites";
 
-  $("jarLabelSmall").textContent=
-    "MY SAVED FAVOURITES";
+$("gardenSubtitle").textContent=
+isKids()
+?"My favourite things 💖"
+:"Blooms and reminders you saved";
 
-  $("growTitle").textContent=
-    isKids()
-      ? "My Favourite Garden"
-      : "My Favourites";
+$("jarSmall").textContent=
+"MY SAVED FAVOURITES";
 
-  const saved=
-    favourites();
+$("growTitle").textContent=
+isKids()
+?"My Favourite Garden"
+:"My Favourites";
 
-  const zone=
-    $("flowerZone");
+$("growSub").textContent=
+isKids()
+?"Everything you love lives here 🌈"
+:"Your saved reminders live here.";
 
-  zone.innerHTML="";
+$("surprise").classList.add("hidden");
+$("resetGarden").classList.add("hidden");
 
-  if(!saved.length){
+const z=$("zone");
 
-    zone.innerHTML=`
-    <div class="empty">
-    ${
-      isKids()
-      ? "Nothing saved yet 💖"
-      : "Your Favourites Jar is empty."
-    }
-    </div>
-    `;
+z.innerHTML="";
 
-  }else{
+if(!a.length){
 
-    const pos=
-      positions(saved.length);
+z.innerHTML=`
+<div class="empty">
+Nothing saved yet 💖
+</div>
+`;
 
-    saved.forEach((item,index)=>{
+}else{
 
-      const button=
-        document.createElement(
-          "button"
-        );
+flowers(
+a,
+[],
+openFavouriteItem
+);
 
-      button.className="petal";
+}
 
-      button.style.left=
-        `${pos[index][0]}%`;
+$("gardenProgress").textContent=
+a.length+" favourites saved";
 
-      button.style.top=
-        `${pos[index][1]}%`;
+$("gardenBar").style.width=
+a.length?"100%":"0%";
 
-      button.style.setProperty(
-        "--duration",
-        `${2.7+(index%5)*.25}s`
-      );
+$("scene")
+.querySelectorAll(".plant")
+.forEach(x=>x.remove());
 
-      button.style.setProperty(
-        "--delay",
-        `${-index*.2}s`
-      );
+$("emptyGarden").style.display="flex";
 
-      button.innerHTML=
-        flowerSVG(index)+
-        `<span>${index+1}</span>`;
+$("emptyGarden").textContent=
+isKids()
+?"Your favourite things live here 💖"
+:"Your saved favourites live here.";
 
-      button.onclick=()=>{
+show("gardenView");
 
-        $("bloomNumber").textContent=
-          "FAVOURITE";
-
-        $("detailHeading").textContent=
-          isKids()
-            ? "My Favourite"
-            : "Favourite Bloom";
-
-        $("detailTag").textContent=
-          item.category || item.type || "Favourite";
-
-        $("detailDeed").textContent=
-          item.deed || item.title || "";
-
-        $("detailSourceType").textContent=
-          item.sourceType || item.type || "";
-
-        $("detailArabic").textContent=
-          item.arabic || "";
-
-        $("detailMeaning").textContent=
-          item.meaning || "";
-
-        $("detailReference").textContent=
-          item.reference || "";
-
-        $("completeBloomBtn")
-          .classList
-          .add("hidden");
-
-        $("favouriteBloomBtn").textContent=
-          "♥ Saved to Favourites";
-
-        show("bloomView");
-      };
-
-      zone.appendChild(button);
-
-    });
-  }
-
-
-  $("gardenProgress").textContent=
-    `${saved.length} favourites saved`;
-
-  $("gardenBar").style.width=
-    saved.length ? "100%" : "0%";
-
-  $("surpriseBtn")
-    .classList
-    .add("hidden");
-
-  $("resetGardenBtn")
-    .classList
-    .add("hidden");
-
-  $("scene")
-    .querySelectorAll(".plant")
-    .forEach(x=>x.remove());
-
-  $("emptyGarden").style.display="flex";
-  $("emptyGarden").textContent=
-    isKids()
-      ? "Your favourite things live here 💖"
-      : "Your saved favourites live here.";
-
-  show("jarView");
 }
 
 
-/* ===============================
+function openFavouriteItem(index){
+
+const item=favs()[index];
+
+if(!item)return;
+
+$("bloomNumber").textContent=
+"FAVOURITE";
+
+$("bloomHeading").textContent=
+isKids()
+?"My Favourite"
+:"Favourite Bloom";
+
+$("bloomTag").textContent=
+item.cat||"Favourite";
+
+$("bloomDeed").textContent=
+item.deed||"";
+
+$("bloomSource").textContent=
+item.type||"";
+
+$("bloomArabic").textContent=
+item.arabic||"";
+
+$("bloomMeaning").textContent=
+item.meaning||"";
+
+$("bloomReference").textContent=
+item.ref||"";
+
+$("bloomComplete").classList.add("hidden");
+
+$("bloomFavourite").textContent=
+"♥ Saved to Favourites";
+
+show("bloomView");
+
+}
+
+
+/* ===========================
    ADHKAR
-================================ */
+=========================== */
 
 function openAdhkar(type){
 
-  currentMode=type;
+mode=type;
+garden=type;
 
-  $("listTitle").textContent=
-    type==="morning"
-      ? "Morning Adhkar"
-      : "Evening Adhkar";
+$("adhTitle").textContent=
+type==="morning"
+?"Morning Adhkar"
+:"Evening Adhkar";
 
-  $("listSubtitle").textContent=
-    type==="morning"
-      ? "Begin your day with authentic remembrance."
-      : "End your day with authentic remembrance.";
+$("adhSub").textContent=
+type==="morning"
+?"Begin your day with authentic remembrance."
+:"End your day with authentic remembrance.";
 
-  $("listResetBtn").textContent=
-    "Reset Today";
+$("adhReset").textContent=
+"Reset Today";
 
-  $("markAllBtn").textContent=
-    "✓ Mark All Done";
+$("adhAll").textContent=
+"✓ Mark All Done";
 
-  renderAdhkar(type);
+renderAdhkar(type);
 
-  show("listView");
+show("adhkarView");
+
 }
 
 
 function renderAdhkar(type){
 
-  const list=
-    type==="morning"
-      ? MORNING
-      : EVENING;
+const list=
+type==="morning"
+?MORNING
+:EVENING;
 
-  const progress=
-    loadDaily(type);
+const state=
+ls(type);
 
-  const container=
-    $("adhkarList");
+const c=$("adhList");
 
-  container.innerHTML="";
+c.innerHTML="";
 
 
-  list.forEach((item,index)=>{
+list.forEach((o,i)=>{
 
-    const state=
-      progress[index] || {
-        count:0,
-        done:false
-      };
+const s=
+state[i]||
+{count:0,done:false};
 
-    const favKey=
-      `adhkar:${type}:${index}`;
+const key=
+"adhkar:"+
+type+":"+
+i;
 
-    const isFav=
-      favourites()
-        .some(x=>x.key===favKey);
+const isFav=
+favs().some(
+x=>x.key===key
+);
 
-    const card=
-      document.createElement(
-        "section"
-      );
+const card=
+document.createElement("section");
 
-    card.className=
-      "adhCard"+
-      (state.done ? " complete" : "");
+card.className=
+"adhCard"+
+(s.done?" complete":"");
 
-    card.innerHTML=`
+card.innerHTML=`
 
-    <div class="adhTop">
+<div class="adhTop">
 
-      <div class="adhNumber">
-      ${state.done ? "✓" : index+1}
-      </div>
+<div class="adhNum">
+${s.done?"✓":i+1}
+</div>
 
-      <div class="adhName">
-      ${item.title}
-      </div>
+<div class="adhName">
+${o.title}
+</div>
 
-    </div>
+</div>
 
-    <div class="adhArabic">
-    ${item.arabic}
-    </div>
+<div class="adhArabic">
+${o.arabic}
+</div>
 
-    <div class="translit">
-    ${item.translit}
-    </div>
+<div class="adhTranslit">
+${o.translit}
+</div>
 
-    <div class="adhMeaning">
-    ${item.meaning}
-    </div>
+<div class="adhMeaning">
+${o.meaning}
+</div>
 
-    <div class="adhRef">
-    ${item.reference}
-    </div>
+<div class="adhRef">
+${o.ref}
+</div>
 
-    <div class="adhControls">
+<div class="adhControls">
 
-      <div class="counterBox">
+<div class="counterBox">
 
-        <div class="counter">
+<div class="counter">
 
-        <button class="minus">
-        −
-        </button>
+<button class="minus">−</button>
 
-        <div class="count">
-        ${state.count}
-        </div>
+<div class="count">
+${s.count}
+</div>
 
-        <button class="plus">
-        +
-        </button>
+<button class="plus">+</button>
 
-        </div>
+</div>
 
-        <div class="repeat">
-        Repeat ×${item.repeat}
-        </div>
+<div class="repeat">
+Repeat ×${o.repeat}
+</div>
 
-      </div>
+</div>
 
-      <button class="completeBtn ${state.done ? "done" : ""}">
-      ${
-        state.done
-        ? "✓ Completed"
-        : "Mark Complete"
-      }
-      </button>
+<button class="adhAction ${s.done?"done":""}">
+${s.done?"✓ Completed":"Mark Complete"}
+</button>
 
-    </div>
+</div>
 
-    <button class="favouriteBtn ${isFav ? "on" : ""}">
-    ${
-      isFav
-      ? "♥ Saved to Favourites"
-      : "♡ Add to Favourites"
-    }
-    </button>
+<button class="adhFav ${isFav?"favOn":""}">
+${isFav?"♥ Saved to Favourites":"♡ Add to Favourites"}
+</button>
 
-    `;
+`;
 
 
-    card
-      .querySelector(".plus")
-      .onclick=()=>{
+card.querySelector(".plus").onclick=()=>{
 
-        const latest=
-          loadDaily(type);
+const q=ls(type);
 
-        const s=
-          latest[index] || {
-            count:0,
-            done:false
-          };
+const x=
+q[i]||
+{count:0,done:false};
 
-        s.count++;
+x.count++;
 
-        if(
-          s.count>=item.repeat
-        ){
-          s.done=true;
-        }
+if(x.count>=o.repeat){
 
-        latest[index]=s;
+x.count=o.repeat;
+x.done=true;
 
-        saveDaily(type,latest);
+}
 
-        renderAdhkar(type);
-      };
+q[i]=x;
 
+ss(type,q);
 
-    card
-      .querySelector(".minus")
-      .onclick=()=>{
+renderAdhkar(type);
 
-        const latest=
-          loadDaily(type);
+};
 
-        const s=
-          latest[index] || {
-            count:0,
-            done:false
-          };
 
-        s.count=
-          Math.max(
-            0,
-            s.count-1
-          );
+card.querySelector(".minus").onclick=()=>{
 
-        if(
-          s.count<item.repeat
-        ){
-          s.done=false;
-        }
+const q=ls(type);
 
-        latest[index]=s;
+const x=
+q[i]||
+{count:0,done:false};
 
-        saveDaily(type,latest);
+x.count=
+Math.max(
+0,
+x.count-1
+);
 
-        renderAdhkar(type);
-      };
+if(x.count<o.repeat){
+x.done=false
+}
 
+q[i]=x;
 
-    card
-      .querySelector(".completeBtn")
-      .onclick=()=>{
+ss(type,q);
 
-        const latest=
-          loadDaily(type);
+renderAdhkar(type);
 
-        latest[index]={
-          count:item.repeat,
-          done:true
-        };
+};
 
-        saveDaily(type,latest);
 
-        renderAdhkar(type);
-      };
+card.querySelector(".adhAction").onclick=()=>{
 
+const q=ls(type);
 
-    card
-      .querySelector(".favouriteBtn")
-      .onclick=()=>{
+q[i]={
+count:o.repeat,
+done:true
+};
 
-        let saved=
-          favourites();
+ss(type,q);
 
-        const existing=
-          saved.findIndex(
-            x=>x.key===favKey
-          );
+renderAdhkar(type);
 
-        if(existing>=0){
+};
 
-          saved.splice(existing,1);
 
-          toast(
-            "Removed from favourites"
-          );
+card.querySelector(".adhFav").onclick=()=>{
 
-        }else{
+let a=favs();
 
-          saved.push({
+const ix=
+a.findIndex(
+x=>x.key===key
+);
 
-            key:favKey,
+if(ix>=0){
 
-            category:
-              type==="morning"
-              ? "Morning Adhkar"
-              : "Evening Adhkar",
+a.splice(ix,1);
 
-            deed:item.title,
+toast(
+"Removed from favourites"
+);
 
-            sourceType:
-              "Authentic Dhikr",
+}else{
 
-            arabic:item.arabic,
+a.push({
 
-            translit:item.translit,
+key,
 
-            meaning:item.meaning,
+cat:
+type==="morning"
+?"Morning Adhkar"
+:"Evening Adhkar",
 
-            reference:item.reference,
+deed:o.title,
 
-            repeat:item.repeat
+type:"Authentic Dhikr",
 
-          });
+arabic:o.arabic,
 
-          toast(
-            "Saved to favourites ♡"
-          );
-        }
+translit:o.translit,
 
-        saveFavourites(saved);
+meaning:o.meaning,
 
-        renderAdhkar(type);
+ref:o.ref
 
-        renderHome();
-      };
+});
 
+toast(
+"Saved to favourites ♡"
+);
 
-    container.appendChild(card);
-  });
+}
 
+sf(a);
 
-  const latest=
-    loadDaily(type);
+renderAdhkar(type);
 
-  const completed=
-    list.filter(
-      (_,index)=>
-        latest[index]?.done
-    ).length;
+renderMenu();
 
-  $("listProgressText").textContent=
-    `${completed} of ${list.length} completed`;
+};
 
-  $("listProgressBar").style.width=
-    `${completed/list.length*100}%`;
+
+c.appendChild(card);
+
+});
+
+
+const latest=ls(type);
+
+const done=
+list.filter(
+(_,i)=>latest[i]?.done
+).length;
+
+$("adhProgText").textContent=
+`${done} of ${list.length} completed`;
+
+$("adhBar").style.width=
+(done/list.length*100)+"%";
+
 }
 
 
-/* ===============================
+/* ===========================
    KIDS DUAS
-================================ */
+=========================== */
 
 function openKidsDuas(){
 
-  currentMode="kids";
+mode="kidsduas";
+garden="kidsduas";
 
-  $("listTitle").textContent=
-    "My Easy Duas";
+$("adhTitle").textContent=
+"My Easy Duas";
 
-  $("listSubtitle").textContent=
-    "Small duas for big little hearts 🌈";
+$("adhSub").textContent=
+"Small duas for big little hearts 🌈";
 
-  $("listResetBtn").textContent=
-    "Start Again";
+$("adhReset").textContent=
+"Start Again";
 
-  $("markAllBtn").textContent=
-    "⭐ I Said Them All";
+$("adhAll").textContent=
+"⭐ I Said Them All";
 
-  renderKidsDuas();
+renderKidsDuas();
 
-  show("listView");
+show("adhkarView");
+
 }
 
 
 function renderKidsDuas(){
 
-  const progress=
-    loadDaily("kidsDu'a");
+const state=
+ls("kidsduas");
 
-  const container=
-    $("adhkarList");
+const c=$("adhList");
 
-  container.innerHTML="";
-
-
-  KIDS_DUAS.forEach((item,index)=>{
-
-    const done=
-      !!progress[index];
-
-    const favKey=
-      `kidsdua:${index}`;
-
-    const isFav=
-      favourites()
-        .some(x=>x.key===favKey);
-
-    const card=
-      document.createElement(
-        "section"
-      );
-
-    card.className=
-      "adhCard"+
-      (done ? " complete" : "");
-
-    card.innerHTML=`
-
-    <div class="adhTop">
-
-      <div class="adhNumber">
-      ${done ? "✓" : index+1}
-      </div>
-
-      <div class="adhName">
-      ${item.title}
-      </div>
-
-    </div>
-
-    <div class="adhArabic">
-    ${item.arabic}
-    </div>
-
-    <div class="translit">
-    ${item.translit}
-    </div>
-
-    <div class="adhMeaning">
-    ${item.meaning}
-    </div>
-
-    <div class="adhRef">
-    ${item.reference}
-    </div>
-
-    <button
-      class="completeBtn ${done ? "done" : ""}"
-      style="width:100%;padding:11px;margin-top:12px"
-    >
-    ${
-      done
-      ? "⭐ I know this one!"
-      : "✓ I said this dua"
-    }
-    </button>
-
-    <button class="favouriteBtn ${isFav ? "on" : ""}">
-    ${
-      isFav
-      ? "💖 In My Favourites"
-      : "♡ Add to Favourites"
-    }
-    </button>
-
-    `;
+c.innerHTML="";
 
 
-    card
-      .querySelector(".completeBtn")
-      .onclick=()=>{
+KIDS_DUAS.forEach((o,i)=>{
 
-        const latest=
-          loadDaily("kidsDu'a");
+const done=
+!!state[i];
 
-        latest[index]=
-          !latest[index];
+const key=
+"kiddua:"+i;
 
-        saveDaily(
-          "kidsDu'a",
-          latest
-        );
+const isFav=
+favs().some(
+x=>x.key===key
+);
 
-        renderKidsDuas();
-      };
+const card=
+document.createElement("section");
 
+card.className=
+"adhCard"+
+(done?" complete":"");
 
-    card
-      .querySelector(".favouriteBtn")
-      .onclick=()=>{
+card.innerHTML=`
 
-        let saved=
-          favourites();
+<div class="adhTop">
 
-        const existing=
-          saved.findIndex(
-            x=>x.key===favKey
-          );
+<div class="adhNum">
+${done?"✓":i+1}
+</div>
 
-        if(existing>=0){
+<div class="adhName">
+${o.title}
+</div>
 
-          saved.splice(existing,1);
+</div>
 
-          toast(
-            "Removed from favourites"
-          );
+<div class="adhArabic">
+${o.arabic}
+</div>
 
-        }else{
+<div class="adhTranslit">
+${o.translit}
+</div>
 
-          saved.push({
+<div class="adhMeaning">
+${o.meaning}
+</div>
 
-            key:favKey,
+<div class="adhRef">
+${o.ref}
+</div>
 
-            category:
-              "Kids Easy Dua",
+<button
+class="adhAction ${done?"done":""}"
+style="width:100%;padding:11px;margin-top:12px"
+>
+${done?"⭐ I know this one!":"✓ I said this dua"}
+</button>
 
-            deed:item.title,
+<button class="adhFav ${isFav?"favOn":""}">
+${isFav?"💖 In My Favourites":"♡ Add to Favourites"}
+</button>
 
-            sourceType:
-              "Everyday Dua",
-
-            arabic:item.arabic,
-
-            translit:item.translit,
-
-            meaning:item.meaning,
-
-            reference:item.reference
-
-          });
-
-          toast(
-            "Saved to favourites 💖"
-          );
-        }
-
-        saveFavourites(saved);
-
-        renderKidsDuas();
-
-        renderHome();
-      };
+`;
 
 
-    container.appendChild(card);
-  });
+card.querySelector(".adhAction").onclick=()=>{
+
+const q=
+ls("kidsduas");
+
+q[i]=!q[i];
+
+ss(
+"kidsduas",
+q
+);
+
+renderKidsDuas();
+
+};
 
 
-  const latest=
-    loadDaily("kidsDu'a");
+card.querySelector(".adhFav").onclick=()=>{
 
-  const completed=
-    KIDS_DUAS.filter(
-      (_,index)=>
-        latest[index]
-    ).length;
+let a=favs();
 
-  $("listProgressText").textContent=
-    `${completed} of ${KIDS_DUAS.length} said today`;
+const ix=
+a.findIndex(
+x=>x.key===key
+);
 
-  $("listProgressBar").style.width=
-    `${completed/KIDS_DUAS.length*100}%`;
+if(ix>=0){
+
+a.splice(ix,1);
+
+toast(
+"Removed from favourites"
+);
+
+}else{
+
+a.push({
+
+key,
+
+cat:"Kids Easy Dua",
+
+deed:o.title,
+
+type:"Everyday Dua",
+
+arabic:o.arabic,
+
+translit:o.translit,
+
+meaning:o.meaning,
+
+ref:o.ref
+
+});
+
+toast(
+"Saved to favourites 💖"
+);
+
+}
+
+sf(a);
+
+renderKidsDuas();
+
+renderMenu();
+
+};
+
+
+c.appendChild(card);
+
+});
+
+
+const latest=
+ls("kidsduas");
+
+const done=
+KIDS_DUAS.filter(
+(_,i)=>latest[i]
+).length;
+
+$("adhProgText").textContent=
+`${done} of ${KIDS_DUAS.length} said today`;
+
+$("adhBar").style.width=
+(done/KIDS_DUAS.length*100)+"%";
+
 }
 
 
-/* ===============================
-   LIST BUTTONS
-================================ */
+/* ===========================
+   ADHKAR BUTTONS
+=========================== */
 
-$("listResetBtn").onclick=()=>{
+$("adhReset").onclick=()=>{
 
-  if(currentMode==="kids"){
+if(mode==="kidsduas"){
 
-    localStorage.removeItem(
-      `islamicBloom_kidsDu'a_${dateKey()}`
-    );
+localStorage.removeItem(
+sessionKey("kidsduas")
+);
 
-    renderKidsDuas();
+renderKidsDuas();
 
-    toast("Fresh start 🌈");
+toast(
+"Fresh start 🌈"
+);
 
-    return;
-  }
+return;
 
-  localStorage.removeItem(
-    `islamicBloom_${currentMode}_${dateKey()}`
-  );
+}
 
-  renderAdhkar(currentMode);
+localStorage.removeItem(
+sessionKey(mode)
+);
 
-  toast("Today's progress reset");
+renderAdhkar(mode);
+
+toast(
+"Today's progress reset"
+);
+
 };
 
 
-$("markAllBtn").onclick=()=>{
+$("adhAll").onclick=()=>{
 
-  if(currentMode==="kids"){
+if(mode==="kidsduas"){
 
-    const all={};
+const q={};
 
-    KIDS_DUAS.forEach(
-      (_,index)=>
-        all[index]=true
-    );
+KIDS_DUAS.forEach(
+(_,i)=>q[i]=true
+);
 
-    saveDaily(
-      "kidsDu'a",
-      all
-    );
+ss(
+"kidsduas",
+q
+);
 
-    renderKidsDuas();
+renderKidsDuas();
 
-    toast("MashaAllah! ⭐");
+toast(
+"MashaAllah! ⭐"
+);
 
-    return;
-  }
+return;
 
-
-  const list=
-    currentMode==="morning"
-      ? MORNING
-      : EVENING;
-
-  const all={};
-
-  list.forEach((item,index)=>{
-
-    all[index]={
-      count:item.repeat,
-      done:true
-    };
-
-  });
-
-  saveDaily(
-    currentMode,
-    all
-  );
-
-  renderAdhkar(
-    currentMode
-  );
-
-  toast(
-    "All marked complete ✓"
-  );
-};
-
-
-/* ===============================
-   SHARING
-================================ */
-
-async function share(
-  title,
-  text
-){
-
-  try{
-
-    if(navigator.share){
-
-      await navigator.share({
-        title,
-        text
-      });
-
-    }else if(
-      navigator.clipboard
-    ){
-
-      await navigator.clipboard.writeText(
-        text
-      );
-
-      toast(
-        "Copied — ready to share ♡"
-      );
-    }
-
-  }catch(e){}
 }
 
 
-$("shareBloomBtn").onclick=()=>{
+const list=
+mode==="morning"
+?MORNING
+:EVENING;
 
-  const item=
-    GARDENS[currentGarden]
-      .blooms[currentBloom];
+const q={};
 
-  share(
-    "Islamic Bloom",
-    `🌸 Islamic Bloom
+list.forEach((o,i)=>{
 
-${item.deed}
+q[i]={
+count:o.repeat,
+done:true
+};
 
-${item.meaning}
+});
 
-${item.reference}`
-  );
+ss(mode,q);
+
+renderAdhkar(mode);
+
+toast(
+"All marked complete ✓"
+);
+
 };
 
 
-$("shareProgressBtn").onclick=()=>{
+$("adhShare").onclick=()=>{
 
-  share(
-    "My Islamic Bloom",
-    isKids()
-      ? `🌈 Islamic Bloom Kids
-Good deeds completed: ${gardenProgress("mixed").length}/30`
-      : `🌸 Islamic Bloom
-Overall progress: ${totalProgress()}/180`
-  );
-};
+if(mode==="kidsduas"){
 
+const q=
+ls("kidsduas");
 
-$("listShareBtn").onclick=()=>{
+const n=
+KIDS_DUAS.filter(
+(_,i)=>q[i]
+).length;
 
-  if(currentMode==="kids"){
+share(
+`🌈 Islamic Bloom Kids
+My Easy Duas: ${n}/${KIDS_DUAS.length} said today`,
+"Islamic Bloom Kids"
+);
 
-    const progress=
-      loadDaily("kidsDu'a");
+return;
 
-    const done=
-      KIDS_DUAS.filter(
-        (_,index)=>
-          progress[index]
-      ).length;
-
-    share(
-      "Islamic Bloom Kids",
-      `🌈 My Easy Duas: ${done}/${KIDS_DUAS.length} said today`
-    );
-
-    return;
-  }
-
-
-  const list=
-    currentMode==="morning"
-      ? MORNING
-      : EVENING;
-
-  const progress=
-    loadDaily(currentMode);
-
-  const done=
-    list.filter(
-      (_,index)=>
-        progress[index]?.done
-    ).length;
-
-
-  share(
-    "Islamic Bloom",
-    `🌸 ${currentMode==="morning"?"Morning":"Evening"} Adhkar: ${done}/${list.length} completed`
-  );
-};
-
-
-/* ===============================
-   NAVIGATION
-================================ */
-
-$("jarHomeBtn").onclick=()=>{
-  renderHome();
-  show("homeView");
-};
-
-
-$("listHomeBtn").onclick=()=>{
-  renderHome();
-  show("homeView");
-};
-
-
-function backToJar(){
-
-  $("completeBloomBtn")
-    .classList
-    .remove("hidden");
-
-  if(
-    currentGarden==="favourites"
-  ){
-
-    openFavourites();
-
-  }else{
-
-    renderGarden();
-
-    show("jarView");
-  }
 }
 
 
-$("detailBackTop").onclick=
-$("detailBackBtn").onclick=
-backToJar;
+const list=
+mode==="morning"
+?MORNING
+:EVENING;
 
+const q=ls(mode);
 
-$("surpriseBtn").onclick=()=>{
+const n=
+list.filter(
+(_,i)=>q[i]?.done
+).length;
 
-  const completed=
-    gardenProgress(currentGarden);
+share(
+`🌸 Islamic Bloom
+${mode==="morning"?"Morning":"Evening"} Adhkar: ${n}/${list.length} completed`
+);
 
-  const remaining=
-    [...Array(30).keys()]
-      .filter(
-        index=>
-          !completed.includes(index)
-      );
-
-  const pool=
-    remaining.length
-      ? remaining
-      : [...Array(30).keys()];
-
-  openBloom(
-    pool[
-      Math.floor(
-        Math.random()*pool.length
-      )
-    ]
-  );
 };
 
 
-$("resetGardenBtn").onclick=()=>{
+/* ===========================
+   OTHER BUTTONS
+=========================== */
 
-  if(
-    confirm(
-      isKids()
-      ? "Start your Good Deeds garden again?"
-      : `Reset ${GARDENS[currentGarden].name}?`
-    )
-  ){
+$("gardenBack").onclick=()=>{
 
-    localStorage.removeItem(
-      "islamicBloom_garden_"+
-      currentGarden
-    );
+renderMenu();
 
-    renderGarden();
+show("choose");
 
-    renderHome();
-
-    toast(
-      isKids()
-        ? "Fresh colourful garden! 🌈"
-        : "Fresh garden started 🌱"
-    );
-  }
 };
 
 
-/* ===============================
+$("adhBack").onclick=()=>{
+
+renderMenu();
+
+show("choose");
+
+};
+
+
+function backToGarden(){
+
+$("bloomComplete").classList.remove("hidden");
+
+if(mode==="favourites"){
+
+openFavourites();
+
+}else{
+
+renderGarden();
+
+show("gardenView");
+
+}
+
+}
+
+
+$("bloomBackTop").onclick=
+$("bloomBack").onclick=
+backToGarden;
+
+
+$("surprise").onclick=()=>{
+
+const done=lp(garden);
+
+const remaining=
+[...Array(30).keys()]
+.filter(i=>!done.includes(i));
+
+const pool=
+remaining.length
+?remaining
+:[...Array(30).keys()];
+
+openBloom(
+pool[
+Math.floor(
+Math.random()*pool.length
+)
+]
+);
+
+};
+
+
+$("resetGarden").onclick=()=>{
+
+if(confirm(
+isKids()
+?"Start your Good Deeds garden again?"
+:"Reset this garden?"
+)){
+
+localStorage.removeItem(
+"ibGarden_"+garden
+);
+
+renderGarden();
+
+renderMenu();
+
+toast(
+isKids()
+?"Fresh colourful garden! 🌈"
+:"Fresh garden started 🌱"
+);
+
+}
+
+};
+
+
+$("gardenShare").onclick=()=>{
+
+share(
+isKids()
+?`🌈 Islamic Bloom Kids
+Good deeds completed: ${lp("mixed").length}/30`
+:`🌸 Islamic Bloom
+Overall progress: ${total()}/180`
+);
+
+};
+
+
+$("bloomShare").onclick=()=>{
+
+const ref=
+referenceFor(
+garden,
+bloomIndex
+);
+
+share(
+`🌸 Islamic Bloom
+
+${DEEDS[garden][bloomIndex]}
+
+${ref.meaning}
+
+${ref.ref}`
+);
+
+};
+
+
+/* ===========================
+   SETUP
+=========================== */
+
+function pickSetup(theme){
+
+pendingTheme=theme;
+
+$("feminineChoice")
+.classList.toggle(
+"active",
+theme==="feminine"
+);
+
+$("masculineChoice")
+.classList.toggle(
+"active",
+theme==="masculine"
+);
+
+$("kidsChoice")
+.classList.toggle(
+"active",
+theme==="kids"
+);
+
+document.body.dataset.theme=
+theme;
+
+}
+
+
+$("feminineChoice").onclick=
+()=>pickSetup("feminine");
+
+$("masculineChoice").onclick=
+()=>pickSetup("masculine");
+
+$("kidsChoice").onclick=
+()=>pickSetup("kids");
+
+
+$("beginBloom").onclick=()=>{
+
+const name=
+$("setupName")
+.value
+.trim();
+
+if(!name){
+
+toast(
+"Please type your name 🌸"
+);
+
+return;
+
+}
+
+saveProfile({
+name,
+theme:pendingTheme
+});
+
+$("setup")
+.classList
+.add("hidden");
+
+toast(
+"Welcome, "+
+name+
+" 🌸"
+);
+
+};
+
+
+/* ===========================
    SETTINGS
-================================ */
+=========================== */
 
-function highlightSetupTheme(theme){
+function pickSettings(theme){
 
-  pendingTheme=theme;
+pendingTheme=theme;
 
-  document
-    .querySelectorAll(
-      "[data-setup-theme]"
-    )
-    .forEach(button=>{
+$("settingsFeminine")
+.classList.toggle(
+"active",
+theme==="feminine"
+);
 
-      button
-        .classList
-        .toggle(
-          "active",
-          button.dataset.setupTheme===theme
-        );
+$("settingsMasculine")
+.classList.toggle(
+"active",
+theme==="masculine"
+);
 
-    });
+$("settingsKids")
+.classList.toggle(
+"active",
+theme==="kids"
+);
 
-  document.body.dataset.theme=
-    theme==="blush" ? "" : theme;
 }
-
-
-document
-.querySelectorAll(
-  "[data-setup-theme]"
-)
-.forEach(button=>{
-
-  button.onclick=()=>{
-
-    highlightSetupTheme(
-      button.dataset.setupTheme
-    );
-
-  };
-
-});
-
-
-$("startBtn").onclick=()=>{
-
-  const name=
-    $("setupName")
-      .value
-      .trim();
-
-  if(!name){
-
-    toast(
-      "Please type your name 🌸"
-    );
-
-    return;
-  }
-
-  saveProfile({
-    name,
-    theme:pendingTheme
-  });
-
-  $("setup")
-    .classList
-    .add("hidden");
-
-  toast(
-    `Welcome, ${name} 🌸`
-  );
-};
-
-
-function highlightSettingsTheme(theme){
-
-  pendingTheme=theme;
-
-  document
-    .querySelectorAll(
-      "[data-settings-theme]"
-    )
-    .forEach(button=>{
-
-      button
-        .classList
-        .toggle(
-          "active",
-          button.dataset.settingsTheme===theme
-        );
-
-    });
-}
-
-
-document
-.querySelectorAll(
-  "[data-settings-theme]"
-)
-.forEach(button=>{
-
-  button.onclick=()=>{
-
-    highlightSettingsTheme(
-      button.dataset.settingsTheme
-    );
-
-  };
-
-});
 
 
 $("settingsBtn").onclick=()=>{
 
-  const p=
-    getProfile() || {
-      name:"",
-      theme:"blush"
-    };
+const p=
+profile()||
+{
+name:"",
+theme:"feminine"
+};
 
-  $("settingsName").value=
-    p.name || "";
+$("settingsName").value=
+p.name||"";
 
-  pendingTheme=
-    p.theme || "blush";
+pendingTheme=
+p.theme||"feminine";
 
-  highlightSettingsTheme(
-    pendingTheme
-  );
+pickSettings(
+pendingTheme
+);
 
-  $("settingsModal")
-    .classList
-    .remove("hidden");
+$("settingsModal")
+.classList
+.remove("hidden");
+
 };
 
 
-$("cancelSettingsBtn").onclick=()=>{
+$("settingsFeminine").onclick=
+()=>pickSettings("feminine");
 
-  $("settingsModal")
-    .classList
-    .add("hidden");
+$("settingsMasculine").onclick=
+()=>pickSettings("masculine");
+
+$("settingsKids").onclick=
+()=>pickSettings("kids");
+
+
+$("closeSettings").onclick=()=>{
+
+$("settingsModal")
+.classList
+.add("hidden");
+
 };
 
 
-$("saveSettingsBtn").onclick=()=>{
+$("saveSettings").onclick=()=>{
 
-  const name=
-    $("settingsName")
-      .value
-      .trim();
+const name=
+$("settingsName")
+.value
+.trim();
 
-  if(!name){
+if(!name){
 
-    toast(
-      "Please type your name"
-    );
+toast(
+"Please type your name"
+);
 
-    return;
-  }
+return;
 
-  saveProfile({
-    name,
-    theme:pendingTheme
-  });
+}
 
-  $("settingsModal")
-    .classList
-    .add("hidden");
+saveProfile({
+name,
+theme:pendingTheme
+});
 
-  toast(
-    "Settings saved ✓"
-  );
+$("settingsModal")
+.classList
+.add("hidden");
+
+toast(
+"Settings saved ✓"
+);
+
 };
 
 
-/* ===============================
-   INITIAL START
-================================ */
+/* ===========================
+   START
+=========================== */
 
 applyProfile();
 
-if(!getProfile()){
+if(!profile()){
 
-  $("setup")
-    .classList
-    .remove("hidden");
+$("setup")
+.classList
+.remove("hidden");
 
-  highlightSetupTheme("blush");
+pickSetup(
+"feminine"
+);
 
 }else{
 
-  $("setup")
-    .classList
-    .add("hidden");
+$("setup")
+.classList
+.add("hidden");
+
 }
 
-renderHome();
+renderMenu();
 
 </script>
+
 </body>
 </html>
