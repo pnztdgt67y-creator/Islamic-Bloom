@@ -1,1 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff7f2">
+<title>Islamic Bloom — Digital Jar</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#fff8f1;
+  --ivory:#fffdf9;
+  --rose:#d98b97;
+  --deep:#b96f7a;
+  --blush:#f9e4e7;
+  --ink:#66534c;
+  --muted:#9b8176;
+  --gold:#c9a66b;
+  --line:#ead8d2;
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
+html,body{
+  margin:0;
+  min-height:100%;
+  background:#fffaf6;
+  color:var(--ink);
+}
+
+body{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  background:
+    radial-gradient(circle at 8% 2%,rgba(246,208,214,.60),transparent 27%),
+    radial-gradient(circle at 96% 16%,rgba(244,229,203,.55),transparent 29%),
+    linear-gradient(180deg,#fff7f2,#fffdf9);
+}
+
+button{font:inherit;touch-action:manipulation}
+
+.app{
+  width:min(100%,480px);
+  min-height:100dvh;
+  margin:auto;
+  padding:20px 18px 30px;
+}
+
+.hidden{display:none!important}
+
+.brand{
+  text-align:center;
+  margin:8px 0 14px;
+}
+
+.brandline{
+  font-size:12px;
+  letter-spacing:4.5px;
+  font-weight:700;
+  color:var(--deep);
+}
+
+.script{
+  font-family:"Allura","Snell Roundhand","Segoe Script",cursive;
+  color:var(--rose);
+}
+
+.title{
+  font-size:60px;
+  line-height:.95;
+  margin:6px 0 2px;
+}
+
+.subtitle{
+  font-size:15px;
+  color:var(--muted);
+  font-style:italic;
+}
+
+.shell{
+  background:rgba(255,253,249,.96);
+  border:1px solid var(--line);
+  border-radius:32px;
+  padding:17px;
+  box-shadow:0 22px 60px rgba(146,93,102,.13);
+}
+
+.jar{
+  width:min(92%,330px);
+  height:490px;
+  margin:auto;
+  position:relative;
+  overflow:hidden;
+  border:3px solid rgba(187,154,143,.28);
+  border-top:15px solid var(--gold);
+  border-radius:34px 34px 58px 58px;
+  background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,242,239,.82));
+}
+
+.jarLabel{
+  position:absolute;
+  top:34px;
+  left:50%;
+  transform:translateX(-50%);
+  width:215px;
+  background:#fffaf7;
+  border:1px solid #eccfd2;
+  border-radius:20px;
+  padding:11px;
+  text-align:center;
+  z-index:3;
+}
+
+.jarLabel .script{
+  font-size:39px;
+  line-height:.9;
+}
+
+.jarLabel small{
+  display:block;
+  margin-top:5px;
+  font-size:9px;
+  letter-spacing:2px;
+  color:var(--deep);
+  font-weight:700;
+}
+
+.grid{
+  position:absolute;
+  left:14px;
+  right:14px;
+  top:125px;
+  bottom:18px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px 6px;
+  align-items:center;
+  justify-items:center;
+}
+
+.petal{
+  width:67px;
+  height:67px;
+  border:0;
+  background:transparent;
+  padding:0;
+  position:relative;
+  cursor:pointer;
+}
+
+.petal:active{transform:scale(.93)}
+
+.petal svg{
+  width:100%;
+  height:100%;
+}
+
+.number{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  font-weight:700;
+  color:#a95f6b;
+}
+
+.hint{
+  text-align:center;
+  color:var(--muted);
+  margin-top:10px;
+  font-size:14px;
+  font-style:italic;
+}
+
+.progress{
+  text-align:center;
+  margin-top:13px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.track{
+  height:8px;
+  background:#f3e2e2;
+  border-radius:99px;
+  overflow:hidden;
+  margin-top:7px;
+}
+
+.fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#e8a1ac,#f0c6cb);
+}
+
+.garden{
+  margin-top:14px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fffdf9;
+  padding:12px;
+  text-align:center;
+}
+
+.gardenTitle{
+  font-size:32px;
+  line-height:1;
+}
+
+#garden{
+  font-size:25px;
+  min-height:30px;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.miniBack{
+  border:1px solid var(--line);
+  background:#fffaf7;
+  color:#986f64;
+  border-radius:999px;
+  padding:9px 14px;
+}
+
+.petalId{
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--deep);
+  font-weight:700;
+}
+
+.today{
+  text-align:center;
+  font-size:56px;
+  line-height:.95;
+  margin:4px 0 14px;
+}
+
+.deedCard{
+  background:linear-gradient(180deg,#fff8f8,#fae7e9);
+  border:1px solid #eed0d4;
+  border-radius:28px;
+  padding:24px 19px;
+  text-align:center;
+}
+
+.category{
+  display:inline-block;
+  background:#fffdfb;
+  border:1px solid #ecd2d4;
+  border-radius:999px;
+  padding:7px 13px;
+  color:var(--deep);
+  font-size:12px;
+  font-weight:700;
+}
+
+.deed{
+  font-size:27px;
+  line-height:1.25;
+  margin:16px 0 3px;
+}
+
+.source{
+  margin-top:13px;
+  background:#fffdf9;
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:18px;
+  text-align:center;
+}
+
+.sourceType{
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:700;
+  color:#9d7668;
+  text-transform:uppercase;
+}
+
+.arabic{
+  font-family:"Noto Naskh Arabic","Geeza Pro",serif;
+  direction:rtl;
+  font-size:28px;
+  line-height:1.75;
+  margin:12px 0 8px;
+}
+
+.reflection{
+  font-size:35px;
+  line-height:1;
+}
+
+.meaning{
+  font-size:17px;
+  line-height:1.4;
+}
+
+.reference{
+  color:var(--deep);
+  font-weight:700;
+}
+
+.btn{
+  width:100%;
+  border:0;
+  border-radius:20px;
+  padding:14px 16px;
+  background:linear-gradient(180deg,#e9a4ae,#d88794);
+  color:white;
+  font-size:17px;
+  font-weight:600;
+  margin-top:12px;
+}
+
+.backBtn{
+  font-family:"Allura","Snell Roundhand",cursive;
+  font-size:34px;
+}
+
+.reset{
+  background:#fffaf6;
+  color:#9c7569;
+  border:1px solid var(--line);
+}
+
+@media(max-width:390px){
+  .jar{height:460px}
+  .petal{width:60px;height:60px}
+  .title{font-size:56px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<main id="jarView">
+
+<header class="brand">
+  <div class="brandline">ISLAMIC BLOOM</div>
+  <div class="script title">Digital Jar</div>
+  <div class="subtitle">Pick a petal. Plant a little goodness.</div>
+</header>
+
+<section class="shell">
+
+<div class="jar">
+
+  <div class="jarLabel">
+    <div class="script">Bloom</div>
+    <small>ONE DEED AT A TIME</small>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+</div>
+
+<div class="hint">Choose any numbered flower 🌸</div>
+
+<div class="progress">
+  <span id="progressText">0 of 20 petals bloomed</span>
+  <div class="track">
+    <div class="fill" id="fill"></div>
+  </div>
+</div>
+
+<button class="btn reset" id="resetBtn">Reset Garden</button>
+
+</section>
+
+<section class="garden">
+  <div class="script gardenTitle">My Garden</div>
+  <div id="garden">♡</div>
+</section>
+
+</main>
+
+<main id="deedView" class="hidden">
+
+<div class="top">
+  <button class="miniBack" id="miniBack">← Jar</button>
+  <div class="petalId" id="petalId">PETAL 01</div>
+  <div style="width:55px"></div>
+</div>
+
+<div class="script today">Today's Bloom</div>
+
+<section class="deedCard">
+  <div class="category" id="category"></div>
+  <div class="deed" id="deed"></div>
+</section>
+
+<section class="source">
+  <div class="sourceType" id="sourceType"></div>
+  <div class="arabic" id="arabic"></div>
+
+  <div class="script reflection">Reflection</div>
+
+  <div class="meaning" id="meaning"></div>
+  <div class="reference" id="reference"></div>
+</section>
+
+<button class="btn" id="doneBtn">✓ I Bloomed This Petal</button>
+<button class="btn backBtn" id="backBtn">Back to Jar</button>
+
+</main>
+
+</div>
+
+<script>
+
+const PETALS=[
+
+["Sadaqah",
+"Give a little sadaqah today, even if the amount feels small.",
+"Qur'an reminder",
+"مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ",
+"Sincere spending for Allah is multiplied greatly.",
+"Qur'an 2:261"],
+
+["Goodness",
+"Do one simple good deed quietly today.",
+"Authentic hadith",
+"كُلُّ مَعْرُوفٍ صَدَقَةٌ",
+"Every act of goodness is charity.",
+"Sahih Muslim 1005"],
+
+["Dhikr",
+"Say SubhanAllah slowly and mindfully today.",
+"Authentic hadith",
+"إِنَّ بِكُلِّ تَسْبِيحَةٍ صَدَقَةً",
+"Every tasbih is charity.",
+"Sahih Muslim 1006"],
+
+["Dhikr",
+"Say Alhamdulillah while thinking of one blessing Allah gave you.",
+"Authentic hadith",
+"وَكُلِّ تَحْمِيدَةٍ صَدَقَةٌ",
+"Every tahmid is charity.",
+"Sahih Muslim 1006"],
+
+["Kind Speech",
+"Say one genuinely kind sentence to someone today.",
+"Authentic hadith",
+"وَالْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ",
+"A good word is charity.",
+"Sahih al-Bukhari 2891"],
+
+["Parents",
+"Do one thoughtful thing for your mother or father today.",
+"Qur'an reminder",
+"وَبِٱلْوَٰلِدَيْنِ إِحْسَـٰنًا",
+"Allah commands excellent treatment of parents.",
+"Qur'an 17:23"],
+
+["Parents",
+"Speak to your parents with extra softness today.",
+"Qur'an reminder",
+"وَقُل لَّهُمَا قَوْلًا كَرِيمًا",
+"Speak to them graciously.",
+"Qur'an 17:23"],
+
+["Gratitude",
+"Name three blessings you are genuinely grateful for.",
+"Qur'an reminder",
+"لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",
+"Allah promises increase for gratitude.",
+"Qur'an 14:7"],
+
+["Character",
+"When something annoys you today, pause before reacting.",
+"Qur'an reminder",
+"وَٱلْكَٰظِمِينَ ٱلْغَيْظَ",
+"Allah praises those who restrain anger.",
+"Qur'an 3:134"],
+
+["Forgiveness",
+"Let go of one small grievance instead of replaying it.",
+"Qur'an reminder",
+"وَٱلْعَافِينَ عَنِ ٱلنَّاسِ",
+"Allah praises those who pardon others.",
+"Qur'an 3:134"],
+
+["Generosity",
+"Give something useful today: money, food, time, or help.",
+"Qur'an reminder",
+"ٱلَّذِينَ يُنفِقُونَ فِى ٱلسَّرَّآءِ وَٱلضَّرَّآءِ",
+"Allah praises those who give in ease and hardship.",
+"Qur'an 3:134"],
+
+["Peace",
+"Take one gentle step toward repairing a tension.",
+"Qur'an reminder",
+"فَأَصْلِحُوا۟ بَيْنَ أَخَوَيْكُمْ",
+"Make peace between one another.",
+"Qur'an 49:10"],
+
+["Family",
+"Help someone at home before they ask.",
+"Authentic hadith",
+"كَانَ يَكُونُ فِي مِهْنَةِ أَهْلِهِ",
+"The Prophet ﷺ used to help his family at home.",
+"Sahih al-Bukhari 676"],
+
+["Helping",
+"Make something easier for someone today.",
+"Authentic hadith",
+"يُعِينُ الرَّجُلَ فِي دَابَّتِهِ ... صَدَقَةٌ",
+"Helping another person is charity.",
+"Sahih al-Bukhari 2891"],
+
+["Sadaqah",
+"Give charity today without reminding anyone of what you gave.",
+"Qur'an reminder",
+"لَا تُبْطِلُوا۟ صَدَقَٰتِكُم بِٱلْمَنِّ وَٱلْأَذَىٰ",
+"Protect your charity from reminders and hurt.",
+"Qur'an 2:264"],
+
+["Community",
+"Remove or fix one small thing that could inconvenience or harm others.",
+"Authentic hadith",
+"اعْزِلِ الأَذَى عَنْ طَرِيقِ الْمُسْلِمِينَ",
+"Remove harmful things from people's path.",
+"Sahih Muslim 2618a"],
+
+["Dhikr",
+"Say Allahu Akbar with presence and meaning today.",
+"Authentic hadith",
+"وَكُلِّ تَكْبِيرَةٍ صَدَقَةٌ",
+"Every takbir is charity.",
+"Sahih Muslim 1006"],
+
+["Kind Speech",
+"Replace one complaint today with a kinder sentence.",
+"Qur'an reminder",
+"وَقُولُوا۟ لِلنَّاسِ حُسْنًا",
+"Speak beautifully to people.",
+"Qur'an 2:83"],
+
+["Gratitude",
+"Thank Allah for one ordinary blessing you usually overlook.",
+"Qur'an reminder",
+"لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",
+"Allah promises increase for gratitude.",
+"Qur'an 14:7"],
+
+["Guidance",
+"Help someone understand something or find their way today.",
+"Authentic hadith",
+"وَدَلُّ الطَّرِيقِ صَدَقَةٌ",
+"Guiding someone is charity.",
+"Sahih al-Bukhari 2891"]
+
+];
+
+const COLORS=[
+["#ebb0b9","#f5d4d8"],
+["#f1c3ca","#f8e1e4"],
+["#f2d0bf","#f9e4d7"],
+["#e8b8c4","#f4d8de"]
+];
+
+let current=0;
+let completed=[];
+
+try{
+  completed=JSON.parse(localStorage.getItem("ibCompleted")||"[]");
+}catch(e){}
+
+const $=id=>document.getElementById(id);
+
+function flower(i){
+
+const c=COLORS[i%4];
+
+return `
+<svg viewBox="0 0 100 100">
+<g fill="${c[0]}" stroke="${c[1]}" stroke-width="1">
+<ellipse cx="50" cy="20" rx="16" ry="27"/>
+<ellipse cx="77" cy="36" rx="16" ry="27" transform="rotate(60 77 36)"/>
+<ellipse cx="77" cy="66" rx="16" ry="27" transform="rotate(120 77 66)"/>
+<ellipse cx="50" cy="80" rx="16" ry="27"/>
+<ellipse cx="23" cy="66" rx="16" ry="27" transform="rotate(60 23 66)"/>
+<ellipse cx="23" cy="36" rx="16" ry="27" transform="rotate(120 23 36)"/>
+</g>
+<circle cx="50" cy="50" r="22" fill="#fffaf5" stroke="#d3b176"/>
+</svg>`;
+}
+
+PETALS.forEach((p,i)=>{
+
+const b=document.createElement("button");
+
+b.className="petal";
+b.type="button";
+
+b.innerHTML=
+flower(i)+
+`<span class="number">${i+1}</span>`;
+
+b.onclick=()=>openPetal(i);
+
+$("grid").appendChild(b);
+
+});
+
+function openPetal(i){
+
+current=i;
+
+const p=PETALS[i];
+
+$("petalId").textContent=
+`PETAL ${String(i+1).padStart(2,"0")} • ${p[0].toUpperCase()}`;
+
+$("category").textContent=p[0];
+$("deed").textContent=p[1];
+$("sourceType").textContent=p[2];
+$("arabic").textContent=p[3];
+$("meaning").textContent=p[4];
+$("reference").textContent=p[5];
+
+$("jarView").classList.add("hidden");
+$("deedView").classList.remove("hidden");
+
+window.scrollTo(0,0);
+
+}
+
+function back(){
+
+$("deedView").classList.add("hidden");
+$("jarView").classList.remove("hidden");
+
+window.scrollTo(0,0);
+
+}
+
+function update(){
+
+const n=completed.length;
+
+$("progressText").textContent=
+`${n} of ${PETALS.length} petals bloomed`;
+
+$("fill").style.width=
+`${(n/PETALS.length)*100}%`;
+
+const icons=["🌸","🌷","🌼","🌺"];
+
+$("garden").textContent=
+n
+? Array.from({length:n},(_,i)=>icons[i%4]).join("")
+: "♡";
+
+}
+
+$("doneBtn").onclick=()=>{
+
+if(!completed.includes(current)){
+
+completed.push(current);
+
+localStorage.setItem(
+"ibCompleted",
+JSON.stringify(completed)
+);
+
+update();
+
+}
+
+};
+
+$("backBtn").onclick=back;
+$("miniBack").onclick=back;
+
+$("resetBtn").onclick=()=>{
+
+if(confirm("Reset your garden?")){
+
+completed=[];
+
+localStorage.removeItem("ibCompleted");
+
+update();
+
+}
+
+};
+
+update();
+
+</script>
+
+</body>
+</html>
