@@ -1,4080 +1,2000 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fff8f3">
 <meta name="apple-mobile-web-app-capable" content="yes">
-
 <title>Islamic Bloom — Your Daily Deen Companion</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Naskh+Arabic:wght@500;600&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Naskh+Arabic:wght@500;600&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
---r:#d98696;
---d:#ad6271;
---i:#5f4d48;
---m:#9a8177;
---g:#caa56b;
---l:#ead6d1;
-}
-
-*{
-box-sizing:border-box;
--webkit-tap-highlight-color:transparent
-}
-
-html,body{
-margin:0;
-min-height:100%;
-}
-
-body{
-font-family:"Cormorant Garamond",Georgia,serif;
-color:var(--i);
-background:
-radial-gradient(circle at 5% 1%,#f8dfe3 0,transparent 28%),
-radial-gradient(circle at 98% 18%,#f8eddc 0,transparent 28%),
-linear-gradient(#fff8f3,#fffdfa);
-}
-
-body[data-theme="masculine"]{
---r:#6688a8;
---d:#496b8c;
---i:#465563;
---m:#788895;
---g:#b69a69;
---l:#cfdae4;
-background:
-radial-gradient(circle at 5% 1%,#dfeaf3 0,transparent 28%),
-radial-gradient(circle at 98% 18%,#edf2e8 0,transparent 28%),
-linear-gradient(#f8fbfd,#fffdfa);
-}
-
-body[data-theme="kids"]{
---r:#ef82b3;
---d:#8868bb;
---i:#5e5671;
---m:#8d84a0;
---g:#efbc63;
---l:#e8d9ef;
-font-family:"Fredoka",Arial,sans-serif;
-background:
-radial-gradient(circle at 8% 5%,#ffd9e9 0,transparent 24%),
-radial-gradient(circle at 95% 10%,#d7efff 0,transparent 24%),
-radial-gradient(circle at 12% 92%,#fff0b8 0,transparent 23%),
-radial-gradient(circle at 92% 88%,#ddf4d7 0,transparent 23%),
-linear-gradient(#fffafd,#fffef7);
-}
+:root{--r:#d98696;--d:#ad6271;--i:#5f4d48;--m:#9a8177;--g:#caa56b;--l:#ead6d1}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;min-height:100%;background:#fff9f5;color:var(--i)}
+body{font-family:"Cormorant Garamond",Georgia,serif;background:radial-gradient(circle at 5% 1%,#f8dfe3 0,transparent 28%),radial-gradient(circle at 98% 18%,#f8eddc 0,transparent 28%),linear-gradient(#fff8f3,#fffdfa)}
+button{font:inherit;touch-action:manipulation}.hidden{display:none!important}.app{width:min(100%,500px);min-height:100dvh;margin:auto;padding:18px 16px 30px}
+.script{font-family:"Allura","Snell Roundhand",cursive;color:var(--r)}.brand{text-align:center;margin:8px 0 16px}.brandline{font-size:11px;letter-spacing:4.8px;font-weight:600;color:var(--d)}.hero{font-size:54px;line-height:.92;margin:7px 0 5px}.subtitle{font-size:15px;color:var(--m);font-style:italic;line-height:1.45}
+.panel{background:#fffdf9f5;border:1px solid var(--l);border-radius:30px;padding:16px;box-shadow:0 20px 55px #915b651f}.overall{padding:13px;border-radius:20px;background:#fff8f7;border:1px solid #efd8db;margin-bottom:15px;text-align:center}
+.bar{height:8px;background:#f0e0e1;border-radius:99px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#df91a0,#f0c8ce);transition:.3s}
+.choose{font-size:42px;line-height:.92;text-align:center;margin:7px 0 15px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{border:1px solid var(--l);background:linear-gradient(#fffdfb,#fff7f4);border-radius:24px;padding:14px 10px;text-align:center;cursor:pointer;min-height:144px;box-shadow:0 7px 18px #915b650f}
+.icon{font-size:28px}.name{font-size:20px;line-height:1.1;margin:6px 0 3px;font-weight:400;font-style:italic;color:#8f766d}.sub{font-size:11px;line-height:1.4;color:var(--m);min-height:31px;font-style:italic}.mini{font-size:10px;color:var(--d);margin-top:8px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}.pill{border:1px solid var(--l);background:#fffaf7;color:#926e65;border-radius:999px;padding:9px 13px;font-size:12px}.gh{text-align:center;margin-bottom:10px}.gh h2{font-size:30px;line-height:1.15;font-weight:400;font-style:italic;color:#9a8177;margin:0}.gh small{color:var(--m);font-size:13px;font-style:italic}
+.jar{width:min(94%,355px);height:560px;margin:8px auto 12px;position:relative;overflow:hidden;border:3px solid #b491872f;border-top:16px solid var(--g);border-radius:38px 38px 64px 64px;background:linear-gradient(#ffffffd1,#ffefefc7);box-shadow:inset 20px 0 30px #ffffffad,0 14px 28px #89555e17}.jar:before{content:"";position:absolute;left:27px;top:18px;width:17px;height:235px;border-radius:20px;background:linear-gradient(#ffffffc4,transparent)}
+.label{position:absolute;z-index:20;top:30px;left:50%;transform:translateX(-50%);width:210px;padding:10px;border-radius:20px;background:#fffbf8f7;border:1px solid #eccdd2;text-align:center}.label .script{font-size:42px;line-height:.85}.label small{font-size:8px;letter-spacing:2.5px;color:var(--d);font-weight:600}
+.zone{position:absolute;left:12px;right:12px;top:112px;bottom:25px}.petal{position:absolute;width:47px;height:47px;border:0;background:transparent;padding:0;cursor:pointer;animation:floaty var(--dur) ease-in-out infinite alternate;animation-delay:var(--delay);filter:drop-shadow(0 4px 5px #965f691c)}.petal svg{width:100%;height:100%}.petal span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#a85e6b}.petal.done{opacity:.55;filter:saturate(.55)}.petal.done span{font-size:0}.petal.done span:after{content:"✓";font-size:17px;color:#8d6d67}@keyframes floaty{from{transform:translate(-3px,-4px) rotate(-2deg)}to{transform:translate(4px,5px) rotate(3deg)}}
+.actions,.twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:9px;margin-top:10px}.btn{width:100%;border:0;border-radius:18px;padding:13px 12px;font-weight:600;cursor:pointer}.primary{background:linear-gradient(#e5a0ac,#d68190);color:white;box-shadow:0 7px 17px #ba667533}.secondary{background:#fffaf7;color:#987168;border:1px solid var(--l)}.prog{font-size:12px;color:var(--m);text-align:center;margin:10px 0 4px;font-style:italic}
+.grow{margin-top:12px;border:1px solid var(--l);border-radius:24px;background:#fffdf9;padding:12px}.grow .script{font-size:38px;text-align:center;line-height:.95}.growSub{font-size:12px;color:var(--m);text-align:center;margin-bottom:8px;font-style:italic}.scene{height:150px;position:relative;overflow:hidden;border-radius:18px;border:1px solid #eee2dc;background:linear-gradient(#fffaf5 0 66%,#e9ecd9 66% 100%)}.ground{position:absolute;bottom:0;left:0;right:0;height:48px;background:linear-gradient(#e1e5cf,#d3dbc0)}
+.plant{position:absolute;bottom:32px;width:25px;height:62px}.stem{position:absolute;left:11px;bottom:0;width:3px;height:38px;background:#96a987;border-radius:3px}.leaf{position:absolute;width:12px;height:7px;background:#a7b798;border-radius:100% 0 100% 0;bottom:16px}.leaf.l{left:1px;transform:rotate(-28deg)}.leaf.r{right:0;transform:scaleX(-1) rotate(-28deg)}.bloom{position:absolute;top:0;left:0;font-size:23px}.empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#a98d84;font-size:13px;font-style:italic;text-align:center;padding:20px}
+.deedTitle{font-size:60px;text-align:center;line-height:.88;margin:8px 0 13px}.deedCard{border-radius:28px;background:linear-gradient(#fff8f8,#fae7e9);border:1px solid #edd0d4;padding:22px 18px;text-align:center}.cat{display:inline-block;border-radius:999px;padding:7px 12px;background:#fffdfb;border:1px solid #ecd2d4;color:var(--d);font-size:10px;font-weight:600}.deedText{font-size:27px;line-height:1.24;margin:15px 0 3px;font-weight:500}.source{margin-top:12px;border-radius:25px;background:#fffdf9;border:1px solid var(--l);padding:17px;text-align:center}.stype{font-size:9px;letter-spacing:2px;font-weight:600;color:#96746b;text-transform:uppercase}.arabic{font-family:"Noto Naskh Arabic","Geeza Pro",serif;direction:rtl;font-size:28px;line-height:1.7;margin:10px 0}.reflection{font-size:38px;line-height:.95}.meaning{font-size:16px;line-height:1.5;margin:8px 0;font-style:italic}.ref{font-weight:600;color:var(--d);font-size:13px}.bigBack{margin-top:9px;font-family:"Allura","Snell Roundhand",cursive;font-size:35px;padding:10px}.favOn{background:#f4d7dc!important;color:#9c5766!important;border-color:#e5b9c1!important}
+.adhkarHero{text-align:center;margin:7px 0 14px}.adhkarHero .script{font-size:52px;line-height:.9}.adhkarHero p{margin:5px 20px 0;color:var(--m);font-size:13px;font-style:italic;line-height:1.45}.adhProg{background:#fffaf7;border:1px solid var(--l);border-radius:22px;padding:12px 14px;margin-bottom:12px;text-align:center}.adhList{display:flex;flex-direction:column;gap:12px}.adhCard{background:#fffdf9fa;border:1px solid var(--l);border-radius:25px;padding:16px;box-shadow:0 8px 22px #915b650f}.adhCard.complete{background:linear-gradient(#fffdf9,#fff7f4)}.adhTop{display:flex;align-items:flex-start;gap:10px}.adhNum{width:31px;height:31px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto;background:#f5e2e5;color:var(--d);font-size:13px;font-weight:600}.adhCard.complete .adhNum{background:#e9efe1;color:#718068}.adhName{flex:1;font-size:20px;font-weight:600;color:#755b55;line-height:1.15}.adhArabic{font-family:"Noto Naskh Arabic","Geeza Pro",serif;direction:rtl;text-align:center;font-size:26px;line-height:1.9;color:#5c4c47;margin:13px 0 8px}.adhTranslit{text-align:center;font-size:13px;line-height:1.55;color:#987168;margin:8px 0 10px;font-style:italic}.adhTranslit:before{content:"Transliteration";display:block;font-size:9px;letter-spacing:1.7px;text-transform:uppercase;color:#b4868d;font-style:normal;margin-bottom:4px}.adhMeaning{text-align:center;font-size:14px;line-height:1.55;color:#6e5d57;font-style:italic}.adhRef{text-align:center;margin-top:8px;color:var(--d);font-size:11px;font-weight:600}.adhControls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}.counter{display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--l);background:#fffaf7;border-radius:16px;padding:8px}.counter button{width:34px;height:34px;border-radius:50%;border:1px solid #ead7d3;background:#fff;color:#9b6e68;font-size:18px}.count{min-width:27px;text-align:center;font-size:17px;color:var(--d);font-weight:600}.repeat{text-align:center;font-size:10px;color:var(--m);margin-top:4px}.adhAction{border:0;border-radius:16px;background:linear-gradient(#e5a0ac,#d68190);color:white;padding:10px;font-weight:600}.adhAction.done{background:#a9b79d}.adhFav{width:100%;margin-top:8px;border-radius:16px;padding:9px;border:1px solid #e8ccd1;background:#fffaf7;color:#a46673}.adhFoot{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:9px}.note{text-align:center;color:var(--m);font-size:11px;font-style:italic;line-height:1.45;margin:12px 8px 0}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);z-index:100;background:#65544f;color:white;padding:10px 14px;border-radius:999px;opacity:0;transition:.2s;pointer-events:none;font-size:12px;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal{position:fixed;inset:0;z-index:80;background:#4d393536;display:flex;align-items:flex-end;justify-content:center;padding:12px}.modalBox{width:min(100%,470px);max-height:88dvh;overflow:auto;background:#fffdf9;border-radius:30px 30px 20px 20px;padding:18px;border:1px solid var(--l);box-shadow:0 -15px 50px #5d3f3926}.modalTitle{font-size:42px;text-align:center;line-height:.95;margin-bottom:10px}.favItem{border:1px solid var(--l);background:#fffaf7;border-radius:19px;padding:12px;margin:8px 0}.favItem b{display:block;color:#7e615a;margin-bottom:4px}.favItem small{color:var(--m);font-style:italic}
+body[data-theme="masculine"]{--r:#6f91aa;--d:#526f84;--i:#4e5f68;--m:#788b94;--g:#a99168;--l:#d4e0e6;background:radial-gradient(circle at 5% 1%,#dfeaf0 0,transparent 28%),radial-gradient(circle at 98% 18%,#e9f0f2 0,transparent 28%),linear-gradient(#f6fafc,#fffdfa)}
+body[data-theme="masculine"] .panel,body[data-theme="masculine"] .grow,body[data-theme="masculine"] .source,body[data-theme="masculine"] .adhCard{background:#fbfdfe}
+body[data-theme="masculine"] .card{background:linear-gradient(#fbfdff,#f0f6f9)}
+body[data-theme="masculine"] .overall,body[data-theme="masculine"] .adhProg{background:#f0f6f9;border-color:#d8e4e9}
+body[data-theme="masculine"] .bar{background:#dce7ec}body[data-theme="masculine"] .bar i{background:linear-gradient(90deg,#789bb4,#aac1cf)}
+body[data-theme="masculine"] .jar{background:linear-gradient(#ffffffd8,#eaf4f8c7);border-color:#7690a033;border-top-color:#a99168}
+body[data-theme="masculine"] .deedCard{background:linear-gradient(#f7fbfd,#e8f1f5);border-color:#d4e3e9}
+body[data-theme="masculine"] .primary,body[data-theme="masculine"] .adhAction{background:linear-gradient(#7d9eb5,#63869f);box-shadow:0 7px 17px #52738a2b}
+body[data-theme="masculine"] .adhNum{background:#e3edf2}body[data-theme="masculine"] .label{background:#f7fbfdf7;border-color:#d4e3e9}
+body[data-theme="masculine"] .script{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600}
+body[data-theme="masculine"] .hero{font-size:43px;line-height:1.05}body[data-theme="masculine"] .choose{font-size:31px}
+body[data-theme="masculine"] .label .script{font-size:31px}
+body[data-theme="masculine"] .grow .script{font-size:29px}
+body[data-theme="masculine"] .deedTitle{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:42px}
+body[data-theme="masculine"] .bigBack{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:22px}
+body[data-theme="masculine"] .adhkarHero .script{font-size:39px}
+body[data-theme="kids"]{--r:#ef82b3;--d:#8868bb;--i:#5e5671;--m:#8d84a0;--g:#efbc63;--l:#e8d9ef;background:radial-gradient(circle at 5% 1%,#ffe0ec 0,transparent 27%),radial-gradient(circle at 98% 18%,#dff3ff 0,transparent 28%),linear-gradient(#fffafc,#fffdf6)}
+body[data-theme="kids"] .panel,body[data-theme="kids"] .grow,body[data-theme="kids"] .source,body[data-theme="kids"] .adhCard{background:#fffdfd}
+body[data-theme="kids"] .card{background:linear-gradient(145deg,#fff0f7,#f1f8ff 52%,#fff8dc);border-color:#ead8ef}
+body[data-theme="kids"] .overall,body[data-theme="kids"] .adhProg{background:#fff3f8;border-color:#ecd7ef}
+body[data-theme="kids"] .bar{background:#f2e5f4}body[data-theme="kids"] .bar i{background:linear-gradient(90deg,#ef82b3,#82bce8,#9ed98b,#f2c75f)}
+body[data-theme="kids"] .jar{background:linear-gradient(#ffffffdd,#f5edffc7);border-color:#9b80bb33;border-top-color:#efbc63}
+body[data-theme="kids"] .deedCard{background:linear-gradient(145deg,#fff0f7,#eef7ff,#fff8dd);border-color:#ead8ef}
+body[data-theme="kids"] .primary,body[data-theme="kids"] .adhAction{background:linear-gradient(100deg,#ed82b3,#9b7ed0,#71b8e8);box-shadow:0 7px 17px #8d70bb2b}
+body[data-theme="kids"] .adhNum{background:#f3e5fa}body[data-theme="kids"] .label{background:#fffdfdf7;border-color:#e6d8ee}
+body[data-theme="kids"] .script{font-family:"Baloo 2",Arial,sans-serif;font-weight:700;font-style:normal}
+body[data-theme="kids"] .hero{font-size:43px;line-height:1.05}body[data-theme="kids"] .choose{font-size:31px}
+body[data-theme="kids"] .label .script{font-size:31px}
+body[data-theme="kids"] .grow .script{font-size:29px}
+body[data-theme="kids"] .deedTitle{font-family:"Baloo 2",Arial,sans-serif;font-size:39px}
+body[data-theme="kids"] .bigBack{font-family:"Baloo 2",Arial,sans-serif;font-size:21px}
+body[data-theme="kids"] .adhkarHero .script{font-size:38px}
+.setup{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;background:linear-gradient(#fff4f4,#fffdf9);padding:22px}
+body[data-theme="masculine"] .setup{background:linear-gradient(#eef5fa,#fffdf9)}
+body[data-theme="kids"] .setup{background:radial-gradient(circle at 10% 10%,#ffd8e8 0,transparent 25%),radial-gradient(circle at 90% 10%,#d9f0ff 0,transparent 25%),radial-gradient(circle at 10% 90%,#fff0b8 0,transparent 25%),radial-gradient(circle at 90% 90%,#dff5db 0,transparent 25%),#fffdfb}
+.setupCard{width:min(100%,440px);background:#fffdf9;border:1px solid var(--l);border-radius:34px;padding:27px 18px;text-align:center;box-shadow:0 24px 80px #65433c22}
+.setupTitle{font-size:54px;line-height:.9;margin:8px 0}.setupText{color:var(--m);font-style:italic;margin:10px 0 16px}
+.nameInput{width:100%;border:1px solid var(--l);background:#fff;border-radius:18px;padding:14px 16px;font:inherit;font-size:18px;color:var(--i);outline:none;text-align:center}
+.themePick{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin:13px 0}
+.themeChoice{border:2px solid var(--l);background:#fffaf7;border-radius:20px;padding:13px 6px;cursor:pointer;color:var(--i)}
+.themeChoice.active{border-color:var(--r);box-shadow:0 0 0 3px rgba(220,140,165,.12)}
+.themeChoice b{display:block;font-size:15px;margin-top:4px}.themeChoice small{display:block;color:var(--m);font-size:9px;margin-top:2px}
+.settingsLabel{font-size:11px;color:var(--m);text-transform:uppercase;letter-spacing:1.4px;margin:12px 0 6px}
+.kidsBanner{text-align:center;font-size:22px;letter-spacing:4px;margin:5px 0 10px}
+body[data-theme="kids"] .choose{font-size:38px}
+body[data-theme="kids"] .hero{font-size:49px}
 
 body[data-theme="kids"]::before{
-content:"🌈   😊   ⭐   😄   🌈   ✨   🙂   ⭐   🌈   😍   ✨   😊   🌈   ⭐   😄   ✨   🌈   🙂   ⭐   😊   🌈   ✨   😄   ⭐   🌈   😊   💖   🌈   ⭐   🙂   ✨   🌈   😄   ⭐   😊   🌈";
-position:fixed;
-inset:-20px;
-z-index:0;
-pointer-events:none;
-overflow:hidden;
-white-space:normal;
-word-spacing:25px;
-line-height:3.4;
-font-size:29px;
-opacity:.115;
-transform:rotate(-5deg) scale(1.08);
+  content:"🌈   😊   ⭐   😄   🌈   ✨   🙂   ⭐   🌈   😍   ✨   😊   🌈   ⭐   😄   ✨   🌈   🙂   ⭐   😊   🌈   ✨   😄   ⭐   🌈   😊   💖   🌈   ⭐   🙂   ✨   🌈   😄   ⭐   😊   🌈";
+  position:fixed;inset:-20px;z-index:0;pointer-events:none;
+  overflow:hidden;white-space:normal;word-spacing:25px;line-height:3.4;
+  font-size:29px;opacity:.115;transform:rotate(-5deg) scale(1.08);
 }
-
-button,input{
-font:inherit
+body[data-theme="kids"] .app{position:relative;z-index:1}
+body[data-theme="kids"] .jar::after{
+  content:"🌈  😊  ⭐  😄  🌈  ✨";
+  position:absolute;left:22px;right:22px;bottom:18px;text-align:center;
+  font-size:21px;letter-spacing:5px;opacity:.16;pointer-events:none;
 }
-
-button{
-touch-action:manipulation;
-cursor:pointer
+.kidFace{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  width:47px;height:47px;border-radius:50%;font-size:35px;
+  background:rgba(255,255,255,.54);border:2px solid rgba(255,255,255,.72);
+  box-shadow:0 4px 10px rgba(115,80,140,.10)
 }
-
-.hidden{
-display:none!important
+body[data-theme="kids"] .petal{filter:drop-shadow(0 4px 5px rgba(120,80,150,.12))}
+body[data-theme="kids"] .petal span{
+  width:21px;height:21px;inset:auto -3px -3px auto;border-radius:50%;
+  background:#fff;color:#8063aa;border:1px solid #dcccef;font-size:11px;
+  box-shadow:0 2px 5px rgba(100,70,130,.12)
 }
+body[data-theme="kids"] .petal.done .kidFace{filter:grayscale(.15);opacity:.62}
+body[data-theme="kids"] .petal.done span{font-size:0}
+body[data-theme="kids"] .petal.done span:after{content:"✓";font-size:12px;color:#66835e}
 
-.app{
-width:min(100%,500px);
-min-height:100dvh;
-margin:auto;
-padding:max(18px,env(safe-area-inset-top)) 16px max(30px,env(safe-area-inset-bottom));
-position:relative;
-z-index:1;
+.adhArabic,.adhTranslit{white-space:pre-line}
+
+/* Kids Bloom: playful typography. Arabic religious text keeps Noto Naskh Arabic. */
+body[data-theme="kids"]{
+  font-family:"Baloo 2",Arial,sans-serif;
 }
-
-.script{
-font-family:"Allura","Snell Roundhand",cursive;
-color:var(--r)
-}
-
 body[data-theme="kids"] .script,
 body[data-theme="kids"] .hero,
 body[data-theme="kids"] .choose,
 body[data-theme="kids"] .modalTitle,
 body[data-theme="kids"] .growTitle{
-font-family:"Fredoka",Arial,sans-serif;
-font-weight:600;
-letter-spacing:-.6px
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-weight:600;
+  letter-spacing:-.6px;
 }
-
-body[data-theme="kids"] .hero{
-font-size:42px!important;
-line-height:1.05
+body[data-theme="kids"] .hero{font-size:42px;line-height:1.05}
+body[data-theme="kids"] .choose{font-size:30px;line-height:1.08}
+body[data-theme="kids"] .card .name{
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-style:normal;
+  font-weight:600;
+  font-size:18px;
 }
-
-.brand{
-text-align:center;
-margin:4px 0 16px
-}
-
-.brandline{
-font-size:11px;
-letter-spacing:4.7px;
-color:var(--d);
-font-weight:600
-}
-
-.hero{
-font-size:53px;
-line-height:.92;
-margin:7px 0 5px
-}
-
-.subtitle{
-color:var(--m);
-font-size:15px;
-font-style:italic;
-line-height:1.45
-}
-
-.panel{
-background:rgba(255,253,249,.95);
-border:1px solid var(--l);
-border-radius:29px;
-padding:16px;
-box-shadow:0 18px 50px rgba(110,70,80,.1)
-}
-
-body[data-theme="kids"] .panel{
-background:rgba(255,255,255,.94)
-}
-
-.top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:8px;
-margin-bottom:10px
-}
-
-.pill{
-border:1px solid var(--l);
-background:#fffaf7;
-color:var(--d);
-border-radius:999px;
-padding:9px 13px;
-font-size:12px
-}
-
-.settingsRow{
-text-align:right
-}
-
-.overall{
-padding:13px 14px;
-border:1px solid var(--l);
-border-radius:20px;
-background:rgba(255,250,247,.9);
-text-align:center;
-margin-bottom:15px
-}
-
-.bar{
-height:8px;
-background:#eee1e3;
-border-radius:99px;
-overflow:hidden;
-margin-top:8px
-}
-
-.bar i{
-display:block;
-height:100%;
-width:0;
-background:linear-gradient(90deg,var(--r),#efc5cd);
-transition:.25s
-}
-
-body[data-theme="kids"] .bar i{
-background:linear-gradient(90deg,#ef82b3,#a38bd6,#74bee9,#90d19d,#f0bc65)
-}
-
-.choose{
-font-size:41px;
-line-height:.95;
-text-align:center;
-margin:7px 0 15px
-}
-
-body[data-theme="kids"] .choose{
-font-size:30px
-}
-
-.cards{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px
-}
-
-.card{
-border:1px solid var(--l);
-background:linear-gradient(#fffdfb,#fff7f4);
-border-radius:23px;
-padding:14px 9px;
-min-height:143px;
-text-align:center;
-box-shadow:0 7px 18px rgba(100,70,80,.05)
-}
-
-body[data-theme="kids"] .card{
-background:linear-gradient(145deg,#fff7fb,#f4fbff,#fffbed);
-min-height:133px
-}
-
-.icon{
-font-size:29px
-}
-
-.name{
-color:#8d746c;
-font-size:20px;
-line-height:1.1;
-font-style:italic;
-margin:6px 0 4px
-}
-
-body[data-theme="kids"] .name{
-font-family:"Fredoka",Arial,sans-serif;
-font-style:normal;
-font-weight:600;
-font-size:18px;
-color:#78659b
-}
-
-.sub{
-color:var(--m);
-font-size:11px;
-line-height:1.4;
-font-style:italic;
-min-height:30px
-}
-
-.mini{
-color:var(--d);
-font-size:10px;
-margin-top:7px
-}
-
 body[data-theme="kids"] .sub,
-body[data-theme="kids"] .mini{
-font-family:"Fredoka",Arial,sans-serif;
-font-style:normal
+body[data-theme="kids"] .mini,
+body[data-theme="kids"] .setupText,
+body[data-theme="kids"] .gardenSub,
+body[data-theme="kids"] .growSub,
+body[data-theme="kids"] .progressText{
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-style:normal;
+}
+body[data-theme="kids"] button,
+body[data-theme="kids"] input{
+  font-family:"Baloo 2",Arial,sans-serif;
 }
-
-.gardenHeader{
-text-align:center;
-margin:5px 0 10px
-}
-
-.gardenName{
-font-size:30px;
-font-weight:400;
-font-style:italic;
-color:var(--m);
-margin:0
-}
-
-.gardenSub{
-color:var(--m);
-font-size:13px;
-font-style:italic
-}
-
-.jar{
-width:min(94%,355px);
-height:555px;
-margin:8px auto 12px;
-position:relative;
-overflow:hidden;
-border:3px solid rgba(180,145,135,.28);
-border-top:16px solid var(--g);
-border-radius:38px 38px 64px 64px;
-background:linear-gradient(rgba(255,255,255,.85),rgba(255,239,242,.76));
-box-shadow:
-inset 20px 0 30px rgba(255,255,255,.7),
-0 14px 28px rgba(137,85,94,.08)
-}
-
-body[data-theme="kids"] .jar{
-background:linear-gradient(rgba(255,255,255,.92),rgba(248,240,255,.84))
-}
-
-body[data-theme="kids"] .jar::after{
-content:"🌈  😊  ⭐  😄  🌈  ✨";
-position:absolute;
-left:22px;
-right:22px;
-bottom:18px;
-text-align:center;
-font-size:21px;
-letter-spacing:5px;
-opacity:.16;
-pointer-events:none
-}
-
-.jar:before{
-content:"";
-position:absolute;
-left:27px;
-top:18px;
-width:17px;
-height:235px;
-border-radius:20px;
-background:linear-gradient(rgba(255,255,255,.8),transparent)
-}
-
-.jarLabel{
-position:absolute;
-z-index:20;
-top:30px;
-left:50%;
-transform:translateX(-50%);
-width:210px;
-padding:10px;
-background:rgba(255,251,248,.97);
-border:1px solid var(--l);
-border-radius:20px;
-text-align:center
-}
-
-.jarLabel .script{
-font-size:42px;
-line-height:.85
-}
-
-.jarLabel small{
-font-size:8px;
-letter-spacing:2.5px;
-color:var(--d)
-}
-
-.zone{
-position:absolute;
-left:12px;
-right:12px;
-top:112px;
-bottom:25px
-}
-
-.petal{
-position:absolute;
-width:47px;
-height:47px;
-border:0;
-background:transparent;
-padding:0;
-animation:floaty var(--duration) ease-in-out infinite alternate;
-animation-delay:var(--delay)
-}
-
-.petal svg{
-width:100%;
-height:100%
-}
-
-.petal span{
-position:absolute;
-inset:0;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#aa606e;
-font-size:14px;
-font-weight:600
-}
-
-.kidFace{
-position:absolute;
-inset:0;
-display:flex;
-align-items:center;
-justify-content:center;
-width:47px;
-height:47px;
-border-radius:50%;
-font-size:35px;
-background:rgba(255,255,255,.54);
-border:2px solid rgba(255,255,255,.72);
-box-shadow:0 4px 10px rgba(115,80,140,.10)
-}
-
-body[data-theme="kids"] .petal span{
-width:21px;
-height:21px;
-inset:auto -3px -3px auto;
-border-radius:50%;
-background:#fff;
-color:#8063aa;
-border:1px solid #dcccef;
-font-size:11px
-}
-
-.petal.done{
-opacity:.55
-}
-
-.petal.done span{
-font-size:0
-}
-
-.petal.done span:after{
-content:"✓";
-font-size:13px;
-color:#66835e
-}
-
-@keyframes floaty{
-from{transform:translate(-3px,-4px) rotate(-2deg)}
-to{transform:translate(4px,5px) rotate(3deg)}
-}
-
-.progressText{
-text-align:center;
-color:var(--m);
-font-size:12px;
-font-style:italic;
-margin-top:6px
-}
-
-.actions{
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:9px;
-margin-top:10px
-}
-
-.btn{
-width:100%;
-border:0;
-border-radius:18px;
-padding:13px 11px;
-font-weight:600
-}
-
-.primary{
-color:#fff;
-background:linear-gradient(#e4a0ac,#d68190)
-}
-
-body[data-theme="masculine"] .primary{
-background:linear-gradient(#88a8c5,#6688a8)
-}
-
-body[data-theme="kids"] .primary{
-background:linear-gradient(90deg,#ef82b3,#9e88d4,#76bce7,#8fcf9d,#efbb62)
-}
-
-.secondary{
-background:#fffaf7;
-color:var(--d);
-border:1px solid var(--l)
-}
-
-.growing{
-margin-top:12px;
-border:1px solid var(--l);
-border-radius:24px;
-background:#fffdf9;
-padding:12px
-}
-
-.growTitle{
-font-size:37px;
-text-align:center;
-line-height:.95
-}
-
-.growSub{
-font-size:12px;
-text-align:center;
-color:var(--m);
-font-style:italic;
-margin-bottom:8px
-}
-
-.scene{
-height:150px;
-position:relative;
-overflow:hidden;
-border-radius:18px;
-border:1px solid var(--l);
-background:linear-gradient(#fffaf5 0 66%,#e9ecd9 66% 100%)
-}
-
-.ground{
-position:absolute;
-left:0;
-right:0;
-bottom:0;
-height:48px;
-background:linear-gradient(#e1e5cf,#d3dbc0)
-}
-
-.empty{
-position:absolute;
-inset:0;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:var(--m);
-font-size:13px;
-font-style:italic;
-padding:18px
-}
-
-.plant{
-position:absolute;
-bottom:31px;
-width:25px;
-height:62px
-}
-
-.stem{
-position:absolute;
-left:11px;
-bottom:0;
-height:38px;
-width:3px;
-background:#96a987
-}
-
-.leaf{
-position:absolute;
-bottom:16px;
-width:12px;
-height:7px;
-background:#a7b798;
-border-radius:100% 0 100% 0
-}
-
-.leaf.left{
-left:1px;
-transform:rotate(-28deg)
-}
-
-.leaf.right{
-right:0;
-transform:scaleX(-1) rotate(-28deg)
-}
-
-.flower{
-position:absolute;
-top:0;
-left:0;
-font-size:23px
-}
-
-.deedTitle{
-font-size:59px;
-text-align:center;
-line-height:.9;
-margin:8px 0 13px
-}
-
-.deedCard{
-text-align:center;
-background:linear-gradient(#fff8f8,#fae7e9);
-border:1px solid var(--l);
-border-radius:27px;
-padding:21px 17px
-}
-
-.tag{
-display:inline-block;
-border:1px solid var(--l);
-background:#fff;
-border-radius:999px;
-padding:6px 11px;
-font-size:10px;
-color:var(--d)
-}
-
-.deedText{
-font-size:26px;
-line-height:1.25;
-margin-top:14px
-}
-
-.source{
-margin-top:12px;
-text-align:center;
-background:#fffdf9;
-border:1px solid var(--l);
-border-radius:24px;
-padding:17px
-}
-
-.sourceType{
-color:var(--d);
-font-size:9px;
-text-transform:uppercase;
-letter-spacing:2px;
-font-weight:600
-}
-
-.arabic,
-.adhArabic{
-font-family:"Noto Naskh Arabic","Geeza Pro",serif!important;
-direction:rtl;
-white-space:pre-line
-}
-
-.arabic{
-font-size:27px;
-line-height:1.75;
-margin:10px 0
-}
-
-.reflection{
-font-size:37px;
-line-height:.95
-}
-
-.meaning{
-font-size:15px;
-line-height:1.5;
-font-style:italic;
-margin:8px 0
-}
-
-.reference{
-color:var(--d);
-font-size:12px;
-font-weight:600
-}
-
-.twoButtons{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
-margin-top:10px
-}
-
-.backScript{
-font-family:"Allura","Snell Roundhand",cursive;
-font-size:34px;
-margin-top:9px
-}
-
-.listHeader{
-text-align:center;
-margin:6px 0 14px
-}
-
-.listHeader .script{
-font-size:51px;
-line-height:.9
-}
-
-.listHeader p{
-margin:5px 15px;
-color:var(--m);
-font-size:13px;
-font-style:italic
-}
-
-.listProgress{
-background:#fffaf7;
-border:1px solid var(--l);
-border-radius:21px;
-padding:12px 14px;
-margin-bottom:12px;
-text-align:center
-}
-
-.adhkarList{
-display:flex;
-flex-direction:column;
-gap:12px
-}
-
-.adhCard{
-background:#fffdf9;
-border:1px solid var(--l);
-border-radius:24px;
-padding:16px;
-box-shadow:0 8px 21px rgba(100,70,80,.05)
-}
-
-body[data-theme="kids"] .adhCard{
-background:rgba(255,255,255,.96)
-}
-
-.adhCard.complete{
-background:linear-gradient(#fffdf9,#fff7f4)
-}
-
-.adhTop{
-display:flex;
-align-items:flex-start;
-gap:10px
-}
-
-.adhNum{
-width:31px;
-height:31px;
-border-radius:50%;
-flex:0 0 auto;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#f5e2e5;
-color:var(--d);
-font-weight:600
-}
-
-.adhName{
-flex:1;
-font-size:20px;
-font-weight:600
-}
-
-.adhArabic{
-text-align:center;
-font-size:25px;
-line-height:1.9;
-margin:13px 0 7px
-}
-
-.adhTranslit{
-white-space:pre-line;
-text-align:center;
-color:#987168;
-font-size:13px;
-line-height:1.55;
-font-style:italic;
-margin:7px 0 10px
-}
-
-.adhTranslit:before{
-content:"Transliteration";
-display:block;
-text-transform:uppercase;
-letter-spacing:1.5px;
-font-size:8px;
-font-style:normal;
-color:#b4868d;
-margin-bottom:3px
-}
-
-body[data-theme="kids"] .adhTranslit,
-body[data-theme="kids"] .adhMeaning,
 body[data-theme="kids"] .adhName{
-font-family:"Fredoka",Arial,sans-serif
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-weight:600;
+}
+body[data-theme="kids"] .adhMeaning,
+body[data-theme="kids"] .adhTranslit,
+body[data-theme="kids"] .translit{
+  font-family:"Baloo 2",Arial,sans-serif;
+}
+body[data-theme="kids"] .adhArabic,
+body[data-theme="kids"] .arabic{
+  font-family:"Noto Naskh Arabic","Geeza Pro",serif !important;
+  font-weight:500;
 }
 
-.adhMeaning{
-text-align:center;
-color:#6e5d57;
-font-size:14px;
-line-height:1.5;
-font-style:italic
+/* ===== FINAL KIDS BLOOM UPGRADE ===== */
+body[data-theme="kids"] .primary{
+  color:#fff;font-weight:800;border:3px solid rgba(255,255,255,.92);
+  background:linear-gradient(90deg,#ff5f6d 0%,#ff9f43 17%,#ffd93d 34%,#6bcb77 51%,#4d96ff 68%,#845ec2 84%,#ff6fb5 100%);
+  box-shadow:0 6px 0 rgba(111,87,150,.14),0 10px 22px rgba(90,70,140,.15);
+  text-shadow:0 1px 2px rgba(0,0,0,.15)
+}
+body[data-theme="kids"] .primary:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(111,87,150,.14)}
+body[data-theme="kids"] .card{
+  position:relative;overflow:visible;border:3px solid #fff;border-radius:28px 28px 28px 12px;
+  background:linear-gradient(145deg,#fff0f7,#eef8ff 38%,#f4efff 67%,#fff8d9);
+  box-shadow:0 7px 0 rgba(151,125,190,.11),0 12px 25px rgba(100,80,150,.09);
+  min-height:145px;padding:16px 10px 18px
+}
+body[data-theme="kids"] .card:after{
+  content:"";position:absolute;bottom:-12px;left:24px;width:22px;height:22px;
+  background:#f4f3ff;border-radius:0 0 0 22px;transform:rotate(18deg);z-index:-1
+}
+body[data-theme="kids"] .card:nth-child(2):after{left:auto;right:24px;transform:rotate(-18deg) scaleX(-1)}
+body[data-theme="kids"] .card .icon{font-size:38px;filter:drop-shadow(0 4px 3px rgba(100,70,140,.11))}
+body[data-theme="kids"] .mini{display:inline-block;background:#fff;border-radius:999px;padding:4px 9px;font-weight:700;color:#8064a5}
+body[data-theme="kids"] .bar{height:11px;background:#fff;border:2px solid rgba(150,120,180,.12)}
+body[data-theme="kids"] .bar i{background:linear-gradient(90deg,#ff5f6d,#ff9f43,#ffd93d,#6bcb77,#4d96ff,#845ec2,#ff6fb5)}
+body[data-theme="kids"] .jar{
+  border:4px solid rgba(157,126,195,.24);border-top:16px solid #f0b94c;
+  background:linear-gradient(rgba(255,255,255,.95),rgba(244,239,255,.89));
+  box-shadow:inset 18px 0 25px rgba(255,255,255,.85),0 15px 30px rgba(105,80,150,.12)
+}
+body[data-theme="kids"] .jar:after{content:"💬 😊  🌈 ⭐  💖 ✨  😄 💬";font-size:20px;opacity:.11}
+.kidBubble{
+  position:absolute;inset:0;width:52px;height:44px;display:flex;align-items:center;justify-content:center;
+  font-size:27px;border:3px solid rgba(255,255,255,.96);border-radius:20px 20px 20px 7px;
+  background:linear-gradient(145deg,#ffe1ef,#e6f5ff,#f0e7ff,#fff1b8);
+  box-shadow:0 5px 9px rgba(90,65,140,.13)
+}
+.kidBubble:after{
+  content:"";position:absolute;bottom:-7px;left:8px;width:13px;height:13px;background:#f1eaff;
+  border-radius:0 0 0 12px;transform:rotate(20deg)
+}
+body[data-theme="kids"] .petal:nth-child(3n) .kidBubble{border-radius:22px 22px 8px 22px}
+body[data-theme="kids"] .petal:nth-child(3n) .kidBubble:after{left:auto;right:8px}
+body[data-theme="kids"] .petal:nth-child(4n) .kidBubble{background:linear-gradient(145deg,#fff2a9,#ffddeb)}
+body[data-theme="kids"] .petal:nth-child(5n) .kidBubble{background:linear-gradient(145deg,#dff7e6,#dcecff)}
+body[data-theme="kids"] .petal span{
+  width:20px;height:20px;right:-5px;bottom:-4px;left:auto;top:auto;background:#fff;
+  border:2px solid #e5d8f4;font-size:10px;font-weight:800;color:#75589a
+}
+body[data-theme="kids"] .petal.done .kidBubble{opacity:.48;filter:grayscale(.15)}
+.resetEverything{
+  width:100%;margin-top:16px;padding:12px;border:2px solid #e7b5bd;border-radius:17px;
+  background:#fff4f5;color:#a65363;font-weight:700
+}
+body[data-theme="kids"] .resetEverything{
+  font-family:"Baloo 2",Arial,sans-serif;border:3px solid #fff;
+  background:linear-gradient(90deg,#ffe1e8,#fff2ca);color:#a04f6e
+}
+/* Arabic stays traditional/readable */
+body[data-theme="kids"] .arabic,body[data-theme="kids"] .adhArabic{
+  font-family:"Noto Naskh Arabic","Geeza Pro",serif!important
 }
 
-.adhRef{
-text-align:center;
-color:var(--d);
-font-size:11px;
-font-weight:600;
-margin-top:7px
-}
-
-.adhControls{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
-margin-top:12px
-}
-
-.counterBox{
-border:1px solid var(--l);
-background:#fffaf7;
-border-radius:15px;
-padding:7px
-}
-
-.counter{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:8px
-}
-
-.counter button{
-width:34px;
-height:34px;
-border-radius:50%;
-border:1px solid var(--l);
-background:#fff;
-color:var(--d);
-font-size:18px
-}
-
-.count{
-min-width:26px;
-text-align:center;
-color:var(--d);
-font-size:17px;
-font-weight:600
-}
-
-.repeat{
-text-align:center;
-font-size:10px;
-color:var(--m);
-margin-top:3px
-}
-
-.adhAction{
-border:0;
-border-radius:15px;
-color:#fff;
-background:linear-gradient(#e4a0ac,#d68190);
-font-weight:600
-}
-
-.adhAction.done{
-background:#9caf91
-}
-
-.adhFav{
-width:100%;
-border:1px solid var(--l);
-background:#fffaf7;
-border-radius:15px;
-color:var(--d);
-padding:9px;
-margin-top:8px
-}
-
-.adhFav.favOn{
-background:#f4d7dc
-}
-
-.listFooter{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
-margin-top:13px
-}
-
-.setup{
-position:fixed;
-inset:0;
-z-index:300;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:22px;
-background:linear-gradient(#fff8f3,#fffdf9)
-}
-
-body[data-theme="kids"] .setup{
-background:
-radial-gradient(circle at 10% 10%,#ffd8e8 0,transparent 25%),
-radial-gradient(circle at 90% 10%,#d9efff 0,transparent 25%),
-radial-gradient(circle at 10% 90%,#fff0b8 0,transparent 25%),
-radial-gradient(circle at 90% 90%,#ddf4d7 0,transparent 25%),
-#fffdfb
-}
-
-.setupCard{
-width:min(100%,440px);
-background:rgba(255,255,255,.96);
-border:1px solid var(--l);
-border-radius:33px;
-padding:26px 18px;
-text-align:center;
-box-shadow:0 24px 80px rgba(90,60,70,.13)
-}
-
-.setupTitle{
-font-size:53px;
-line-height:.9;
-margin:7px 0
-}
-
-.setupText{
-color:var(--m);
-font-style:italic;
-margin:9px 0 14px
-}
-
-.nameInput{
-width:100%;
-border:1px solid var(--l);
-background:#fff;
-border-radius:17px;
-padding:13px 14px;
-text-align:center;
-color:var(--i);
-font-size:18px;
-outline:none
-}
-
-.formLabel{
-color:var(--m);
-text-transform:uppercase;
-letter-spacing:1.3px;
-font-size:10px;
-margin:13px 0 6px
-}
-
-.themeGrid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:7px;
-margin:10px 0 13px
-}
-
-.themeChoice{
-border:2px solid var(--l);
-background:#fff;
-border-radius:19px;
-padding:12px 6px;
-color:var(--i)
-}
-
-.themeChoice.active{
-border-color:var(--r);
-box-shadow:0 0 0 3px rgba(220,130,160,.1)
-}
-
-.themeChoice span{
-font-size:27px
-}
-
-.themeChoice b{
-display:block;
-font-size:14px;
-margin-top:3px
-}
-
-.themeChoice small{
-display:block;
-color:var(--m);
-font-size:9px
-}
-
-.rainbow{
-font-size:22px;
-letter-spacing:4px;
-margin:7px 0
-}
-
-.modal{
-position:fixed;
-inset:0;
-z-index:250;
-background:rgba(70,50,50,.28);
-backdrop-filter:blur(5px);
-display:flex;
-align-items:center;
-justify-content:center;
-padding:20px
-}
-
-.modalCard{
-width:min(100%,420px);
-background:#fffdf9;
-border:1px solid var(--l);
-border-radius:29px;
-padding:23px 18px;
-text-align:center
-}
-
-.modalTitle{
-font-size:50px;
-line-height:.9
-}
-
-.toast{
-position:fixed;
-z-index:500;
-left:50%;
-bottom:25px;
-transform:translate(-50%,20px);
-background:#5e504c;
-color:#fff;
-padding:9px 13px;
-border-radius:999px;
-font-size:12px;
-opacity:0;
-pointer-events:none;
-transition:.2s;
-white-space:nowrap
-}
-
-.toast.show{
-opacity:1;
-transform:translate(-50%,0)
-}
-
-@media(max-width:390px){
-.hero{font-size:47px}
-.jar{height:525px}
-.petal{width:43px;height:43px}
-.kidFace{width:43px;height:43px;font-size:32px}
-}
 </style>
 </head>
-
 <body>
-
 <div class="app">
-
 <main id="choose">
+<div style="text-align:right"><button class="pill" id="settingsBtn">⚙ Settings</button></div><header class="brand"><div class="brandline">ISLAMIC BLOOM</div><div class="script hero" id="personalHero">Your Daily Deen Companion</div><div class="subtitle">One petal. One reminder. One step closer.</div></header>
+<section class="panel"><div class="overall"><strong id="overallText">Overall Bloom Progress: 0 / 180</strong><div class="bar"><i id="overallBar"></i></div></div><div class="script choose" id="chooseHeading">Choose Your Garden</div><div class="cards" id="cards"></div></section>
+</main>
 
-<div class="settingsRow">
-<button class="pill" id="settingsBtn">⚙ Settings</button>
-</div>
-
-<header class="brand">
-<div class="brandline">ISLAMIC BLOOM</div>
-<div class="script hero" id="personalHero">Your Daily Deen Companion</div>
-<div class="subtitle" id="homeSub">One petal. One reminder. One step closer.</div>
-</header>
-
+<main id="jarView" class="hidden">
+<div class="top"><button class="pill" id="gardensBtn">← Gardens</button><button class="pill" id="shareProgress">♡ Share Progress</button></div>
+<div class="gh"><h2 id="gName">Garden</h2><small id="gSub"></small></div>
 <section class="panel">
-
-<div class="overall">
-<strong id="overallText"></strong>
-<div class="bar"><i id="overallBar"></i></div>
-</div>
-
-<div class="script choose" id="chooseHeading">Choose Your Garden</div>
-
-<div class="cards" id="cards"></div>
-
+<div class="jar"><div class="label"><div class="script">Bloom</div><small>ONE DEED AT A TIME</small></div><div class="zone" id="zone"></div></div>
+<div class="prog" id="gProg"></div><div class="bar"><i id="gBar"></i></div>
+<div class="actions"><button class="btn primary" id="surprise">✨ Surprise Me</button><button class="btn secondary" id="resetGarden">Reset Garden</button></div>
 </section>
+<section class="grow"><div class="script">My Growing Garden</div><div class="growSub">Every completed bloom plants another flower.</div><div class="scene" id="scene"><div class="ground"></div><div class="empty" id="empty">Your first bloom is waiting 🌱</div></div></section>
 </main>
 
-
-<main id="gardenView" class="hidden">
-
-<div class="top">
-<button class="pill" id="gardenBack">← Home</button>
-<button class="pill" id="gardenShare">♡ Share</button>
-</div>
-
-<div class="gardenHeader">
-<h2 class="gardenName" id="gardenTitle"></h2>
-<div class="gardenSub" id="gardenSubtitle"></div>
-</div>
-
-<section class="panel">
-
-<div class="jar">
-
-<div class="jarLabel">
-<div class="script">Bloom</div>
-<small id="jarSmall">ONE DEED AT A TIME</small>
-</div>
-
-<div class="zone" id="zone"></div>
-
-</div>
-
-<div class="progressText" id="gardenProgress"></div>
-
-<div class="bar"><i id="gardenBar"></i></div>
-
-<div class="actions">
-<button class="btn primary" id="surprise">✨ Surprise Me</button>
-<button class="btn secondary" id="resetGarden">Reset Garden</button>
-</div>
-
-</section>
-
-<section class="growing">
-
-<div class="script growTitle" id="growTitle">My Growing Garden</div>
-
-<div class="growSub" id="growSub">
-Every completed bloom plants another flower.
-</div>
-
-<div class="scene" id="scene">
-<div class="ground"></div>
-<div class="empty" id="emptyGarden">Your first bloom is waiting 🌱</div>
-</div>
-
-</section>
+<main id="deedView" class="hidden">
+<div class="top"><button class="pill" id="backJarTop">← Jar</button><span class="pill" id="bloomId">BLOOM 01</span></div>
+<div class="script deedTitle">Today's Bloom</div>
+<section class="deedCard"><div class="cat" id="dCat"></div><div class="deedText" id="dText"></div></section>
+<section class="source"><div class="stype" id="sType"></div><div class="arabic" id="arabic"></div><div class="script reflection" id="reflection"></div><div class="meaning" id="meaning"></div><div class="ref" id="ref"></div></section>
+<div class="twocol"><button class="btn primary" id="done">✓ Mark Complete</button><button class="btn secondary" id="favDeed">♡ Favourite</button></div>
+<button class="btn secondary bigBack" id="backJar">Back to the Jar</button>
 </main>
-
-
-<main id="bloomView" class="hidden">
-
-<div class="top">
-<button class="pill" id="bloomBackTop">← Jar</button>
-<span class="pill" id="bloomNumber"></span>
-</div>
-
-<div class="script deedTitle" id="bloomHeading">Today's Bloom</div>
-
-<section class="deedCard">
-<div class="tag" id="bloomTag"></div>
-<div class="deedText" id="bloomDeed"></div>
-</section>
-
-<section class="source">
-
-<div class="sourceType" id="bloomSource"></div>
-
-<div class="arabic" id="bloomArabic"></div>
-
-<div class="script reflection">Reflection</div>
-
-<div class="meaning" id="bloomMeaning"></div>
-
-<div class="reference" id="bloomReference"></div>
-
-</section>
-
-<div class="twoButtons">
-
-<button class="btn primary" id="bloomComplete">
-✓ I Bloomed This
-</button>
-
-<button class="btn secondary" id="bloomShare">
-♡ Share
-</button>
-
-</div>
-
-<button class="btn secondary" id="bloomFavourite" style="margin-top:8px">
-♡ Add to Favourites
-</button>
-
-<button class="btn primary backScript" id="bloomBack">
-Back to Jar
-</button>
-
-</main>
-
 
 <main id="adhkarView" class="hidden">
-
-<div class="top">
-<button class="pill" id="adhBack">← Home</button>
-<button class="pill" id="adhReset">Reset Today</button>
-</div>
-
-<header class="listHeader">
-
-<div class="brandline">ISLAMIC BLOOM</div>
-
-<div class="script" id="adhTitle"></div>
-
-<p id="adhSub"></p>
-
-</header>
-
-<div class="listProgress">
-
-<strong id="adhProgText"></strong>
-
-<div class="bar">
-<i id="adhBar"></i>
-</div>
-
-</div>
-
-<div class="adhkarList" id="adhList"></div>
-
-<div class="listFooter">
-
-<button class="btn secondary" id="adhShare">
-♡ Share
-</button>
-
-<button class="btn primary" id="adhAll">
-✓ Mark All Done
-</button>
-
-</div>
-
+<div class="top"><button class="pill" id="adhkarBack">← Home</button><button class="pill" id="adhkarReset">Reset Today</button></div>
+<div class="adhkarHero"><div class="script" id="adhkarTitle">Morning Adhkar</div><p id="adhkarIntro"></p></div>
+<div class="adhProg"><strong id="adhProgText"></strong><div class="bar"><i id="adhBar"></i></div></div>
+<div class="adhList" id="adhList"></div>
+<div class="adhFoot"><button class="btn secondary" id="adhBackBottom">← Home</button><button class="btn primary" id="adhShare">Share Progress</button></div>
+<div class="note">Read with presence and sincerity. Counts shown are the commonly reported repetitions for these remembrances.</div>
 </main>
 
+<main id="favView" class="hidden">
+<div class="top"><button class="pill" id="favBack">← Home</button><span class="pill">♡ My Favourites</span></div>
+<div class="script deedTitle">Favourite Jar</div>
+<section class="panel"><div id="favList"></div></section>
+</main>
 </div>
-
-
-<div class="setup hidden" id="setup">
-
-<div class="setupCard">
-
-<div class="brandline">ISLAMIC BLOOM</div>
-
-<div class="script setupTitle">
-Welcome to Islamic Bloom
-</div>
-
-<div class="setupText">
-Your personal space to grow, remember & reflect.
-</div>
-
-<div class="rainbow">
-🌸 ⭐ 😊 🌈 ✨
-</div>
-
-<div class="formLabel">
-What should we call you?
-</div>
-
-<input
-class="nameInput"
-id="setupName"
-maxlength="24"
-placeholder="Your name"
->
-
-<div class="formLabel">
-Choose your Bloom style
-</div>
-
-<div class="themeGrid">
-
-<button class="themeChoice active" id="feminineChoice">
-<span>🌸</span>
-<b>Blush Bloom</b>
-<small>Pink · cream · gold</small>
-</button>
-
-<button class="themeChoice" id="masculineChoice">
-<span>🌿</span>
-<b>Blue Bloom</b>
-<small>Dusty blue · cream</small>
-</button>
-
-<button class="themeChoice" id="kidsChoice">
-<span>🌈</span>
-<b>Kids Bloom</b>
-<small>Colours · stars · smiles</small>
-</button>
-
-</div>
-
-<button class="btn primary" id="beginBloom">
-Begin My Bloom
-</button>
-
-</div>
-</div>
-
 
 <div class="modal hidden" id="settingsModal">
-
-<div class="modalCard">
-
-<div class="brandline">ISLAMIC BLOOM</div>
-
-<div class="script modalTitle">
-My Settings
+<div class="modalBox">
+<div class="script modalTitle">My Islamic Bloom</div>
+<div class="settingsLabel">Your name</div>
+<input class="nameInput" id="settingsName" maxlength="30" placeholder="Your name">
+<div class="settingsLabel">Choose your style</div>
+<div class="themePick" id="settingsThemes">
+<button class="themeChoice" data-theme-choice="feminine">🌸<b>Blush</b><small>Women</small></button>
+<button class="themeChoice" data-theme-choice="masculine">🌙<b>Blue</b><small>Men</small></button>
+<button class="themeChoice" data-theme-choice="kids">🌈<b>Kids</b><small>Fun & simple</small></button>
+</div>
+<button class="btn primary" id="saveSettings">Save</button>
+<button class="btn secondary" id="closeSettings" style="margin-top:8px">Cancel</button>
+<button class="resetEverything" id="resetEverything">↻ Start Fresh / Reset Everything</button>
+</div>
 </div>
 
-<div class="formLabel">Name</div>
-
-<input class="nameInput" id="settingsName" maxlength="24">
-
-<div class="formLabel">Style</div>
-
-<div class="themeGrid">
-
-<button class="themeChoice" id="settingsFeminine">
-🌸
-<b>Blush</b>
-</button>
-
-<button class="themeChoice" id="settingsMasculine">
-🌿
-<b>Blue</b>
-</button>
-
-<button class="themeChoice" id="settingsKids">
-🌈
-<b>Kids</b>
-</button>
-
+<div class="setup hidden" id="setup">
+<div class="setupCard">
+<div class="brandline">WELCOME TO</div>
+<div class="script setupTitle">Islamic Bloom</div>
+<div class="setupText">Your own little space to grow in deen, one beautiful deed at a time.</div>
+<input class="nameInput" id="setupName" maxlength="30" placeholder="What should we call you?">
+<div class="settingsLabel">Who is this Bloom for?</div>
+<div class="themePick">
+<button class="themeChoice active" data-setup-theme="feminine">🌸<b>Woman</b><small>Blush garden</small></button>
+<button class="themeChoice" data-setup-theme="masculine">🌙<b>Man</b><small>Blue garden</small></button>
+<button class="themeChoice" data-setup-theme="kids">🌈<b>Child</b><small>Kids Bloom</small></button>
 </div>
-
-<button class="btn primary" id="saveSettings">
-Save Changes
-</button>
-
-<button class="btn secondary" id="closeSettings" style="margin-top:8px">
-Cancel
-</button>
-
+<div class="kidsBanner hidden" id="kidsBanner">🌈 😊 ⭐ 💖 ✨ 😄</div>
+<button class="btn primary" id="beginBtn">Begin My Bloom ✨</button>
 </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-
 const $=id=>document.getElementById(id);
+const storeKey="islamicBloom_v6";
+const profileKey="islamicBloom_profile_v1";
+const favKey="islamicBloom_favourites_v1";
+const seedKey="islamicBloom_user_seed_v1";
 
-const PROFILE_KEY="ibProfile";
+let PROFILE=JSON.parse(localStorage.getItem(profileKey)||"null");
+let pendingTheme=PROFILE?.theme||"feminine";
 
-let pendingTheme="feminine";
-let garden="mixed";
-let bloomIndex=0;
-let mode="garden";
-
-
-function toast(text){
-
-$("toast").textContent=text;
-$("toast").classList.add("show");
-
-setTimeout(
-()=>$("toast").classList.remove("show"),
-1600
-);
-
+let USER_SEED=localStorage.getItem(seedKey);
+if(!USER_SEED){
+  USER_SEED=Math.floor(Math.random()*1000000000).toString();
+  localStorage.setItem(seedKey,USER_SEED);
 }
-
-
-function profile(){
-
-try{
-return JSON.parse(
-localStorage.getItem(PROFILE_KEY)||"null"
-);
-}catch(e){
-return null
-}
-
-}
-
-
-function saveProfile(p){
-
-localStorage.setItem(
-PROFILE_KEY,
-JSON.stringify(p)
-);
-
-applyProfile();
-renderMenu();
-
-}
-
-
-function activeTheme(){
-
-const p=profile();
-
-return p &&
-["feminine","masculine","kids"].includes(p.theme)
-?p.theme
-:"feminine";
-
-}
-
+USER_SEED=Number(USER_SEED)||1;
 
 function isKids(){
-return activeTheme()==="kids"
+  return (PROFILE?.theme||pendingTheme)==="kids";
 }
-
 
 function applyProfile(){
-
-const p=profile();
-const theme=activeTheme();
-
-document.body.dataset.theme=theme;
-
-if(p&&p.name){
-
-$("personalHero").textContent=
-theme==="kids"
-?p.name+"'s Happy Bloom"
-:p.name+"'s Islamic Bloom";
-
-document.title=
-p.name+"'s Islamic Bloom";
-
-}else{
-
-$("personalHero").textContent=
-"Your Daily Deen Companion";
-
+  const theme=PROFILE?.theme||pendingTheme||"feminine";
+  document.body.dataset.theme=theme;
+  const nm=(PROFILE?.name||"").trim();
+  $("personalHero").textContent=nm?`${nm}'s Islamic Bloom`:"Your Daily Deen Companion";
+  $("chooseHeading").textContent=theme==="kids"?"Pick Your Fun Garden":"Choose Your Garden";
+  document.querySelectorAll("[data-theme-choice]").forEach(b=>b.classList.toggle("active",b.dataset.themeChoice===theme));
+  if(PROFILE){
+    $("settingsName").value=PROFILE.name||"";
+  }
 }
 
-$("homeSub").textContent=
-theme==="kids"
-?"Learn, smile, make dua & grow 🌈"
-:"One petal. One reminder. One step closer.";
-
-$("chooseHeading").textContent=
-theme==="kids"
-?"What Shall We Do Today?"
-:"Choose Your Garden";
-
+function toast(t){
+  $("toast").textContent=t;
+  $("toast").classList.add("show");
+  clearTimeout(window.__tt);
+  window.__tt=setTimeout(()=>$("toast").classList.remove("show"),1500);
 }
 
-
-function show(id){
-
-["choose","gardenView","bloomView","adhkarView"]
-.forEach(x=>$(x).classList.toggle("hidden",x!==id));
-
-window.scrollTo(0,0);
-
-}
-
-
-function share(text,title="Islamic Bloom"){
-
-if(navigator.share){
-
-navigator.share({title,text}).catch(()=>{});
-
-}else if(navigator.clipboard){
-
-navigator.clipboard.writeText(text);
-
-toast("Copied — ready to share ♡");
-
-}
-
-}
-
-
-/* ===========================
-   BLOOMS
-=========================== */
-
-const G={
-
-mixed:{
-name:"Mixed Garden",
-icon:"🌸",
-sub:"A little of everything"
-},
-
-sadaqah:{
-name:"Sadaqah Garden",
-icon:"🤍",
-sub:"Give, help & spread goodness"
-},
-
-dhikr:{
-name:"Dhikr Garden",
-icon:"✨",
-sub:"Remember Allah throughout your day"
-},
-
-gratitude:{
-name:"Gratitude Garden",
-icon:"🌷",
-sub:"Notice, thank & appreciate"
-},
-
-character:{
-name:"Character Garden",
-icon:"🌿",
-sub:"Grow beautiful character"
-},
-
-family:{
-name:"Family & Kindness",
-icon:"💗",
-sub:"Bring goodness into your home"
-}
-
-};
-
-
-const DEEDS={
-
-sadaqah:[
-"Give a small amount of sadaqah quietly.",
-"Offer someone a kind word.",
-"Give water to someone.",
-"Share food.",
-"Donate something useful.",
-"Help someone carry something.",
-"Make someone's task easier.",
-"Help without being asked.",
-"Give someone your full attention.",
-"Support a person who is struggling.",
-"Help tidy a shared space.",
-"Share beneficial knowledge.",
-"Give a thoughtful gift.",
-"Help a neighbour.",
-"Pay for something small for someone.",
-"Give without mentioning what you gave.",
-"Make sincere dua for someone.",
-"Offer encouragement.",
-"Share something you genuinely like.",
-"Contribute to a community need.",
-"Set aside money for charity.",
-"Help a relative.",
-"Smile and speak kindly.",
-"Choose one quiet act of goodness.",
-"Share a meal.",
-"Offer practical help.",
-"Give something you no longer need.",
-"Help solve someone's problem.",
-"Choose generosity today.",
-"Do one good deed only Allah knows about."
-],
-
-dhikr:[
-"Say SubhanAllah slowly.",
-"Say Alhamdulillah mindfully.",
-"Say Allahu Akbar.",
-"Say Astaghfirullah sincerely.",
-"Say La ilaha illa Allah.",
-"Send salawat upon the Prophet ﷺ.",
-"Make dhikr while walking.",
-"Use one waiting moment for dhikr.",
-"Say SubhanAllah when you see beauty.",
-"Say Alhamdulillah for guidance.",
-"Say La hawla wa la quwwata illa billah.",
-"Make istighfar after a mistake.",
-"Begin a task with Bismillah.",
-"End a task with Alhamdulillah.",
-"Spend one quiet minute remembering Allah.",
-"Make dhikr after salah.",
-"Remember Allah before sleep.",
-"Make dhikr after waking.",
-"Reflect on one Name of Allah.",
-"Replace one complaint with Alhamdulillah.",
-"Read a small portion of Qur'an.",
-"Make dhikr during your commute.",
-"Pause your phone and remember Allah.",
-"Say SubhanAllah, Alhamdulillah and Allahu Akbar.",
-"Finish the day with istighfar.",
-"Remember Allah during a difficult moment.",
-"Say Alhamdulillah for your health.",
-"Say Allahu Akbar when overwhelmed.",
-"Make one minute completely for dhikr.",
-"Remember Allah with your heart, not only your tongue."
-],
-
-gratitude:[
-"Write three blessings.",
-"Thank Allah for your health.",
-"Thank Allah for your family.",
-"Notice one everyday blessing.",
-"Thank Allah for clean water.",
-"Thank Allah for food.",
-"Thank someone who helps you.",
-"Thank Allah for safety.",
-"Notice beauty in nature.",
-"Remember a hardship Allah brought you through.",
-"Thank Allah for guidance.",
-"Thank Allah for another chance.",
-"Thank Allah for your ability to make dua.",
-"Notice one blessing in your body.",
-"Thank Allah for your home.",
-"Thank Allah for someone who loves you.",
-"Choose gratitude instead of comparison.",
-"Name one blessing money cannot buy.",
-"Thank Allah for something small.",
-"Think of an answered dua.",
-"Say Alhamdulillah slowly.",
-"Write: Alhamdulillah for…",
-"Thank Allah for your ability to learn.",
-"Notice one convenience you normally forget.",
-"Thank Allah for a peaceful moment.",
-"Remember someone who taught you something.",
-"Thank Allah for your senses.",
-"Thank Allah for today's opportunities.",
-"End your day naming five blessings.",
-"Turn one complaint into gratitude."
-],
-
-character:[
-"Pause before responding when annoyed.",
-"Forgive one small mistake.",
-"Speak gently.",
-"Walk away from an unnecessary argument.",
-"Avoid backbiting.",
-"Give someone the benefit of the doubt.",
-"Keep a promise.",
-"Admit a mistake.",
-"Apologise sincerely.",
-"Do not interrupt.",
-"Be patient with someone.",
-"Lower your voice during tension.",
-"Choose humility over the last word.",
-"Do what is fair.",
-"Speak well of someone absent.",
-"Avoid hurtful sarcasm.",
-"Keep a private matter private.",
-"Do not repeat gossip.",
-"Correct someone gently.",
-"Refuse to mock anyone.",
-"Control one angry reaction.",
-"Let someone else go first.",
-"Be truthful and kind.",
-"Show mercy instead of harshness.",
-"Let go of one petty resentment.",
-"Respond to ignorance peacefully.",
-"Practice patience while waiting.",
-"Choose the kinder wording.",
-"Think before you speak.",
-"Do one thing today with ihsan."
-],
-
-family:[
-"Speak softly to your parents.",
-"Make dua for your parents.",
-"Help prepare a meal.",
-"Clean up without being asked.",
-"Message a relative you miss.",
-"Ask someone at home how they are.",
-"Give someone your full attention.",
-"Put your phone away during family time.",
-"Help a child patiently.",
-"Check on an elderly relative.",
-"Thank a family member.",
-"Do someone else's chore.",
-"Be patient with a child.",
-"Avoid raising your voice.",
-"Show affection.",
-"Make peace after tension.",
-"Share food with family.",
-"Make dua for someone by name.",
-"Offer help before being asked.",
-"Say something encouraging.",
-"Do not bring up an old mistake.",
-"Thank someone for something routine.",
-"Make home easier for another person.",
-"Call a relative.",
-"Listen without interrupting.",
-"Give an elder respectful attention.",
-"Do something thoughtful for your spouse.",
-"Help your sibling.",
-"Choose gentleness at home.",
-"Create one peaceful moment in your home."
-]
-
-};
-
-
-DEEDS.mixed=[];
-
-for(let i=0;i<6;i++){
-
-DEEDS.mixed.push(
-DEEDS.sadaqah[i],
-DEEDS.dhikr[i],
-DEEDS.gratitude[i],
-DEEDS.character[i],
-DEEDS.family[i]
-);
-
-}
-
-
-const K=[
-"mixed",
-"sadaqah",
-"dhikr",
-"gratitude",
-"character",
-"family"
+const adultGardens=[
+{id:"mixed",name:"Mixed Garden",icon:"🌸",sub:"A little of everything — your all-in-one daily deen jar."},
+{id:"sadaqah",name:"Sadaqah Garden",icon:"🤍",sub:"Small acts of charity and kindness that bloom into reward."},
+{id:"dhikr",name:"Dhikr Garden",icon:"📿",sub:"Simple remembrance to keep your tongue and heart connected to Allah."},
+{id:"gratitude",name:"Gratitude Garden",icon:"🌷",sub:"Pause, notice your blessings, and say Alhamdulillah."},
+{id:"character",name:"Character Garden",icon:"🌿",sub:"Grow patience, mercy, honesty, gentleness and beautiful manners."},
+{id:"family",name:"Family & Kindness",icon:"💗",sub:"Bring warmth, service and mercy into your home."}
 ];
 
+const kidsGardens=[
+{id:"mixed",name:"My Good Deeds",icon:"😊",sub:"Easy good deeds you can do today!"},
+{id:"dhikr",name:"Little Dhikr",icon:"⭐",sub:"Short and simple words to remember Allah."},
+{id:"gratitude",name:"Thank You Allah",icon:"🌈",sub:"Think of all the lovely things Allah gave you."},
+{id:"character",name:"Kind Heart",icon:"💖",sub:"Practice kindness, patience and good manners."}
+];
 
-const BLOOM_REFERENCES={
+const extraCards=[
+{id:"morning",name:"Morning Adhkar",icon:"☀️",sub:"Start your day protected and remembering Allah.",adhkar:true},
+{id:"evening",name:"Evening Adhkar",icon:"🌙",sub:"End your day with remembrance, protection and peace.",adhkar:true},
+{id:"favourites",name:"Favourite Jar",icon:"♡",sub:"Save the blooms and adhkar you want to come back to.",fav:true}
+];
 
-sadaqah:[
+const kidsExtraCards=[
+{id:"kidsduas",name:"My Easy Duas",icon:"🤲",sub:"Simple everyday duas for sleeping, eating, home and more.",kidsDuas:true},
+{id:"favourites",name:"My Favourites",icon:"💖",sub:"Keep your favourite good deeds and duas here.",fav:true}
+];
+
+const base=[
 {
+id:1,
+cat:"Qur'an",
+text:"Read one page of Qur'an today — slowly, even if it is only a few verses.",
+type:"Qur'an • Surah Al-Isra",
+arabic:"إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ",
+reflection:"A little Qur'an still blooms.",
+meaning:"Indeed, this Qur'an guides to that which is most upright.",
+ref:"Qur'an 17:9"
+},
+{
+id:2,
+cat:"Dhikr",
+text:"Say SubhanAllahi wa bihamdihi 100 times today.",
+type:"Dhikr",
+arabic:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+reflection:"Light words. Heavy reward.",
+meaning:"Glory is to Allah and praise is to Him.",
+ref:"Sahih al-Bukhari 6405"
+},
+{
+id:3,
+cat:"Sadaqah",
+text:"Give something today — money, food, water, help, or even a sincere smile.",
+type:"Hadith",
 arabic:"كُلُّ مَعْرُوفٍ صَدَقَةٌ",
-meaning:"Every act of goodness is charity.",
+reflection:"Goodness is never small with Allah.",
+meaning:"Every good deed is charity.",
 ref:"Sahih Muslim 1005"
 },
 {
-arabic:"وَالْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ",
-meaning:"A good word is charity.",
-ref:"Sahih al-Bukhari 2891"
-},
-{
-arabic:"لَن تَنَالُوا۟ ٱلْبِرَّ حَتَّىٰ تُنفِقُوا۟ مِمَّا تُحِبُّونَ",
-meaning:"Righteousness includes giving from what you love.",
-ref:"Qur'an 3:92"
-}
-],
-
-dhikr:[
-{
-arabic:"أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ",
-meaning:"Hearts find rest in the remembrance of Allah.",
-ref:"Qur'an 13:28"
-},
-{
-arabic:"فَٱذْكُرُونِىٓ أَذْكُرْكُمْ",
-meaning:"Remember Allah, and He will remember you.",
-ref:"Qur'an 2:152"
-}
-],
-
-gratitude:[
-{
+id:4,
+cat:"Gratitude",
+text:"Name three blessings you usually forget to thank Allah for.",
+type:"Qur'an • Surah Ibrahim",
 arabic:"لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",
-meaning:"Allah promises increase for gratitude.",
+reflection:"Notice it. Thank Him for it.",
+meaning:"If you are grateful, I will surely increase you.",
 ref:"Qur'an 14:7"
 },
 {
-arabic:"وَإِن تَعُدُّوا۟ نِعْمَةَ ٱللَّهِ لَا تُحْصُوهَآ",
-meaning:"Allah's blessings are beyond counting.",
-ref:"Qur'an 16:18"
-}
-],
-
-character:[
-{
-arabic:"وَٱلْكَٰظِمِينَ ٱلْغَيْظَ وَٱلْعَافِينَ عَنِ ٱلنَّاسِ",
-meaning:"Allah praises those who restrain anger and pardon others.",
-ref:"Qur'an 3:134"
+id:5,
+cat:"Character",
+text:"Choose gentleness today, especially when you could easily respond harshly.",
+type:"Hadith",
+arabic:"إِنَّ الرِّفْقَ لَا يَكُونُ فِي شَيْءٍ إِلَّا زَانَهُ",
+reflection:"Gentleness beautifies.",
+meaning:"Gentleness is not in anything except that it beautifies it.",
+ref:"Sahih Muslim 2594"
 },
 {
-arabic:"يَقُولُوا۟ ٱلَّتِى هِىَ أَحْسَنُ",
-meaning:"Say that which is best.",
-ref:"Qur'an 17:53"
-}
-],
-
-family:[
-{
-arabic:"وَقُل لَّهُمَا قَوْلًا كَرِيمًا",
-meaning:"Speak to your parents with gracious words.",
-ref:"Qur'an 17:23"
+id:6,
+cat:"Family",
+text:"Do one helpful thing for your family before anyone asks you.",
+type:"Reflection",
+arabic:"",
+reflection:"Serve with love, not applause.",
+meaning:"Turn ordinary help at home into worship through sincere intention.",
+ref:"Daily reflection"
 },
 {
-arabic:"وَقُل رَّبِّ ٱرْحَمْهُمَا كَمَا رَبَّيَانِى صَغِيرًا",
-meaning:"Ask Allah to have mercy upon your parents.",
+id:7,
+cat:"Dhikr",
+text:"Say Astaghfirullah 100 times throughout the day.",
+type:"Dhikr",
+arabic:"أَسْتَغْفِرُ اللَّهَ",
+reflection:"Return again and again.",
+meaning:"I seek forgiveness from Allah.",
+ref:"Daily istighfar"
+},
+{
+id:8,
+cat:"Qur'an",
+text:"Read Ayatul Kursi with attention and reflect on Allah's greatness.",
+type:"Qur'an • Ayatul Kursi",
+arabic:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",
+reflection:"Allah is enough.",
+meaning:"Allah — there is no deity except Him, the Ever-Living, the Sustainer of all existence.",
+ref:"Qur'an 2:255"
+},
+{
+id:9,
+cat:"Sadaqah",
+text:"Put out clean water or food for a bird or animal.",
+type:"Hadith",
+arabic:"فِي كُلِّ كَبِدٍ رَطْبَةٍ أَجْرٌ",
+reflection:"Mercy reaches every living thing.",
+meaning:"There is a reward for serving every living being.",
+ref:"Sahih al-Bukhari 2363"
+},
+{
+id:10,
+cat:"Gratitude",
+text:"Say Alhamdulillah slowly ten times and think of a different blessing each time.",
+type:"Dhikr",
+arabic:"الْحَمْدُ لِلَّهِ",
+reflection:"Let gratitude become a habit.",
+meaning:"All praise and thanks belong to Allah.",
+ref:"Daily gratitude"
+},
+{
+id:11,
+cat:"Character",
+text:"Hold your tongue from one complaint, insult, or piece of gossip today.",
+type:"Hadith",
+arabic:"فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+reflection:"Good words — or beautiful silence.",
+meaning:"Let them speak good or remain silent.",
+ref:"Sahih al-Bukhari 6018; Sahih Muslim 47"
+},
+{
+id:12,
+cat:"Family",
+text:"Make a sincere dua for your parents and family by name.",
+type:"Qur'an • Dua",
+arabic:"رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+reflection:"Carry them in your dua.",
+meaning:"My Lord, have mercy upon them as they raised me when I was small.",
 ref:"Qur'an 17:24"
+},
+{
+id:13,
+cat:"Dhikr",
+text:"Send salawat upon Prophet Muhammad ﷺ ten times.",
+type:"Qur'an",
+arabic:"إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ",
+reflection:"Send peace upon the beloved ﷺ.",
+meaning:"Indeed Allah and His angels send blessings upon the Prophet.",
+ref:"Qur'an 33:56"
+},
+{
+id:14,
+cat:"Sadaqah",
+text:"Send someone a kind message that genuinely lifts their heart.",
+type:"Reflection",
+arabic:"",
+reflection:"Kindness can arrive as a sentence.",
+meaning:"Use your words as a form of generosity today.",
+ref:"Daily reflection"
+},
+{
+id:15,
+cat:"Gratitude",
+text:"Thank Allah for one difficult thing that eventually taught you something.",
+type:"Qur'an",
+arabic:"وَعَسَىٰ أَنْ تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَكُمْ",
+reflection:"Some blessings arrive disguised.",
+meaning:"Perhaps you dislike a thing and it is good for you.",
+ref:"Qur'an 2:216"
+},
+{
+id:16,
+cat:"Character",
+text:"Forgive one small thing today instead of replaying it in your mind.",
+type:"Qur'an",
+arabic:"وَلْيَعْفُوا وَلْيَصْفَحُوا",
+reflection:"Release it for Allah.",
+meaning:"Let them pardon and overlook.",
+ref:"Qur'an 24:22"
+},
+{
+id:17,
+cat:"Family",
+text:"Give someone at home ten minutes of your full attention — no phone.",
+type:"Reflection",
+arabic:"",
+reflection:"Presence is a form of love.",
+meaning:"Give the people Allah entrusted to you your attention.",
+ref:"Daily reflection"
+},
+{
+id:18,
+cat:"Dhikr",
+text:"Say La hawla wa la quwwata illa billah whenever you feel overwhelmed today.",
+type:"Dhikr",
+arabic:"لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+reflection:"Your strength comes from Him.",
+meaning:"There is no power and no strength except through Allah.",
+ref:"Sahih al-Bukhari 6384"
+},
+{
+id:19,
+cat:"Qur'an",
+text:"Read Surah Al-Ikhlas three times with attention to its meaning.",
+type:"Qur'an • Surah Al-Ikhlas",
+arabic:"قُلْ هُوَ اللَّهُ أَحَدٌ",
+reflection:"Know the One you worship.",
+meaning:"Say: He is Allah, the One.",
+ref:"Qur'an 112:1"
+},
+{
+id:20,
+cat:"Sadaqah",
+text:"Remove something harmful, messy, or inconvenient from another person's path.",
+type:"Hadith",
+arabic:"",
+reflection:"Clear the way.",
+meaning:"Removing harm from the road is a branch of faith.",
+ref:"Sahih Muslim 35"
+},
+{
+id:21,
+cat:"Gratitude",
+text:"Look around your home and choose five ordinary things to thank Allah for.",
+type:"Reflection",
+arabic:"",
+reflection:"Ordinary blessings are still blessings.",
+meaning:"Train your heart to notice what it has.",
+ref:"Daily reflection"
+},
+{
+id:22,
+cat:"Character",
+text:"Give someone the benefit of the doubt today instead of assuming the worst.",
+type:"Reflection",
+arabic:"",
+reflection:"Protect your heart from suspicion.",
+meaning:"Choose the interpretation that preserves goodness when you reasonably can.",
+ref:"Daily reflection"
+},
+{
+id:23,
+cat:"Family",
+text:"Tell a family member one specific thing you appreciate about them.",
+type:"Reflection",
+arabic:"",
+reflection:"Say the good while you can.",
+meaning:"Gratitude between people strengthens love.",
+ref:"Daily reflection"
+},
+{
+id:24,
+cat:"Dhikr",
+text:"Say Hasbunallahu wa ni'mal wakeel seven times and hand one worry to Allah.",
+type:"Qur'an",
+arabic:"حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+reflection:"Hand the worry back to Allah.",
+meaning:"Allah is sufficient for us, and He is the best disposer of affairs.",
+ref:"Qur'an 3:173"
+},
+{
+id:25,
+cat:"Qur'an",
+text:"Read the last two verses of Surah Al-Baqarah tonight.",
+type:"Qur'an",
+arabic:"آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ",
+reflection:"Close your day with revelation.",
+meaning:"The Messenger has believed in what was revealed to him from his Lord.",
+ref:"Qur'an 2:285–286"
+},
+{
+id:26,
+cat:"Sadaqah",
+text:"Give a small amount secretly for the sake of Allah alone.",
+type:"Reflection",
+arabic:"",
+reflection:"Let Allah be the only One who needs to know.",
+meaning:"Protect the sincerity of your charity.",
+ref:"Daily reflection"
+},
+{
+id:27,
+cat:"Gratitude",
+text:"Write down one dua Allah answered in a way you did not expect.",
+type:"Reflection",
+arabic:"",
+reflection:"Remember the answered prayers.",
+meaning:"Looking back can strengthen your trust going forward.",
+ref:"Daily reflection"
+},
+{
+id:28,
+cat:"Character",
+text:"Apologise sincerely if you know you hurt or wronged someone.",
+type:"Reflection",
+arabic:"",
+reflection:"Humility repairs.",
+meaning:"A sincere apology can be an act of courage and good character.",
+ref:"Daily reflection"
+},
+{
+id:29,
+cat:"Family",
+text:"Make dua for peace, mercy and barakah inside your home.",
+type:"Qur'an • Dua",
+arabic:"رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ",
+reflection:"Ask Allah to beautify your home from within.",
+meaning:"Our Lord, grant us from our spouses and offspring comfort to our eyes.",
+ref:"Qur'an 25:74"
+},
+{
+id:30,
+cat:"Dhikr",
+text:"Say SubhanAllahi wa bihamdihi, SubhanAllahil-'Azim ten times.",
+type:"Dhikr",
+arabic:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ سُبْحَانَ اللَّهِ الْعَظِيمِ",
+reflection:"Beloved words.",
+meaning:"Glory and praise be to Allah; glory be to Allah the Magnificent.",
+ref:"Sahih al-Bukhari 6406"
 }
-]
-
-};
-
-
-function referenceFor(key,index){
-
-let sourceKey=key;
-
-if(key==="mixed"){
-
-const types=[
-"sadaqah",
-"dhikr",
-"gratitude",
-"character",
-"family"
 ];
 
-sourceKey=
-types[index%5];
-
-}
-
-const refs=
-BLOOM_REFERENCES[sourceKey];
-
-return refs[index%refs.length];
-
-}
-
-
-function lp(key){
-
-try{
-
-return JSON.parse(
-localStorage.getItem(
-"ibGarden_"+key
-)||"[]"
-);
-
-}catch(e){
-
-return [];
-
-}
-
-}
-
-
-function sp(key,value){
-
-localStorage.setItem(
-"ibGarden_"+key,
-JSON.stringify(value)
-);
-
-}
-
-
-function favs(){
-
-try{
-
-return JSON.parse(
-localStorage.getItem("ibFavs")
-||"[]"
-);
-
-}catch(e){
-
-return [];
-
-}
-
-}
-
-
-function sf(a){
-
-localStorage.setItem(
-"ibFavs",
-JSON.stringify(a)
-);
-
-}
-
-
-function total(){
-
-return K.reduce(
-(a,k)=>a+lp(k).length,
-0
-);
-
-}
-
-
-/* ===========================
-   MORNING ADHKAR
-=========================== */
-
-const THREE_QULS_ARABIC=
-`بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-قُلْ هُوَ اللَّهُ أَحَدٌ
+const adhkarMorning=[
+{
+name:"Ayatul Kursi",
+arabic:`اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ`,
+translit:`Allahu la ilaha illa Huwa, Al-Hayyul-Qayyum. La ta'khudhuhu sinatun wa la nawm. Lahu ma fis-samawati wa ma fil-ard. Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih. Ya'lamu ma bayna aydihim wa ma khalfahum, wa la yuhituna bi shay'in min 'ilmihi illa bima sha'. Wasi'a kursiyyuhus-samawati wal-ard, wa la ya'uduhu hifdhuhuma, wa Huwal-'Aliyyul-'Azim.`,
+meaning:"Allah — there is no deity except Him, the Ever-Living, the Sustainer of all existence. Neither drowsiness nor sleep overtakes Him. To Him belongs whatever is in the heavens and whatever is on the earth. Who can intercede with Him except by His permission? He knows what is before them and what is behind them, and they encompass nothing of His knowledge except what He wills. His Kursi extends over the heavens and the earth, and preserving them does not tire Him. He is the Most High, the Most Great.",
+ref:"Qur'an 2:255",
+repeat:1
+},
+{
+name:"Surah Al-Ikhlas",
+arabic:`قُلْ هُوَ اللَّهُ أَحَدٌ
 اللَّهُ الصَّمَدُ
 لَمْ يَلِدْ وَلَمْ يُولَدْ
-وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ
-
-بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ
-مِن شَرِّ مَا خَلَقَ
-وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ
-وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ
-وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ
-
-بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-قُلْ أَعُوذُ بِرَبِّ النَّاسِ
-مَلِكِ النَّاسِ
-إِلَٰهِ النَّاسِ
-مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ
-الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ
-مِنَ الْجِنَّةِ وَالنَّاسِ`;
-
-
-const THREE_QULS_TRANSLIT=
-`Bismillahir-Rahmanir-Rahim.
-Qul Huwallahu Ahad.
-Allahus-Samad.
+وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ`,
+translit:`Qul huwa Allahu ahad.
+Allahu-s-Samad.
 Lam yalid wa lam yulad.
-Wa lam yakun lahu kufuwan ahad.
-
-Bismillahir-Rahmanir-Rahim.
-Qul a'udhu bi Rabbil-falaq.
+Wa lam yakun lahu kufuwan ahad.`,
+meaning:"Say: He is Allah, the One. Allah, the Self-Sufficient. He neither begets nor is born, and there is none comparable to Him.",
+ref:"Qur'an 112:1–4",
+repeat:3
+},
+{
+name:"Surah Al-Falaq",
+arabic:`قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ
+مِنْ شَرِّ مَا خَلَقَ
+وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ
+وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ
+وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ`,
+translit:`Qul a'udhu bi Rabbil-falaq.
 Min sharri ma khalaq.
 Wa min sharri ghasiqin idha waqab.
 Wa min sharrin-naffathati fil-'uqad.
-Wa min sharri hasidin idha hasad.
-
-Bismillahir-Rahmanir-Rahim.
-Qul a'udhu bi Rabbin-nas.
+Wa min sharri hasidin idha hasad.`,
+meaning:"Say: I seek refuge in the Lord of daybreak, from the evil of what He created, from the evil of darkness when it settles, from the evil of those who blow on knots, and from the evil of an envier when he envies.",
+ref:"Qur'an 113:1–5",
+repeat:3
+},
+{
+name:"Surah An-Nas",
+arabic:`قُلْ أَعُوذُ بِرَبِّ النَّاسِ
+مَلِكِ النَّاسِ
+إِلَٰهِ النَّاسِ
+مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ
+الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ
+مِنَ الْجِنَّةِ وَالنَّاسِ`,
+translit:`Qul a'udhu bi Rabbin-nas.
 Malikin-nas.
 Ilahin-nas.
 Min sharril-waswasil-khannas.
 Alladhi yuwaswisu fi sudurin-nas.
-Minal-jinnati wan-nas.`;
-
-
-const MORNING=[
-
-{
-title:"Ayat al-Kursi",
-arabic:`اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ
-لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ
-لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ
-مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ
-يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ
-وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ
-وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ
-وَلَا يَئُودُهُ حِفْظُهُمَا
-وَهُوَ الْعَلِيُّ الْعَظِيمُ`,
-translit:`Allahu la ilaha illa Huwal-Hayyul-Qayyum.
-La ta'khudhuhu sinatun wa la nawm.
-Lahu ma fis-samawati wa ma fil-ard.
-Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih.
-Ya'lamu ma bayna aydihim wa ma khalfahum.
-Wa la yuhituna bi shay'in min 'ilmihi illa bima sha'.
-Wasi'a kursiyyuhus-samawati wal-ard.
-Wa la ya'uduhu hifzuhuma.
-Wa Huwal-'Aliyyul-'Azim.`,
-meaning:"Allah is the Ever-Living and Sustainer of all.",
-ref:"Qur'an 2:255",
-repeat:1
-},
-
-{
-title:"Al-Ikhlas, Al-Falaq & An-Nas",
-arabic:THREE_QULS_ARABIC,
-translit:THREE_QULS_TRANSLIT,
-meaning:"Recite Surah Al-Ikhlas, Al-Falaq and An-Nas three times each.",
-ref:"Qur'an 112–114 • Hisn al-Muslim 76 • Abu Dawud 5082",
+Minal-jinnati wan-nas.`,
+meaning:"Say: I seek refuge in the Lord of mankind, the King of mankind, the God of mankind, from the evil of the retreating whisperer who whispers into the hearts of mankind, from among jinn and mankind.",
+ref:"Qur'an 114:1–6",
 repeat:3
 },
-
 {
-title:"We have reached the morning",
-arabic:"أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ",
-translit:"Asbahna wa asbahal-mulku lillah, walhamdu lillah.",
-meaning:"We enter the morning acknowledging Allah's dominion and praise.",
-ref:"Hisn al-Muslim 77",
+name:"We have entered a new morning",
+arabic:"أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ. رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ. رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ. رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.",
+translit:"Asbahna wa asbahal-mulku lillah, walhamdu lillah. La ilaha illAllahu wahdahu la sharika lah, lahul-mulku wa lahul-hamd, wa Huwa 'ala kulli shay'in qadir. Rabbi as'aluka khayra ma fi hadhal-yawmi wa khayra ma ba'dah, wa a'udhu bika min sharri ma fi hadhal-yawmi wa sharri ma ba'dah. Rabbi a'udhu bika minal-kasali wa su'il-kibar. Rabbi a'udhu bika min 'adhabin fin-nari wa 'adhabin fil-qabr.",
+meaning:"We have entered a new morning and all sovereignty belongs to Allah. Praise is for Allah. There is no deity except Allah alone, without partner. To Him belongs sovereignty and praise, and He has power over all things. My Lord, I ask You for the good of this day and the good after it, and I seek refuge in You from the evil of this day and the evil after it. My Lord, I seek refuge in You from laziness and the hardships of old age. My Lord, I seek refuge in You from punishment in the Fire and punishment in the grave.",
+ref:"Sahih Muslim 2723",
 repeat:1
 },
-
 {
-title:"By You we enter the morning",
-arabic:"اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ",
+name:"O Allah, by You we enter the morning",
+arabic:"اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ",
 translit:"Allahumma bika asbahna, wa bika amsayna, wa bika nahya, wa bika namut, wa ilaykan-nushur.",
-meaning:"O Allah, by You we enter the morning and evening, live and die.",
-ref:"Hisn al-Muslim 78",
+meaning:"O Allah, by You we enter the morning, by You we enter the evening, by You we live, by You we die, and to You is the resurrection.",
+ref:"Jami' at-Tirmidhi 3391",
 repeat:1
 },
-
 {
-title:"Sayyid al-Istighfar",
-arabic:"اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي، فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
-translit:"Allahumma Anta Rabbi la ilaha illa Ant, khalaqtani wa ana 'abduk, wa ana 'ala 'ahdika wa wa'dika mastata't. A'udhu bika min sharri ma sana't. Abu'u laka bini'matika 'alayya, wa abu'u bidhanbi, faghfir li fa innahu la yaghfirudh-dhunuba illa Ant.",
-meaning:"The foremost supplication for seeking Allah's forgiveness.",
+name:"Master supplication for forgiveness",
+arabic:"اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي، فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+translit:"Allahumma Anta Rabbi la ilaha illa Ant, khalaqtani wa ana 'abduk, wa ana 'ala 'ahdika wa wa'dika mastata't. A'udhu bika min sharri ma sana't. Abu'u laka bini'matika 'alayya, wa abu'u bidhanbi, faghfir li, fa innahu la yaghfirudh-dhunuba illa Ant.",
+meaning:"O Allah, You are my Lord. There is no deity except You. You created me and I am Your servant. I remain upon Your covenant and promise as much as I am able. I seek refuge in You from the evil of what I have done. I acknowledge Your favour upon me and I acknowledge my sin, so forgive me, for none forgives sins except You.",
 ref:"Sahih al-Bukhari 6306",
 repeat:1
 },
-
 {
-title:"Testimony of Tawhid",
-arabic:"اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",
-translit:"Allahumma inni asbahtu ush-hiduka, wa ush-hidu hamalata 'arshik, wa mala'ikataka, wa jami'a khalqik, annaka Antallahu la ilaha illa Anta wahdaka la sharika lak, wa anna Muhammadan 'abduka wa rasuluk.",
-meaning:"Bear witness to Allah's oneness and Muhammad's messengership.",
-ref:"Hisn al-Muslim 80",
+name:"I am pleased with Allah as my Lord",
+arabic:"رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا",
+translit:"Raditu billahi Rabba, wa bil-Islami dina, wa bi Muhammadin ﷺ Nabiyya.",
+meaning:"I am pleased with Allah as my Lord, Islam as my religion, and Muhammad ﷺ as my Prophet.",
+ref:"Sunan Abi Dawud 5072",
+repeat:3
+},
+{
+name:"O Allah, I have entered the morning calling You to witness",
+arabic:"اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَٰهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",
+translit:"Allahumma inni asbahtu ushhiduka, wa ushhidu hamalata 'arshik, wa mala'ikatak, wa jami'a khalqik, annaka AntAllahu la ilaha illa Anta wahdaka la sharika lak, wa anna Muhammadan 'abduka wa rasuluk.",
+meaning:"O Allah, I have entered the morning calling You to witness, and calling the bearers of Your Throne, Your angels and all Your creation to witness, that You are Allah; there is no deity except You alone, without partner, and that Muhammad is Your servant and Messenger.",
+ref:"Sunan Abi Dawud 5069",
 repeat:4
 },
-
 {
-title:"Thank Allah for every blessing",
-arabic:"اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
-translit:"Allahumma ma asbaha bi min ni'matin aw bi ahadin min khalqik, fa minka wahdaka la sharika lak, falakal-hamdu wa lakash-shukr.",
-meaning:"Whatever blessing I received this morning is from You alone.",
-ref:"Hisn al-Muslim 81",
+name:"Whatever blessing I have is from You",
+arabic:"اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ، فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
+translit:"Allahumma ma asbaha bi min ni'matin aw bi ahadin min khalqik, faminka wahdaka la sharika lak, falakal-hamdu wa lakash-shukr.",
+meaning:"O Allah, whatever blessing has come to me or any of Your creation this morning is from You alone, without partner. To You belongs all praise and all thanks.",
+ref:"Sunan Abi Dawud 5073",
 repeat:1
 },
-
 {
-title:"Health, hearing & sight",
-arabic:"اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَهَ إِلَّا أَنْتَ",
-translit:"Allahumma 'afini fi badani. Allahumma 'afini fi sam'i. Allahumma 'afini fi basari. La ilaha illa Ant.",
-meaning:"Ask Allah for well-being in your body, hearing and sight.",
-ref:"Hisn al-Muslim 82",
+name:"O Allah, grant wellbeing in my body",
+arabic:"اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَٰهَ إِلَّا أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لَا إِلَٰهَ إِلَّا أَنْتَ",
+translit:"Allahumma 'afini fi badani, Allahumma 'afini fi sam'i, Allahumma 'afini fi basari, la ilaha illa Ant. Allahumma inni a'udhu bika minal-kufri wal-faqr, wa a'udhu bika min 'adhabil-qabr, la ilaha illa Ant.",
+meaning:"O Allah, grant wellbeing to my body. O Allah, grant wellbeing to my hearing. O Allah, grant wellbeing to my sight. There is no deity except You. O Allah, I seek refuge in You from disbelief and poverty, and I seek refuge in You from the punishment of the grave. There is no deity except You.",
+ref:"Sunan Abi Dawud 5090",
 repeat:3
 },
-
 {
-title:"Allah is sufficient for me",
-arabic:"حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ، عَلَيْهِ تَوَكَّلْتُ، وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
-translit:"Hasbiyallahu la ilaha illa Huwa, 'alayhi tawakkaltu, wa Huwa Rabbul-'Arshil-'Azim.",
-meaning:"Allah is sufficient for me and I place my trust in Him.",
-ref:"Hisn al-Muslim 83",
+name:"Allah is sufficient for me",
+arabic:"حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ، عَلَيْهِ تَوَكَّلْتُ، وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+translit:"HasbiyAllahu la ilaha illa Huwa, 'alayhi tawakkaltu, wa Huwa Rabbul-'Arshil-'Azim.",
+meaning:"Allah is sufficient for me. There is no deity except Him. In Him I place my trust, and He is the Lord of the Mighty Throne.",
+ref:"Qur'an 9:129",
 repeat:7
 },
-
 {
-title:"Forgiveness & well-being",
-arabic:"اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ",
-translit:"Allahumma inni as'alukal-'afwa wal-'afiyata fid-dunya wal-akhirah.",
-meaning:"O Allah, I ask You for pardon and well-being in this world and the next.",
-ref:"Hisn al-Muslim 84",
+name:"O Allah, I ask You for pardon and wellbeing",
+arabic:"اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ. اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي. اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي. اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي",
+translit:"Allahumma inni as'alukal-'afwa wal-'afiyata fid-dunya wal-akhirah. Allahumma inni as'alukal-'afwa wal-'afiyata fi dini wa dunyaya wa ahli wa mali. Allahummastur 'awrati wa amin raw'ati. Allahummahfadhni min bayni yadayya, wa min khalfi, wa 'an yamini, wa 'an shimali, wa min fawqi, wa a'udhu bi'azamatika an ughtala min tahti.",
+meaning:"O Allah, I ask You for pardon and wellbeing in this world and the Hereafter. O Allah, I ask You for pardon and wellbeing in my religion, worldly affairs, family and wealth. Conceal my faults and calm my fears. Protect me from in front of me, behind me, on my right, on my left and above me, and I seek refuge in Your greatness from being taken unexpectedly from beneath me.",
+ref:"Sunan Abi Dawud 5074",
 repeat:1
 },
-
 {
-title:"Knower of the unseen",
-arabic:"اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ، فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ",
-translit:"Allahumma 'alimal-ghaybi wash-shahadah, Fatiras-samawati wal-ard, Rabba kulli shay'in wa malikah. Ash-hadu an la ilaha illa Ant. A'udhu bika min sharri nafsi wa min sharrish-shaytani wa shirkih.",
-meaning:"Ask Allah for protection from the evil of yourself and Shaytan.",
-ref:"Hisn al-Muslim 85",
+name:"Knower of the unseen and the seen",
+arabic:"اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ، فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَىٰ نَفْسِي سُوءًا أَوْ أَجُرَّهُ إِلَىٰ مُسْلِمٍ",
+translit:"Allahumma 'Alimal-ghaybi wash-shahadah, Fatiras-samawati wal-ard, Rabba kulli shay'in wa malikah, ashhadu an la ilaha illa Ant, a'udhu bika min sharri nafsi, wa min sharrish-shaytani wa shirkih, wa an aqtarifa 'ala nafsi su'an aw ajurrahu ila Muslim.",
+meaning:"O Allah, Knower of the unseen and the seen, Creator of the heavens and earth, Lord and Sovereign of everything, I testify that there is no deity except You. I seek refuge in You from the evil of myself, from the evil of Satan and his traps, and from committing evil against myself or bringing it upon another Muslim.",
+ref:"Jami' at-Tirmidhi 3392",
 repeat:1
 },
-
 {
-title:"Protection in Allah's Name",
-arabic:"بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
-translit:"Bismillahil-ladhi la yadurru ma'a ismihi shay'un fil-ardi wa la fis-sama', wa Huwas-Sami'ul-'Alim.",
-meaning:"In Allah's Name, with which nothing can cause harm.",
-ref:"Hisn al-Muslim 86",
+name:"In the name of Allah, with whose name nothing can harm",
+arabic:"بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ، وَهُوَ السَّمِيعُ الْعَلِيمُ",
+translit:"Bismillahil-ladhi la yadurru ma'asmihi shay'un fil-ardi wa la fis-sama', wa Huwas-Sami'ul-'Alim.",
+meaning:"In the name of Allah, with whose name nothing on earth or in heaven can cause harm, and He is the All-Hearing, All-Knowing.",
+ref:"Sunan Abi Dawud 5088; Jami' at-Tirmidhi 3388",
 repeat:3
 },
-
 {
-title:"Pleased with Allah as Lord",
-arabic:"رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا",
-translit:"Raditu billahi Rabban, wa bil-Islami dinan, wa bi Muhammadin ﷺ nabiyyan.",
-meaning:"I am pleased with Allah as Lord, Islam as religion and Muhammad ﷺ as Prophet.",
-ref:"Hisn al-Muslim 87",
-repeat:3
-},
-
-{
-title:"O Ever-Living, O Sustainer",
-arabic:"يَا حَيُّ يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ",
-translit:"Ya Hayyu ya Qayyum, bi rahmatika astaghith. Aslih li sha'ni kullahu, wa la takilni ila nafsi tarfata 'ayn.",
-meaning:"O Ever-Living, O Sustainer, by Your mercy I seek help.",
-ref:"Hisn al-Muslim 88",
+name:"O Ever-Living, O Sustainer",
+arabic:"يَا حَيُّ يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ",
+translit:"Ya Hayyu Ya Qayyum, bi rahmatika astaghith, aslih li sha'ni kullah, wa la takilni ila nafsi tarfata 'ayn.",
+meaning:"O Ever-Living, O Sustainer of all, by Your mercy I seek help. Set right all of my affairs and do not leave me to myself even for the blink of an eye.",
+ref:"Al-Hakim; authenticated by Al-Albani",
 repeat:1
 },
-
 {
-title:"Upon the natural way of Islam",
-arabic:"أَصْبَحْنَا عَلَى فِطْرَةِ الْإِسْلَامِ، وَعَلَى كَلِمَةِ الْإِخْلَاصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ ﷺ",
-translit:"Asbahna 'ala fitratil-Islam, wa 'ala kalimatil-ikhlas, wa 'ala dini Nabiyyina Muhammadin ﷺ.",
-meaning:"We enter the morning upon the natural way of Islam.",
-ref:"Hisn al-Muslim 90",
+name:"We have entered the morning upon the natural religion of Islam",
+arabic:"أَصْبَحْنَا عَلَىٰ فِطْرَةِ الْإِسْلَامِ، وَعَلَىٰ كَلِمَةِ الْإِخْلَاصِ، وَعَلَىٰ دِينِ نَبِيِّنَا مُحَمَّدٍ ﷺ، وَعَلَىٰ مِلَّةِ أَبِينَا إِبْرَاهِيمَ حَنِيفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِينَ",
+translit:"Asbahna 'ala fitratil-Islam, wa 'ala kalimatil-ikhlas, wa 'ala dini Nabiyyina Muhammadin ﷺ, wa 'ala millati abina Ibrahima hanifan Musliman wa ma kana minal-mushrikin.",
+meaning:"We have entered the morning upon the natural religion of Islam, the word of sincere faith, the religion of our Prophet Muhammad ﷺ, and the way of our father Ibrahim, who was upright, a Muslim, and not among the polytheists.",
+ref:"Musnad Ahmad",
 repeat:1
 },
-
 {
-title:"SubhanAllahi wa bihamdih",
+name:"Glory and praise be to Allah",
 arabic:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
 translit:"SubhanAllahi wa bihamdih.",
-meaning:"Glory and praise are to Allah.",
-ref:"Hisn al-Muslim 91",
+meaning:"Glory and praise be to Allah.",
+ref:"Sahih Muslim 2692",
 repeat:100
 },
-
 {
-title:"Tawhid dhikr",
-arabic:"لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
-translit:"La ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamd, wa Huwa 'ala kulli shay'in Qadir.",
-meaning:"None has the right to be worshipped but Allah alone.",
-ref:"Hisn al-Muslim 92",
-repeat:10
+name:"None has the right to be worshipped except Allah alone",
+arabic:"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+translit:"La ilaha illAllahu wahdahu la sharika lah, lahul-mulku wa lahul-hamd, wa Huwa 'ala kulli shay'in qadir.",
+meaning:"There is no deity except Allah alone, without partner. To Him belongs sovereignty and praise, and He has power over all things.",
+ref:"Sahih al-Bukhari 3293; Sahih Muslim 2691",
+repeat:100
 },
-
 {
-title:"Praise by the measure of creation",
+name:"Glory be to Allah and praise Him by the number of His creation",
 arabic:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ",
 translit:"SubhanAllahi wa bihamdih, 'adada khalqih, wa rida nafsih, wa zinata 'arshih, wa midada kalimatih.",
-meaning:"Glory and praise to Allah by the measure of His creation.",
+meaning:"Glory and praise be to Allah, by the number of His creation, by His pleasure, by the weight of His Throne, and by the ink of His words.",
 ref:"Sahih Muslim 2726",
 repeat:3
 },
-
 {
-title:"Beneficial knowledge & good provision",
+name:"O Allah, I ask You for beneficial knowledge",
 arabic:"اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا",
 translit:"Allahumma inni as'aluka 'ilman nafi'an, wa rizqan tayyiban, wa 'amalan mutaqabbalan.",
-meaning:"Ask Allah for beneficial knowledge, good provision and accepted deeds.",
-ref:"Ibn Majah 925",
+meaning:"O Allah, I ask You for beneficial knowledge, good provision and accepted deeds.",
+ref:"Sunan Ibn Majah 925",
 repeat:1
-},
-
-{
-title:"Seek forgiveness",
-arabic:"أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ",
-translit:"Astaghfirullaha wa atubu ilayh.",
-meaning:"I seek Allah's forgiveness and repent to Him.",
-ref:"Hisn al-Muslim 96",
-repeat:100
 }
-
 ];
 
+const adhkarEvening=adhkarMorning.map(x=>({...x}));
 
-/* EVENING */
-
-const EVENING=MORNING
-.filter(x=>
-![
-"Praise by the measure of creation",
-"Beneficial knowledge & good provision"
-].includes(x.title)
-)
-.map(x=>({...x}));
-
-
-function eveningChange(title,data){
-
-const i=EVENING.findIndex(
-x=>x.title===title
-);
-
-if(i>=0){
-
-EVENING[i]={
-...EVENING[i],
-...data
+adhkarEvening[4]={
+name:"We have entered a new evening",
+arabic:"أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ. رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا. رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ. رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.",
+translit:"Amsayna wa amsal-mulku lillah, walhamdu lillah. La ilaha illAllahu wahdahu la sharika lah, lahul-mulku wa lahul-hamd, wa Huwa 'ala kulli shay'in qadir. Rabbi as'aluka khayra ma fi hadhihil-laylati wa khayra ma ba'daha, wa a'udhu bika min sharri ma fi hadhihil-laylati wa sharri ma ba'daha. Rabbi a'udhu bika minal-kasali wa su'il-kibar. Rabbi a'udhu bika min 'adhabin fin-nari wa 'adhabin fil-qabr.",
+meaning:"We have entered a new evening and all sovereignty belongs to Allah. Praise is for Allah. There is no deity except Allah alone, without partner. To Him belongs sovereignty and praise, and He has power over all things. My Lord, I ask You for the good of this night and the good after it, and I seek refuge in You from the evil of this night and the evil after it. My Lord, I seek refuge in You from laziness and the hardships of old age. My Lord, I seek refuge in You from punishment in the Fire and punishment in the grave.",
+ref:"Sahih Muslim 2723",
+repeat:1
 };
 
-}
-
-}
-
-
-eveningChange(
-"We have reached the morning",
-{
-title:"We have reached the evening",
-arabic:"أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ",
-translit:"Amsayna wa amsal-mulku lillah, walhamdu lillah.",
-meaning:"We enter the evening acknowledging Allah's dominion and praise."
-}
-);
-
-
-eveningChange(
-"By You we enter the morning",
-{
-title:"By You we enter the evening",
-arabic:"اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ",
+adhkarEvening[5]={
+name:"O Allah, by You we enter the evening",
+arabic:"اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ",
 translit:"Allahumma bika amsayna, wa bika asbahna, wa bika nahya, wa bika namut, wa ilaykal-masir.",
-meaning:"O Allah, by You we enter the evening and morning."
-}
-);
+meaning:"O Allah, by You we enter the evening, by You we enter the morning, by You we live, by You we die, and to You is the final return.",
+ref:"Jami' at-Tirmidhi 3391",
+repeat:1
+};
 
+adhkarEvening[8]={
+name:"O Allah, I have entered the evening calling You to witness",
+arabic:"اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَٰهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",
+translit:"Allahumma inni amsaytu ushhiduka, wa ushhidu hamalata 'arshik, wa mala'ikatak, wa jami'a khalqik, annaka AntAllahu la ilaha illa Anta wahdaka la sharika lak, wa anna Muhammadan 'abduka wa rasuluk.",
+meaning:"O Allah, I have entered the evening calling You to witness, and calling the bearers of Your Throne, Your angels and all Your creation to witness, that You are Allah; there is no deity except You alone, without partner, and that Muhammad is Your servant and Messenger.",
+ref:"Sunan Abi Dawud 5069",
+repeat:4
+};
 
-eveningChange(
-"Testimony of Tawhid",
-{
-arabic:"اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",
-translit:"Allahumma inni amsaytu ush-hiduka, wa ush-hidu hamalata 'arshik, wa mala'ikataka, wa jami'a khalqik, annaka Antallahu la ilaha illa Anta wahdaka la sharika lak, wa anna Muhammadan 'abduka wa rasuluk."
-}
-);
+adhkarEvening[9]={
+name:"Whatever blessing I have is from You",
+arabic:"اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ، فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
+translit:"Allahumma ma amsa bi min ni'matin aw bi ahadin min khalqik, faminka wahdaka la sharika lak, falakal-hamdu wa lakash-shukr.",
+meaning:"O Allah, whatever blessing has come to me or any of Your creation this evening is from You alone, without partner. To You belongs all praise and all thanks.",
+ref:"Sunan Abi Dawud 5073",
+repeat:1
+};
 
+adhkarEvening[15]={
+name:"We have entered the evening upon the natural religion of Islam",
+arabic:"أَمْسَيْنَا عَلَىٰ فِطْرَةِ الْإِسْلَامِ، وَعَلَىٰ كَلِمَةِ الْإِخْلَاصِ، وَعَلَىٰ دِينِ نَبِيِّنَا مُحَمَّدٍ ﷺ، وَعَلَىٰ مِلَّةِ أَبِينَا إِبْرَاهِيمَ حَنِيفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِينَ",
+translit:"Amsayna 'ala fitratil-Islam, wa 'ala kalimatil-ikhlas, wa 'ala dini Nabiyyina Muhammadin ﷺ, wa 'ala millati abina Ibrahima hanifan Musliman wa ma kana minal-mushrikin.",
+meaning:"We have entered the evening upon the natural religion of Islam, the word of sincere faith, the religion of our Prophet Muhammad ﷺ, and the way of our father Ibrahim, who was upright, a Muslim, and not among the polytheists.",
+ref:"Musnad Ahmad",
+repeat:1
+};
 
-eveningChange(
-"Thank Allah for every blessing",
-{
-arabic:"اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
-translit:"Allahumma ma amsa bi min ni'matin aw bi ahadin min khalqik, fa minka wahdaka la sharika lak, falakal-hamdu wa lakash-shukr.",
-meaning:"Whatever blessing I received this evening is from You alone."
-}
-);
-
-
-eveningChange(
-"Upon the natural way of Islam",
-{
-arabic:"أَمْسَيْنَا عَلَى فِطْرَةِ الْإِسْلَامِ، وَعَلَى كَلِمَةِ الْإِخْلَاصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ ﷺ",
-translit:"Amsayna 'ala fitratil-Islam, wa 'ala kalimatil-ikhlas, wa 'ala dini Nabiyyina Muhammadin ﷺ.",
-meaning:"We enter the evening upon the natural way of Islam."
-}
-);
-
-
-EVENING.push({
-
-title:"Refuge in Allah's perfect words",
-
-arabic:"أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
-
-translit:"A'udhu bi kalimatillahit-tammati min sharri ma khalaq.",
-
-meaning:"I seek refuge in Allah's perfect words from the evil of what He created.",
-
-ref:"Hisn al-Muslim 97",
-
-repeat:3
-
-});
-
-
-/* ===========================
-   KIDS EASY DUAS
-=========================== */
-
-const KIDS_DUAS=[
-
+  const KIDS_DUAS=[
 {
 title:"When I wake up 🌞",
 arabic:"الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
 translit:"Alhamdu lillahil-ladhi ahyana ba'da ma amatana wa ilayhin-nushur.",
 meaning:"Praise Allah for giving us a new day.",
-ref:"Sahih al-Bukhari 6324"
+ref:"Sahih al-Bukhari 6324 • Hisn al-Muslim 1"
 },
-
 {
 title:"Before I eat 🍎",
 arabic:"بِسْمِ اللَّهِ",
 translit:"Bismillah.",
 meaning:"In the Name of Allah.",
-ref:"Abu Dawud / At-Tirmidhi"
+ref:"Hisn al-Muslim 178 • Abu Dawud / At-Tirmidhi"
 },
-
 {
 title:"After I eat 🍽️",
-arabic:"الْحَمْدُ لِلَّهِ",
-translit:"Alhamdulillah.",
-meaning:"All praise belongs to Allah.",
-ref:"Sunnah"
+arabic:"الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ",
+translit:"Alhamdu lillahil-ladhi at'amani hadha wa razaqanihi min ghayri hawlin minni wa la quwwah.",
+meaning:"Praise Allah for the food He gave me.",
+ref:"Hisn al-Muslim 180 • At-Tirmidhi / Abu Dawud / Ibn Majah"
 },
-
 {
 title:"Before I sleep 🌙",
 arabic:"بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
 translit:"Bismika Allahumma amutu wa ahya.",
 meaning:"In Your Name, O Allah, I die and I live.",
-ref:"Sahih al-Bukhari 6324"
+ref:"Sahih al-Bukhari 6324 • Hisn al-Muslim 105"
 },
-
 {
 title:"When I leave home 🏡",
 arabic:"بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
 translit:"Bismillah, tawakkaltu 'alallah, wa la hawla wa la quwwata illa billah.",
-meaning:"In Allah's Name. I trust Allah. All strength comes from Him.",
-ref:"Abu Dawud / At-Tirmidhi"
+meaning:"I leave in Allah's Name, trust Allah, and know all strength comes from Him.",
+ref:"Hisn al-Muslim 16 • Abu Dawud / At-Tirmidhi"
 },
-
 {
 title:"Before the bathroom 🚪",
 arabic:"اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",
 translit:"Allahumma inni a'udhu bika minal-khubthi wal-khaba'ith.",
 meaning:"O Allah, protect me from evil.",
-ref:"Sahih al-Bukhari 6322"
+ref:"Sahih al-Bukhari 6322 • Hisn al-Muslim 10"
 },
-
 {
 title:"After the bathroom 💧",
 arabic:"غُفْرَانَكَ",
 translit:"Ghufranak.",
 meaning:"O Allah, I ask Your forgiveness.",
-ref:"Abu Dawud / At-Tirmidhi"
+ref:"Hisn al-Muslim 11 • Sunan Ibn Majah 300"
 },
-
 {
 title:"Dua for my parents 💗",
 arabic:"رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
 translit:"Rabbir-hamhuma kama rabbayani saghira.",
 meaning:"My Lord, have mercy on my parents as they cared for me when I was little.",
 ref:"Qur'an 17:24"
-},
-
-{
-title:"When I sneeze 😊",
-arabic:"الْحَمْدُ لِلَّهِ",
-translit:"Alhamdulillah.",
-meaning:"Praise Allah.",
-ref:"Sahih al-Bukhari"
-},
-
-{
-title:"When it rains 🌧️",
-arabic:"اللَّهُمَّ صَيِّبًا نَافِعًا",
-translit:"Allahumma sayyiban nafi'an.",
-meaning:"O Allah, make this beneficial rain.",
-ref:"Sahih al-Bukhari 1032"
 }
-
 ];
 
+const PROFILE_KEY="ibProfile";
+let pendingTheme="feminine";
 
-/* ===========================
-   DAILY STORAGE
-=========================== */
-
-function dateKey(){
-
-const d=new Date();
-
-return [
-d.getFullYear(),
-String(d.getMonth()+1).padStart(2,"0"),
-String(d.getDate()).padStart(2,"0")
-].join("-");
-
+function profile(){
+  try{
+    return JSON.parse(localStorage.getItem(PROFILE_KEY)||"null")
+  }catch(e){
+    return null
+  }
 }
 
-
-function sessionKey(type){
-
-return "ib_"+
-type+"_"+
-dateKey();
-
+function saveProfile(p){
+  localStorage.setItem(PROFILE_KEY,JSON.stringify(p));
+  applyProfile();
+  renderMenu()
 }
 
-
-function ls(type){
-
-try{
-
-return JSON.parse(
-localStorage.getItem(
-sessionKey(type)
-)||"{}"
-);
-
-}catch(e){
-
-return {};
-
+function activeTheme(){
+  const p=profile();
+  return p&&["feminine","masculine","kids"].includes(p.theme)
+    ?p.theme
+    :"feminine"
 }
 
+function isKids(){
+  return activeTheme()==="kids"
 }
 
+function applyProfile(){
+  const p=profile(),theme=activeTheme();
 
-function ss(type,value){
+  document.body.dataset.theme=theme;
 
-localStorage.setItem(
-sessionKey(type),
-JSON.stringify(value)
-);
+  if(p&&p.name){
+    $("personalHero").textContent=
+      theme==="kids"
+        ?p.name+"'s Happy Bloom"
+        :p.name+"'s Islamic Bloom";
 
+    document.title=
+      theme==="kids"
+        ?p.name+"'s Happy Bloom — Islamic Bloom"
+        :p.name+"'s Islamic Bloom";
+  }else{
+    $("personalHero").textContent="Your Daily Deen Companion";
+  }
+
+  $("chooseHeading").textContent=
+    theme==="kids"
+      ?"What shall we do today?"
+      :"Choose Your Garden";
 }
 
+function pickSetup(t){
+  pendingTheme=t;
 
-/* ===========================
-   HOME
-=========================== */
+  $("feminineChoice").classList.toggle("active",t==="feminine");
+  $("masculineChoice").classList.toggle("active",t==="masculine");
+  $("kidsChoice").classList.toggle("active",t==="kids");
 
-function renderMenu(){
-
-const c=$("cards");
-c.innerHTML="";
-
-
-if(isKids()){
-
-const n=lp("mixed").length;
-
-$("overallText").textContent=
-`My Good Deeds: ${n} / 30`;
-
-$("overallBar").style.width=
-(n/30*100)+"%";
-
-
-[
-{
-type:"garden",
-key:"mixed",
-icon:"🌈",
-name:"My Good Deeds",
-sub:"Pick a smiley and do something kind 🌈",
-status:`${n} / 30 done`
-},
-
-{
-type:"kids",
-icon:"🤲",
-name:"My Easy Duas",
-sub:"Little duas for everyday moments",
-status:`${KIDS_DUAS.length} easy duas`
-},
-
-{
-type:"favourites",
-icon:"💖",
-name:"My Favourites",
-sub:"My favourite reminders and duas",
-status:`${favs().length} saved`
+  document.body.dataset.theme=t;
 }
 
-]
-.forEach(addCard);
-
-return;
-
-}
-
-
-const n=total();
-
-$("overallText").textContent=
-`Overall Bloom Progress: ${n} / 180`;
-
-$("overallBar").style.width=
-(n/180*100)+"%";
-
-
-K.forEach(key=>{
-
-addCard({
-
-type:"garden",
-key,
-
-icon:G[key].icon,
-
-name:G[key].name,
-
-sub:G[key].sub,
-
-status:
-`${lp(key).length} / 30 bloomed`
-
-});
-
-});
-
-
-addCard({
-type:"morning",
-icon:"🌅",
-name:"Morning Adhkar",
-sub:"Authentic morning remembrance",
-status:`${MORNING.length} verified adhkar`
-});
-
-
-addCard({
-type:"evening",
-icon:"🌙",
-name:"Evening Adhkar",
-sub:"Authentic evening remembrance",
-status:`${EVENING.length} verified adhkar`
-});
-
-
-addCard({
-type:"favourites",
-icon:"♡",
-name:"My Favourites",
-sub:"Your personally saved blooms",
-status:`${favs().length} saved`
-});
-
-}
-
-
-function addCard(x){
-
-const b=document.createElement("button");
-
-b.className="card";
-
-b.innerHTML=`
-<div class="icon">${x.icon}</div>
-<div class="name">${x.name}</div>
-<div class="sub">${x.sub}</div>
-<div class="mini">${x.status}</div>
-`;
-
-b.onclick=()=>{
-
-if(x.type==="garden"){
-openGarden(x.key)
-}
-
-if(x.type==="morning"){
-openAdhkar("morning")
-}
-
-if(x.type==="evening"){
-openAdhkar("evening")
-}
-
-if(x.type==="kids"){
-openKidsDuas()
-}
-
-if(x.type==="favourites"){
-openFavourites()
-}
-
-};
-
-$("cards").appendChild(b);
-
-}
-
-
-/* ===========================
-   PETALS
-=========================== */
-
-function getSeed(){
-
-let s=
-localStorage.getItem("ibSeed");
-
-if(!s){
-
-s=String(
-Math.floor(
-Math.random()*2000000000
-)+1
-);
-
-localStorage.setItem(
-"ibSeed",
-s
-);
-
-}
-
-return Number(s);
-
-}
-
-
-const USER_SEED=getSeed();
-
-
-function rnd(n){
-
-const x=
-Math.sin(n)*10000;
-
-return x-Math.floor(x);
-
-}
-
-
-function pos(count){
-
-const result=[];
-const cols=count>20?5:4;
-const rows=Math.ceil(count/cols);
-
-for(let i=0;i<count;i++){
-
-const row=Math.floor(i/cols);
-const col=i%cols;
-
-const x=
-4+
-col*(88/(cols-1))+
-(rnd(USER_SEED+i*31)-.5)*4;
-
-const y=
-4+
-row*(84/Math.max(rows-1,1))+
-(rnd(USER_SEED+i*47)-.5)*3;
-
-result.push([
-Math.max(1,Math.min(90,x)),
-Math.max(1,Math.min(88,y))
-]);
-
-}
-
-return result;
-
-}
-
-
-function fsvg(i){
-
-const colors=[
-["#ebb0ba","#f6d4d9"],
-["#f1c4ca","#fae2e5"],
-["#f0cfbe","#f8e5d9"],
-["#e8bac5","#f4d9df"],
-["#efc3d5","#f8e3eb"]
-];
-
-const c=colors[i%colors.length];
-
-return `
-<svg viewBox="0 0 100 100">
-
-<g fill="${c[0]}" stroke="${c[1]}">
-
-<ellipse cx="50" cy="20" rx="15" ry="26"/>
-
-<ellipse cx="77" cy="36" rx="15" ry="26" transform="rotate(60 77 36)"/>
-
-<ellipse cx="77" cy="66" rx="15" ry="26" transform="rotate(120 77 66)"/>
-
-<ellipse cx="50" cy="80" rx="15" ry="26"/>
-
-<ellipse cx="23" cy="66" rx="15" ry="26" transform="rotate(60 23 66)"/>
-
-<ellipse cx="23" cy="36" rx="15" ry="26" transform="rotate(120 23 36)"/>
-
-</g>
-
-<circle cx="50" cy="50" r="21" fill="#fffaf6" stroke="#d3b176"/>
-
-</svg>
-`;
-
-}
-
-
-function flowers(items,done,callback){
-
-const z=$("zone");
-const p=pos(items.length);
-
-const kidIcons=[
-"😊","😄","🙂","😁","🥰",
-"🌈","⭐","✨","💖","🌟"
-];
-
-z.innerHTML="";
-
-items.forEach((_,i)=>{
-
-const b=
-document.createElement("button");
-
-b.className=
-"petal"+
-(done&&done.includes(i)
-?" done"
-:"");
-
-b.style.left=p[i][0]+"%";
-b.style.top=p[i][1]+"%";
-
-b.style.setProperty(
-"--duration",
-(2.7+(i%6)*.25)+"s"
-);
-
-b.style.setProperty(
-"--delay",
-(-i*.18)+"s"
-);
-
-b.innerHTML=
-isKids()
-?`<div class="kidFace">${kidIcons[i%kidIcons.length]}</div><span>${i+1}</span>`
-:fsvg(i)+`<span>${i+1}</span>`;
-
-b.onclick=()=>callback(i);
-
-z.appendChild(b);
-
-});
-
-}
-
-
-/* ===========================
-   GARDENS
-=========================== */
-
-function openGarden(key){
-
-mode="garden";
-garden=key;
-
-$("gardenTitle").textContent=
-isKids()
-?"My Good Deeds"
-:G[key].name;
-
-$("gardenSubtitle").textContent=
-isKids()
-?"Pick a smiley and make someone smile 🌈"
-:G[key].sub;
-
-$("jarSmall").textContent=
-isKids()
-?"ONE HAPPY DEED AT A TIME"
-:"ONE DEED AT A TIME";
-
-$("growTitle").textContent=
-isKids()
-?"My Happy Garden"
-:"My Growing Garden";
-
-$("growSub").textContent=
-isKids()
-?"Every good deed grows another happy flower ⭐"
-:"Every completed bloom plants another flower.";
-
-$("surprise").classList.remove("hidden");
-$("resetGarden").classList.remove("hidden");
-
-renderGarden();
-
-show("gardenView");
-
-}
-
-
-function renderGarden(){
-
-const items=DEEDS[garden];
-const done=lp(garden);
-
-flowers(
-items,
-done,
-openBloom
-);
-
-$("gardenProgress").textContent=
-isKids()
-?`${done.length} of 30 good deeds done`
-:`${done.length} of 30 petals bloomed`;
-
-$("gardenBar").style.width=
-(done.length/30*100)+"%";
-
-renderGrowing(done);
-
-}
-
-
-function renderGrowing(done){
-
-const scene=$("scene");
-
-scene.querySelectorAll(".plant")
-.forEach(x=>x.remove());
-
-$("emptyGarden").style.display=
-done.length?"none":"flex";
-
-$("emptyGarden").textContent=
-isKids()
-?"Do your first good deed and grow something happy! 🌱"
-:"Your first bloom is waiting 🌱";
-
-
-const adultFlowers=[
-"🌸","🌷","🌼","🌺","🌹"
-];
-
-const kidFlowers=[
-"🌸","🌼","🌈","⭐","🌷","😊","💖"
-];
-
-
-done.forEach((index,n)=>{
-
-const plant=
-document.createElement("div");
-
-plant.className="plant";
-
-plant.style.left=
-(3+(n%10)*9.4+
-(Math.floor(n/10)%2)*2)+"%";
-
-plant.style.bottom=
-(29+Math.floor(n/10)*4)+"px";
-
-const arr=
-isKids()
-?kidFlowers
-:adultFlowers;
-
-plant.innerHTML=`
-<span class="stem"></span>
-<span class="leaf left"></span>
-<span class="leaf right"></span>
-<span class="flower">${arr[index%arr.length]}</span>
-`;
-
-scene.appendChild(plant);
-
-});
-
-}
-
-
-function openBloom(index){
-
-mode="garden";
-bloomIndex=index;
-
-const deed=
-DEEDS[garden][index];
-
-const ref=
-referenceFor(garden,index);
-
-$("bloomNumber").textContent=
-"BLOOM "+
-String(index+1).padStart(2,"0");
-
-$("bloomHeading").textContent=
-isKids()
-?"My Good Deed"
-:"Today's Bloom";
-
-$("bloomTag").textContent=
-isKids()
-?"🌈 GOOD DEED"
-:G[garden].name;
-
-$("bloomDeed").textContent=
-deed;
-
-$("bloomSource").textContent=
-ref.ref.startsWith("Qur'an")
-?"Qur'an Reminder"
-:"Authentic Hadith";
-
-$("bloomArabic").textContent=
-ref.arabic;
-
-$("bloomMeaning").textContent=
-ref.meaning;
-
-$("bloomReference").textContent=
-ref.ref;
-
-$("bloomComplete").textContent=
-isKids()
-?"⭐ I Did This!"
-:"✓ I Bloomed This";
-
-$("bloomComplete").classList.remove("hidden");
-
-updateBloomFavourite();
-
-show("bloomView");
-
-}
-
-
-function bloomKey(){
-
-return "garden:"+
-garden+":"+
-bloomIndex;
-
-}
-
-
-function updateBloomFavourite(){
-
-const on=
-favs().some(
-x=>x.key===bloomKey()
-);
-
-$("bloomFavourite").textContent=
-on
-?"♥ Saved to Favourites"
-:"♡ Add to Favourites";
-
-}
-
-
-$("bloomComplete").onclick=()=>{
-
-const done=lp(garden);
-
-if(!done.includes(bloomIndex)){
-
-done.push(bloomIndex);
-
-sp(garden,done);
-
-toast(
-isKids()
-?"MashaAllah! ⭐"
-:"Added to your garden 🌸"
-);
-
-}else{
-
-toast(
-isKids()
-?"You already did this one 😊"
-:"Already bloomed 🌷"
-);
-
-}
-
-renderGarden();
-renderMenu();
-
-setTimeout(
-()=>show("gardenView"),
-350
-);
-
-};
-
-
-$("bloomFavourite").onclick=()=>{
-
-let a=favs();
-
-const key=bloomKey();
-
-const i=
-a.findIndex(
-x=>x.key===key
-);
-
-if(i>=0){
-
-a.splice(i,1);
-
-toast(
-"Removed from favourites"
-);
-
-}else{
-
-const ref=
-referenceFor(
-garden,
-bloomIndex
-);
-
-a.push({
-
-key,
-
-cat:
-G[garden].name,
-
-deed:
-DEEDS[garden][bloomIndex],
-
-type:
-ref.ref.startsWith("Qur'an")
-?"Qur'an Reminder"
-:"Authentic Hadith",
-
-arabic:
-ref.arabic,
-
-meaning:
-ref.meaning,
-
-ref:
-ref.ref
-
-});
-
-toast(
-isKids()
-?"Saved to favourites 💖"
-:"Saved to favourites ♡"
-);
-
-}
-
-sf(a);
-
-updateBloomFavourite();
-
-renderMenu();
-
-};
-
-
-/* ===========================
-   FAVOURITES
-=========================== */
-
-function openFavourites(){
-
-mode="favourites";
-garden="favourites";
-
-const a=favs();
-
-$("gardenTitle").textContent=
-"My Favourites";
-
-$("gardenSubtitle").textContent=
-isKids()
-?"My favourite things 💖"
-:"Blooms and reminders you saved";
-
-$("jarSmall").textContent=
-"MY SAVED FAVOURITES";
-
-$("growTitle").textContent=
-isKids()
-?"My Favourite Garden"
-:"My Favourites";
-
-$("growSub").textContent=
-isKids()
-?"Everything you love lives here 🌈"
-:"Your saved reminders live here.";
-
-$("surprise").classList.add("hidden");
-$("resetGarden").classList.add("hidden");
-
-const z=$("zone");
-
-z.innerHTML="";
-
-if(!a.length){
-
-z.innerHTML=`
-<div class="empty">
-Nothing saved yet 💖
-</div>
-`;
-
-}else{
-
-flowers(
-a,
-[],
-openFavouriteItem
-);
-
-}
-
-$("gardenProgress").textContent=
-a.length+" favourites saved";
-
-$("gardenBar").style.width=
-a.length?"100%":"0%";
-
-$("scene")
-.querySelectorAll(".plant")
-.forEach(x=>x.remove());
-
-$("emptyGarden").style.display="flex";
-
-$("emptyGarden").textContent=
-isKids()
-?"Your favourite things live here 💖"
-:"Your saved favourites live here.";
-
-show("gardenView");
-
-}
-
-
-function openFavouriteItem(index){
-
-const item=favs()[index];
-
-if(!item)return;
-
-$("bloomNumber").textContent=
-"FAVOURITE";
-
-$("bloomHeading").textContent=
-isKids()
-?"My Favourite"
-:"Favourite Bloom";
-
-$("bloomTag").textContent=
-item.cat||"Favourite";
-
-$("bloomDeed").textContent=
-item.deed||"";
-
-$("bloomSource").textContent=
-item.type||"";
-
-$("bloomArabic").textContent=
-item.arabic||"";
-
-$("bloomMeaning").textContent=
-item.meaning||"";
-
-$("bloomReference").textContent=
-item.ref||"";
-
-$("bloomComplete").classList.add("hidden");
-
-$("bloomFavourite").textContent=
-"♥ Saved to Favourites";
-
-show("bloomView");
-
-}
-
-
-/* ===========================
-   ADHKAR
-=========================== */
-
-function openAdhkar(type){
-
-mode=type;
-garden=type;
-
-$("adhTitle").textContent=
-type==="morning"
-?"Morning Adhkar"
-:"Evening Adhkar";
-
-$("adhSub").textContent=
-type==="morning"
-?"Begin your day with authentic remembrance."
-:"End your day with authentic remembrance.";
-
-$("adhReset").textContent=
-"Reset Today";
-
-$("adhAll").textContent=
-"✓ Mark All Done";
-
-renderAdhkar(type);
-
-show("adhkarView");
-
-}
-
-
-function renderAdhkar(type){
-
-const list=
-type==="morning"
-?MORNING
-:EVENING;
-
-const state=
-ls(type);
-
-const c=$("adhList");
-
-c.innerHTML="";
-
-
-list.forEach((o,i)=>{
-
-const s=
-state[i]||
-{count:0,done:false};
-
-const key=
-"adhkar:"+
-type+":"+
-i;
-
-const isFav=
-favs().some(
-x=>x.key===key
-);
-
-const card=
-document.createElement("section");
-
-card.className=
-"adhCard"+
-(s.done?" complete":"");
-
-card.innerHTML=`
-
-<div class="adhTop">
-
-<div class="adhNum">
-${s.done?"✓":i+1}
-</div>
-
-<div class="adhName">
-${o.title}
-</div>
-
-</div>
-
-<div class="adhArabic">
-${o.arabic}
-</div>
-
-<div class="adhTranslit">
-${o.translit}
-</div>
-
-<div class="adhMeaning">
-${o.meaning}
-</div>
-
-<div class="adhRef">
-${o.ref}
-</div>
-
-<div class="adhControls">
-
-<div class="counterBox">
-
-<div class="counter">
-
-<button class="minus">−</button>
-
-<div class="count">
-${s.count}
-</div>
-
-<button class="plus">+</button>
-
-</div>
-
-<div class="repeat">
-Repeat ×${o.repeat}
-</div>
-
-</div>
-
-<button class="adhAction ${s.done?"done":""}">
-${s.done?"✓ Completed":"Mark Complete"}
-</button>
-
-</div>
-
-<button class="adhFav ${isFav?"favOn":""}">
-${isFav?"♥ Saved to Favourites":"♡ Add to Favourites"}
-</button>
-
-`;
-
-
-card.querySelector(".plus").onclick=()=>{
-
-const q=ls(type);
-
-const x=
-q[i]||
-{count:0,done:false};
-
-x.count++;
-
-if(x.count>=o.repeat){
-
-x.count=o.repeat;
-x.done=true;
-
-}
-
-q[i]=x;
-
-ss(type,q);
-
-renderAdhkar(type);
-
-};
-
-
-card.querySelector(".minus").onclick=()=>{
-
-const q=ls(type);
-
-const x=
-q[i]||
-{count:0,done:false};
-
-x.count=
-Math.max(
-0,
-x.count-1
-);
-
-if(x.count<o.repeat){
-x.done=false
-}
-
-q[i]=x;
-
-ss(type,q);
-
-renderAdhkar(type);
-
-};
-
-
-card.querySelector(".adhAction").onclick=()=>{
-
-const q=ls(type);
-
-q[i]={
-count:o.repeat,
-done:true
-};
-
-ss(type,q);
-
-renderAdhkar(type);
-
-};
-
-
-card.querySelector(".adhFav").onclick=()=>{
-
-let a=favs();
-
-const ix=
-a.findIndex(
-x=>x.key===key
-);
-
-if(ix>=0){
-
-a.splice(ix,1);
-
-toast(
-"Removed from favourites"
-);
-
-}else{
-
-a.push({
-
-key,
-
-cat:
-type==="morning"
-?"Morning Adhkar"
-:"Evening Adhkar",
-
-deed:o.title,
-
-type:"Authentic Dhikr",
-
-arabic:o.arabic,
-
-translit:o.translit,
-
-meaning:o.meaning,
-
-ref:o.ref
-
-});
-
-toast(
-"Saved to favourites ♡"
-);
-
-}
-
-sf(a);
-
-renderAdhkar(type);
-
-renderMenu();
-
-};
-
-
-c.appendChild(card);
-
-});
-
-
-const latest=ls(type);
-
-const done=
-list.filter(
-(_,i)=>latest[i]?.done
-).length;
-
-$("adhProgText").textContent=
-`${done} of ${list.length} completed`;
-
-$("adhBar").style.width=
-(done/list.length*100)+"%";
-
-}
-
-
-/* ===========================
-   KIDS DUAS
-=========================== */
-
-function openKidsDuas(){
-
-mode="kidsduas";
-garden="kidsduas";
-
-$("adhTitle").textContent=
-"My Easy Duas";
-
-$("adhSub").textContent=
-"Small duas for big little hearts 🌈";
-
-$("adhReset").textContent=
-"Start Again";
-
-$("adhAll").textContent=
-"⭐ I Said Them All";
-
-renderKidsDuas();
-
-show("adhkarView");
-
-}
-
-
-function renderKidsDuas(){
-
-const state=
-ls("kidsduas");
-
-const c=$("adhList");
-
-c.innerHTML="";
-
-
-KIDS_DUAS.forEach((o,i)=>{
-
-const done=
-!!state[i];
-
-const key=
-"kiddua:"+i;
-
-const isFav=
-favs().some(
-x=>x.key===key
-);
-
-const card=
-document.createElement("section");
-
-card.className=
-"adhCard"+
-(done?" complete":"");
-
-card.innerHTML=`
-
-<div class="adhTop">
-
-<div class="adhNum">
-${done?"✓":i+1}
-</div>
-
-<div class="adhName">
-${o.title}
-</div>
-
-</div>
-
-<div class="adhArabic">
-${o.arabic}
-</div>
-
-<div class="adhTranslit">
-${o.translit}
-</div>
-
-<div class="adhMeaning">
-${o.meaning}
-</div>
-
-<div class="adhRef">
-${o.ref}
-</div>
-
-<button
-class="adhAction ${done?"done":""}"
-style="width:100%;padding:11px;margin-top:12px"
->
-${done?"⭐ I know this one!":"✓ I said this dua"}
-</button>
-
-<button class="adhFav ${isFav?"favOn":""}">
-${isFav?"💖 In My Favourites":"♡ Add to Favourites"}
-</button>
-
-`;
-
-
-card.querySelector(".adhAction").onclick=()=>{
-
-const q=
-ls("kidsduas");
-
-q[i]=!q[i];
-
-ss(
-"kidsduas",
-q
-);
-
-renderKidsDuas();
-
-};
-
-
-card.querySelector(".adhFav").onclick=()=>{
-
-let a=favs();
-
-const ix=
-a.findIndex(
-x=>x.key===key
-);
-
-if(ix>=0){
-
-a.splice(ix,1);
-
-toast(
-"Removed from favourites"
-);
-
-}else{
-
-a.push({
-
-key,
-
-cat:"Kids Easy Dua",
-
-deed:o.title,
-
-type:"Everyday Dua",
-
-arabic:o.arabic,
-
-translit:o.translit,
-
-meaning:o.meaning,
-
-ref:o.ref
-
-});
-
-toast(
-"Saved to favourites 💖"
-);
-
-}
-
-sf(a);
-
-renderKidsDuas();
-
-renderMenu();
-
-};
-
-
-c.appendChild(card);
-
-});
-
-
-const latest=
-ls("kidsduas");
-
-const done=
-KIDS_DUAS.filter(
-(_,i)=>latest[i]
-).length;
-
-$("adhProgText").textContent=
-`${done} of ${KIDS_DUAS.length} said today`;
-
-$("adhBar").style.width=
-(done/KIDS_DUAS.length*100)+"%";
-
-}
-
-
-/* ===========================
-   ADHKAR BUTTONS
-=========================== */
-
-$("adhReset").onclick=()=>{
-
-if(mode==="kidsduas"){
-
-localStorage.removeItem(
-sessionKey("kidsduas")
-);
-
-renderKidsDuas();
-
-toast(
-"Fresh start 🌈"
-);
-
-return;
-
-}
-
-localStorage.removeItem(
-sessionKey(mode)
-);
-
-renderAdhkar(mode);
-
-toast(
-"Today's progress reset"
-);
-
-};
-
-
-$("adhAll").onclick=()=>{
-
-if(mode==="kidsduas"){
-
-const q={};
-
-KIDS_DUAS.forEach(
-(_,i)=>q[i]=true
-);
-
-ss(
-"kidsduas",
-q
-);
-
-renderKidsDuas();
-
-toast(
-"MashaAllah! ⭐"
-);
-
-return;
-
-}
-
-
-const list=
-mode==="morning"
-?MORNING
-:EVENING;
-
-const q={};
-
-list.forEach((o,i)=>{
-
-q[i]={
-count:o.repeat,
-done:true
-};
-
-});
-
-ss(mode,q);
-
-renderAdhkar(mode);
-
-toast(
-"All marked complete ✓"
-);
-
-};
-
-
-$("adhShare").onclick=()=>{
-
-if(mode==="kidsduas"){
-
-const q=
-ls("kidsduas");
-
-const n=
-KIDS_DUAS.filter(
-(_,i)=>q[i]
-).length;
-
-share(
-`🌈 Islamic Bloom Kids
-My Easy Duas: ${n}/${KIDS_DUAS.length} said today`,
-"Islamic Bloom Kids"
-);
-
-return;
-
-}
-
-
-const list=
-mode==="morning"
-?MORNING
-:EVENING;
-
-const q=ls(mode);
-
-const n=
-list.filter(
-(_,i)=>q[i]?.done
-).length;
-
-share(
-`🌸 Islamic Bloom
-${mode==="morning"?"Morning":"Evening"} Adhkar: ${n}/${list.length} completed`
-);
-
-};
-
-
-/* ===========================
-   OTHER BUTTONS
-=========================== */
-
-$("gardenBack").onclick=()=>{
-
-renderMenu();
-
-show("choose");
-
-};
-
-
-$("adhBack").onclick=()=>{
-
-renderMenu();
-
-show("choose");
-
-};
-
-
-function backToGarden(){
-
-$("bloomComplete").classList.remove("hidden");
-
-if(mode==="favourites"){
-
-openFavourites();
-
-}else{
-
-renderGarden();
-
-show("gardenView");
-
-}
-
-}
-
-
-$("bloomBackTop").onclick=
-$("bloomBack").onclick=
-backToGarden;
-
-
-$("surprise").onclick=()=>{
-
-const done=lp(garden);
-
-const remaining=
-[...Array(30).keys()]
-.filter(i=>!done.includes(i));
-
-const pool=
-remaining.length
-?remaining
-:[...Array(30).keys()];
-
-openBloom(
-pool[
-Math.floor(
-Math.random()*pool.length
-)
-]
-);
-
-};
-
-
-$("resetGarden").onclick=()=>{
-
-if(confirm(
-isKids()
-?"Start your Good Deeds garden again?"
-:"Reset this garden?"
-)){
-
-localStorage.removeItem(
-"ibGarden_"+garden
-);
-
-renderGarden();
-
-renderMenu();
-
-toast(
-isKids()
-?"Fresh colourful garden! 🌈"
-:"Fresh garden started 🌱"
-);
-
-}
-
-};
-
-
-$("gardenShare").onclick=()=>{
-
-share(
-isKids()
-?`🌈 Islamic Bloom Kids
-Good deeds completed: ${lp("mixed").length}/30`
-:`🌸 Islamic Bloom
-Overall progress: ${total()}/180`
-);
-
-};
-
-
-$("bloomShare").onclick=()=>{
-
-const ref=
-referenceFor(
-garden,
-bloomIndex
-);
-
-share(
-`🌸 Islamic Bloom
-
-${DEEDS[garden][bloomIndex]}
-
-${ref.meaning}
-
-${ref.ref}`
-);
-
-};
-
-
-/* ===========================
-   SETUP
-=========================== */
-
-function pickSetup(theme){
-
-pendingTheme=theme;
-
-$("feminineChoice")
-.classList.toggle(
-"active",
-theme==="feminine"
-);
-
-$("masculineChoice")
-.classList.toggle(
-"active",
-theme==="masculine"
-);
-
-$("kidsChoice")
-.classList.toggle(
-"active",
-theme==="kids"
-);
-
-document.body.dataset.theme=
-theme;
-
-}
-
-
-$("feminineChoice").onclick=
-()=>pickSetup("feminine");
-
-$("masculineChoice").onclick=
-()=>pickSetup("masculine");
-
-$("kidsChoice").onclick=
-()=>pickSetup("kids");
-
+$("feminineChoice").onclick=()=>pickSetup("feminine");
+$("masculineChoice").onclick=()=>pickSetup("masculine");
+$("kidsChoice").onclick=()=>pickSetup("kids");
 
 $("beginBloom").onclick=()=>{
+  const name=$("setupName").value.trim();
 
-const name=
-$("setupName")
-.value
-.trim();
+  if(!name){
+    toast("Please type your name 🌸");
+    return
+  }
 
-if(!name){
+  saveProfile({
+    name,
+    theme:pendingTheme
+  });
 
-toast(
-"Please type your name 🌸"
-);
-
-return;
-
-}
-
-saveProfile({
-name,
-theme:pendingTheme
-});
-
-$("setup")
-.classList
-.add("hidden");
-
-toast(
-"Welcome, "+
-name+
-" 🌸"
-);
-
+  $("setup").classList.add("hidden");
+  toast("Welcome, "+name+" 🌸");
 };
 
+function pickSettings(t){
+  pendingTheme=t;
 
-/* ===========================
-   SETTINGS
-=========================== */
-
-function pickSettings(theme){
-
-pendingTheme=theme;
-
-$("settingsFeminine")
-.classList.toggle(
-"active",
-theme==="feminine"
-);
-
-$("settingsMasculine")
-.classList.toggle(
-"active",
-theme==="masculine"
-);
-
-$("settingsKids")
-.classList.toggle(
-"active",
-theme==="kids"
-);
-
+  $("settingsFeminine").classList.toggle("active",t==="feminine");
+  $("settingsMasculine").classList.toggle("active",t==="masculine");
+  $("settingsKids").classList.toggle("active",t==="kids");
 }
-
 
 $("settingsBtn").onclick=()=>{
+  const p=profile()||{
+    name:"",
+    theme:"feminine"
+  };
 
-const p=
-profile()||
-{
-name:"",
-theme:"feminine"
+  $("settingsName").value=p.name||"";
+  pendingTheme=p.theme||"feminine";
+
+  pickSettings(pendingTheme);
+
+  $("settingsModal").classList.remove("hidden");
 };
 
-$("settingsName").value=
-p.name||"";
-
-pendingTheme=
-p.theme||"feminine";
-
-pickSettings(
-pendingTheme
-);
-
-$("settingsModal")
-.classList
-.remove("hidden");
-
-};
-
-
-$("settingsFeminine").onclick=
-()=>pickSettings("feminine");
-
-$("settingsMasculine").onclick=
-()=>pickSettings("masculine");
-
-$("settingsKids").onclick=
-()=>pickSettings("kids");
-
+$("settingsFeminine").onclick=()=>pickSettings("feminine");
+$("settingsMasculine").onclick=()=>pickSettings("masculine");
+$("settingsKids").onclick=()=>pickSettings("kids");
 
 $("closeSettings").onclick=()=>{
-
-$("settingsModal")
-.classList
-.add("hidden");
-
+  $("settingsModal").classList.add("hidden")
 };
-
 
 $("saveSettings").onclick=()=>{
+  const name=$("settingsName").value.trim();
 
-const name=
-$("settingsName")
-.value
-.trim();
+  if(!name){
+    toast("Please type your name");
+    return
+  }
 
-if(!name){
+  saveProfile({
+    name,
+    theme:pendingTheme
+  });
 
-toast(
-"Please type your name"
-);
-
-return;
-
-}
-
-saveProfile({
-name,
-theme:pendingTheme
-});
-
-$("settingsModal")
-.classList
-.add("hidden");
-
-toast(
-"Settings saved ✓"
-);
-
+  $("settingsModal").classList.add("hidden");
+  toast("Settings saved ✓");
 };
 
+let garden="mixed",
+    bloom=0,
+    mode="garden";
 
-/* ===========================
-   START
-=========================== */
+function seed(){
+  let s=localStorage.getItem("ibSeed");
 
-applyProfile();
+  if(!s){
+    s=String(Math.floor(Math.random()*2e9)+1);
+    localStorage.setItem("ibSeed",s)
+  }
 
-if(!profile()){
-
-$("setup")
-.classList
-.remove("hidden");
-
-pickSetup(
-"feminine"
-);
-
-}else{
-
-$("setup")
-.classList
-.add("hidden");
-
+  return +s
 }
 
+const SEED=seed();
+
+function rnd(n){
+  const x=Math.sin(n)*10000;
+  return x-Math.floor(x)
+}
+
+function lp(k){
+  try{
+    return JSON.parse(localStorage.getItem("ib_"+k)||"[]")
+  }catch(e){
+    return[]
+  }
+}
+
+function sp(k,a){
+  localStorage.setItem("ib_"+k,JSON.stringify(a))
+}
+
+function favs(){
+  try{
+    return JSON.parse(localStorage.getItem("ibFav")||"[]")
+  }catch(e){
+    return[]
+  }
+}
+
+function sf(a){
+  localStorage.setItem("ibFav",JSON.stringify(a))
+}
+
+function show(v){
+  ["choose","jarView","deedView","adhkarView"].forEach(id=>{
+    $(id).classList.toggle("hidden",id!==v)
+  });
+
+  scrollTo(0,0)
+}
+
+function toast(t){
+  $("toast").textContent=t;
+  $("toast").classList.add("show");
+
+  setTimeout(()=>{
+    $("toast").classList.remove("show")
+  },1500)
+}
+
+function total(){
+  return K.reduce((n,k)=>n+lp(k).length,0)
+}
+
+function renderMenu(){
+  const n=total();
+
+  $("overallText").textContent=
+    isKids()
+      ?`My Good Deeds: ${lp("mixed").length} / 30`
+      :`Overall Bloom Progress: ${n} / 180`;
+
+  $("overallBar").style.width=
+    isKids()
+      ?(lp("mixed").length/30*100)+"%"
+      :(n/180*100)+"%";
+
+  const c=$("cards");
+  c.innerHTML="";
+
+  const a=isKids()
+    ?[
+      {
+        t:"g",
+        k:"mixed",
+        name:"My Good Deeds",
+        icon:"🌈",
+        sub:"Pick a smiley and do something kind 🌈",
+        status:`${lp("mixed").length} / 30 done`
+      },
+      {
+        t:"kd",
+        k:"kidsduas",
+        name:"My Easy Duas",
+        icon:"🤲",
+        sub:"Little duas for everyday moments",
+        status:`${KIDS_DUAS.length} easy duas`
+      },
+      {
+        t:"f",
+        k:"favourites",
+        name:"My Favourites",
+        icon:"💖",
+        sub:"My favourite reminders and duas",
+        status:`${favs().length} saved`
+      }
+    ]
+    :[
+      ...K.map(k=>({
+        t:"g",
+        k,
+        name:G[k].name,
+        icon:G[k].icon,
+        sub:G[k].sub,
+        status:`${lp(k).length} / 30 bloomed`
+      })),
+      {
+        t:"a",
+        k:"morning",
+        name:"Morning Adhkar",
+        icon:"🌅",
+        sub:"Authentic morning remembrance",
+        status:`${MORNING.length} verified adhkar`
+      },
+      {
+        t:"a",
+        k:"evening",
+        name:"Evening Adhkar",
+        icon:"🌙",
+        sub:"Authentic evening remembrance",
+        status:`${EVENING.length} verified adhkar`
+      },
+      {
+        t:"f",
+        k:"favourites",
+        name:"My Favourites",
+        icon:"♡",
+        sub:"Your personally saved blooms",
+        status:`${favs().length} saved`
+      }
+    ];
+
+  a.forEach(x=>{
+    const b=document.createElement("button");
+
+    b.className="card";
+
+    b.innerHTML=`
+      <div class="icon">${x.icon}</div>
+      <div class="name">${x.name}</div>
+      <div class="sub">${x.sub}</div>
+      <div class="mini">${x.status}</div>
+    `;
+
+    b.onclick=()=>{
+      if(x.t==="g"){
+        openGarden(x.k)
+      }else if(x.t==="a"){
+        openAdhkar(x.k)
+      }else if(x.t==="kd"){
+        openKidsDuas()
+      }else{
+        openFavJar()
+      }
+    };
+
+    c.appendChild(b);
+  });
+}
+
+function fsvg(i){
+  const C=[
+    ["#ebb0ba","#f6d4d9"],
+    ["#f1c4ca","#fae2e5"],
+    ["#f0cfbe","#f8e5d9"],
+    ["#e8bac5","#f4d9df"],
+    ["#efc3d5","#f8e3eb"]
+  ];
+
+  const c=C[i%C.length];
+
+  return `<svg viewBox="0 0 100 100">
+    <g fill="${c[0]}" stroke="${c[1]}">
+      <ellipse cx="50" cy="20" rx="15" ry="26"/>
+      <ellipse cx="77" cy="36" rx="15" ry="26" transform="rotate(60 77 36)"/>
+      <ellipse cx="77" cy="66" rx="15" ry="26" transform="rotate(120 77 66)"/>
+      <ellipse cx="50" cy="80" rx="15" ry="26"/>
+      <ellipse cx="23" cy="66" rx="15" ry="26" transform="rotate(60 23 66)"/>
+      <ellipse cx="23" cy="36" rx="15" ry="26" transform="rotate(120 23 36)"/>
+    </g>
+    <circle cx="50" cy="50" r="21" fill="#fffaf6" stroke="#d3b176"/>
+  </svg>`
+}
+
+function pos(n){
+  const a=[],
+        cols=n>20?5:4,
+        rows=Math.ceil(n/cols);
+
+  for(let i=0;i<n;i++){
+    const r=Math.floor(i/cols),
+          c=i%cols,
+          x=4+c*(88/(cols-1))+(rnd(SEED+i*31)-.5)*4,
+          y=4+r*(84/Math.max(rows-1,1))+(rnd(SEED+i*47)-.5)*3;
+
+    a.push([
+      Math.max(1,Math.min(90,x)),
+      Math.max(1,Math.min(88,y))
+    ])
+  }
+
+  return a
+}
+
+function flowers(items,done,callback){
+  const z=$("zone"),
+        p=pos(items.length);
+
+  const kidIcons=[
+    "😊","🌈","⭐","😄","💖",
+    "✨","🥰","🌟","🙂","🌸",
+    "😁","☀️","💫","🤗","🌼"
+  ];
+
+  z.innerHTML="";
+
+  items.forEach((_,i)=>{
+    const b=document.createElement("button");
+
+    b.className="petal"+(
+      done&&done.includes(i)
+        ?" done"
+        :""
+    );
+
+    b.style.left=p[i][0]+"%";
+    b.style.top=p[i][1]+"%";
+
+    b.style.setProperty(
+      "--duration",
+      (2.4+rnd(USER_SEED+i*91)*2.2)+"s"
+    );
+
+    b.style.setProperty(
+      "--delay",
+      (-rnd(USER_SEED+i*111)*3)+"s"
+    );
+
+    if(isKids()){
+      const emoji=
+        kidIcons[
+          Math.floor(
+            rnd(USER_SEED+i*133)*kidIcons.length
+          )
+        ];
+
+      b.innerHTML=`
+        <div class="kidBubble">${emoji}</div>
+        <span>${i+1}</span>
+      `;
+    }else{
+      b.innerHTML=
+        fsvg(i)+
+        `<span>${i+1}</span>`;
+    }
+
+    b.onclick=()=>callback(i);
+
+    z.appendChild(b);
+  });
+} function openGarden(k){
+  mode="garden";
+  garden=k;
+
+  $("gName").textContent=G[k].name;
+  $("gSub").textContent=G[k].sub;
+
+  renderGarden();
+  show("jarView")
+}
+
+function renderGarden(){
+  const d=lp(garden);
+
+  flowers(
+    G[garden].blooms,
+    d,
+    openBloom
+  );
+
+  $("gProg").textContent=
+    `${d.length} of 30 petals bloomed`;
+
+  $("gBar").style.width=
+    (d.length/30*100)+"%";
+
+  $("surprise").classList.remove("hidden");
+  $("resetGarden").classList.remove("hidden");
+
+  renderScene(d)
+}
+
+function renderScene(d){
+  const s=$("scene");
+
+  s.querySelectorAll(".plant")
+    .forEach(x=>x.remove());
+
+  $("empty").style.display=
+    d.length
+      ?"none"
+      :"flex";
+
+  d.forEach((idx,n)=>{
+    const p=document.createElement("div");
+
+    p.className="plant";
+
+    p.style.left=
+      (
+        3+
+        (n%10)*9.5+
+        (Math.floor(n/10)%2)*2
+      )+"%";
+
+    p.style.bottom=
+      (
+        29+
+        Math.floor(n/10)*4
+      )+"px";
+
+    const ic=[
+      "🌸",
+      "🌷",
+      "🌼",
+      "🌺",
+      "🌹"
+    ];
+
+    p.innerHTML=`
+      <span class="stem"></span>
+      <span class="leaf l"></span>
+      <span class="leaf r"></span>
+      <span class="bloom">${ic[idx%5]}</span>
+    `;
+
+    s.appendChild(p)
+  })
+}
+
+function openFavJar(){
+  mode="favjar";
+  garden="favourites";
+
+  $("gName").textContent=
+    "My Favourites";
+
+  $("gSub").textContent=
+    "Blooms you personally saved";
+
+  const a=favs(),
+        z=$("zone");
+
+  z.innerHTML="";
+
+  if(!a.length){
+    z.innerHTML=`
+      <div class="empty">
+        Your Favourites Jar is empty.
+        <br><br>
+        Open any bloom and tap ♡ Add to Favourites.
+      </div>
+    `;
+  }else{
+    flowers(
+      a,
+      null,
+      openFav
+    )
+  }
+
+  $("gProg").textContent=
+    `${a.length} favourites saved`;
+
+  $("gBar").style.width=
+    a.length
+      ?"100%"
+      :"0%";
+
+  $("surprise").classList.add("hidden");
+  $("resetGarden").classList.add("hidden");
+
+  renderScene([]);
+
+  show("jarView")
+}
+
+function fillDetail(o){
+  $("cat").textContent=o.cat;
+  $("deed").textContent=o.deed;
+  $("stype").textContent=o.type;
+  $("arabic").textContent=o.arabic;
+  $("meaning").textContent=o.meaning;
+  $("ref").textContent=o.ref
+}
+
+function setFav(k){
+  const on=
+    favs().some(x=>x.key===k);
+
+  $("favBtn").dataset.key=k;
+
+  $("favBtn").textContent=
+    on
+      ?"♥ Saved to Favourites"
+      :"♡ Add to Favourites";
+
+  $("favBtn")
+    .classList
+    .toggle(
+      "favOn",
+      on
+    )
+}
+
+function openBloom(i){
+  mode="garden";
+  bloom=i;
+
+  const o=
+    G[garden].blooms[i];
+
+  $("bloomId").textContent=
+    `BLOOM ${String(i+1).padStart(2,"0")}`;
+
+  fillDetail(o);
+
+  $("doneBloom")
+    .classList
+    .remove("hidden");
+
+  setFav(
+    `g:${garden}:${i}`
+  );
+
+  show("deedView")
+}
+
+function openFav(i){
+  mode="favourite";
+  bloom=i;
+
+  const o=favs()[i];
+
+  if(!o)return;
+
+  $("bloomId").textContent=
+    "FAVOURITE";
+
+  fillDetail(o);
+
+  $("doneBloom")
+    .classList
+    .add("hidden");
+
+  setFav(o.key);
+
+  show("deedView")
+}
+
+$("favBtn").onclick=()=>{
+  const item=
+    mode==="garden"
+      ?{
+        key:`g:${garden}:${bloom}`,
+        ...G[garden].blooms[bloom]
+      }
+      :mode==="favourite"
+        ?favs()[bloom]
+        :null;
+
+  if(!item)return;
+
+  let a=favs(),
+      i=a.findIndex(
+        x=>x.key===item.key
+      );
+
+  if(i>=0){
+    a.splice(i,1);
+    toast(
+      "Removed from favourites"
+    )
+  }else{
+    a.push(item);
+
+    toast(
+      "Saved to your Favourites ♡"
+    )
+  }
+
+  sf(a);
+  setFav(item.key);
+  renderMenu()
+};
+
+$("doneBloom").onclick=()=>{
+  let d=lp(garden);
+
+  if(!d.includes(bloom)){
+    d.push(bloom);
+    sp(garden,d);
+
+    $("doneBloom").textContent=
+      "🌸 Bloom Completed!";
+
+    toast(
+      "Added to your garden 🌸"
+    );
+
+    setTimeout(()=>{
+      $("doneBloom").textContent=
+        "✓ I Bloomed This";
+
+      renderGarden();
+      show("jarView");
+
+      if(d.length===30){
+        celebrate(
+          "This Garden Has Bloomed",
+          `You completed all 30 blooms in <strong>${G[garden].name}</strong>.<br><br>May Allah accept every sincere deed. Ameen.`
+        )
+      }
+
+      if(total()===180){
+        celebrate(
+          "All 180 Blooms Complete",
+          `Your entire Islamic Bloom collection has blossomed.<br><br><strong>May Allah accept every sincere act of goodness. Ameen.</strong>`
+        )
+      }
+    },800)
+  }else{
+    toast(
+      "Already bloomed 🌷"
+    );
+
+    setTimeout(()=>{
+      renderGarden();
+      show("jarView")
+    },500)
+  }
+};
+
+$("surprise").onclick=()=>{
+  const d=lp(garden);
+
+  const r=[
+    ...Array(30).keys()
+  ].filter(
+    i=>!d.includes(i)
+  );
+
+  const p=
+    r.length
+      ?r
+      :[
+        ...Array(30).keys()
+      ];
+
+  openBloom(
+    p[
+      Math.floor(
+        Math.random()*p.length
+      )
+    ]
+  )
+};
+
+$("resetGarden").onclick=()=>{
+  if(
+    confirm(
+      `Reset ${G[garden].name}?`
+    )
+  ){
+    localStorage.removeItem(
+      "ib_"+garden
+    );
+
+    renderGarden();
+    renderMenu();
+
+    toast(
+      "Fresh garden started 🌱"
+    )
+  }
+};
+
+$("gardensBtn").onclick=()=>{
+  renderMenu();
+  show("choose")
+};
+
+$("backJarTop").onclick=
+$("backJar").onclick=()=>{
+  if(garden==="favourites"){
+    openFavJar()
+  }else{
+    renderGarden();
+    show("jarView")
+  }
+};
+
+function sessionKey(p){
+  const d=new Date();
+
+  const s=
+    `${d.getFullYear()}-`+
+    `${String(d.getMonth()+1).padStart(2,"0")}-`+
+    `${String(d.getDate()).padStart(2,"0")}`;
+
+  return `ib_${p}_${s}`
+}
+
+function ls(p){
+  try{
+    return JSON.parse(
+      localStorage.getItem(
+        sessionKey(p)
+      )||"{}"
+    )
+  }catch(e){
+    return{}
+  }
+}
+
+function ss(p,o){
+  localStorage.setItem(
+    sessionKey(p),
+    JSON.stringify(o)
+  )
+}
+
+function kidsDuaKey(){
+  const d=new Date();
+
+  return (
+    "ib_kidsduas_"+
+    d.getFullYear()+"-"+
+    (d.getMonth()+1)+"-"+
+    d.getDate()
+  )
+}
+
+function loadKidsDuas(){
+  try{
+    return JSON.parse(
+      localStorage.getItem(
+        kidsDuaKey()
+      )||"{}"
+    )
+  }catch(e){
+    return{}
+  }
+}
+
+function saveKidsDuas(x){
+  localStorage.setItem(
+    kidsDuaKey(),
+    JSON.stringify(x)
+  )
+}
+
+function openKidsDuas(){
+  mode="kidsduas";
+  garden="kidsduas";
+
+  $("adhTitle").textContent=
+    "My Easy Duas";
+
+  $("adhSub").textContent=
+    "Small duas for big little hearts 🌈";
+
+  renderKidsDuas();
+
+  show("adhkarView")
+}
+
+function renderKidsDuas(){
+  const s=loadKidsDuas(),
+        c=$("adhList");
+
+  c.innerHTML="";
+
+  KIDS_DUAS.forEach((o,i)=>{
+    const done=!!s[i],
+          key=`kiddua:${i}`,
+          isFav=favs().some(
+            x=>x.key===key
+          );
+
+    const card=
+      document.createElement("section");
+
+    card.className=
+      "adhCard"+
+      (done
+        ?" complete"
+        :""
+      );
+
+    card.innerHTML=`
+      <div class="adhTop">
+        <div class="adhNum">
+          ${done?"✓":i+1}
+        </div>
+
+        <div class="adhName">
+          ${o.title}
+        </div>
+      </div>
+
+      <div class="adhArabic">
+        ${o.arabic}
+      </div>
+
+      <div class="adhTranslit">
+        ${o.translit}
+      </div>
+
+      <div class="adhMeaning">
+        ${o.meaning}
+      </div>
+
+      <div class="adhRef">
+        ${o.ref}
+      </div>
+
+      <button
+        class="adhAction ${done?"done":""}"
+        style="width:100%;margin-top:12px"
+      >
+        ${
+          done
+            ?"✓ I know this one!"
+            :"✓ I said this dua"
+        }
+      </button>
+
+      <button
+        class="adhFav ${isFav?"favOn":""}"
+      >
+        ${
+          isFav
+            ?"♥ In My Favourites"
+            :"♡ Add to Favourites"
+        }
+      </button>
+    `;
+
+    card.querySelector(
+      ".adhAction"
+    ).onclick=()=>{
+      const q=loadKidsDuas();
+
+      q[i]=!q[i];
+
+      saveKidsDuas(q);
+      renderKidsDuas()
+    };
+
+    card.querySelector(
+      ".adhFav"
+    ).onclick=()=>{
+      let a=favs(),
+          ix=a.findIndex(
+            x=>x.key===key
+          );
+
+      if(ix>=0){
+        a.splice(ix,1);
+
+        toast(
+          "Removed from favourites"
+        )
+      }else{
+        a.push({
+          key,
+          cat:"Kids Easy Dua",
+          deed:o.title,
+          type:"Easy Everyday Dua",
+          arabic:o.arabic,
+          translit:o.translit,
+          meaning:o.meaning,
+          ref:o.ref
+        });
+
+        toast(
+          "Saved to favourites 💖"
+        )
+      }
+
+      sf(a);
+      renderKidsDuas();
+      renderMenu()
+    };
+
+    c.appendChild(card);
+  });
+
+  const q=loadKidsDuas();
+
+  const done=
+    KIDS_DUAS.filter(
+      (_,i)=>q[i]
+    ).length;
+
+  $("adhProgText").textContent=
+    `${done} of ${KIDS_DUAS.length} said today`;
+
+  $("adhBar").style.width=
+    (
+      done/
+      KIDS_DUAS.length*
+      100
+    )+"%";
+
+  $("adhReset").textContent=
+    "Start Again";
+
+  $("adhAll").textContent=
+    "✓ I Said Them All";
+}function openAdhkar(p){mode=p;garden=p;$("adhReset").textContent="Reset Today";$("adhAll").textContent="✓ Mark All Done";$("adhTitle").textContent=p==="morning"?"Morning Adhkar":"Evening Adhkar";$("adhSub").textContent=p==="morning"?"Begin your day with authentic remembrance.":"End your day with authentic remembrance.";renderAdhkar(p);show("adhkarView")}
+
+function renderAdhkar(p){
+  const list=p==="morning"?MORNING:EVENING,s=ls(p),c=$("adhList");c.innerHTML="";
+  list.forEach((o,i)=>{
+    const st=s[i]||{count:0,done:false},key=`a:${p}:${i}`,isFav=favs().some(x=>x.key===key),card=document.createElement("section");
+    card.className="adhCard"+(st.done?" complete":"");
+    card.innerHTML=`<div class="adhTop"><div class="adhNum">${st.done?"✓":i+1}</div><div class="adhName">${o.title}</div></div><div class="adhArabic">${o.arabic}</div><div class="adhTranslit">${o.translit||""}</div><div class="adhMeaning">${o.meaning}</div><div class="adhRef">${o.ref}</div><div class="adhControls"><div><div class="counter"><button data-a="m">−</button><div class="count">${st.count||0}</div><button data-a="p">+</button></div><div class="repeat">Repeat ×${o.repeat||1}</div></div><button class="adhAction ${st.done?"done":""}">${st.done?"✓ Completed":"Mark Complete"}</button></div><button class="adhFav ${isFav?"favOn":""}">${isFav?"♥ Saved to Favourites":"♡ Add to Favourites"}</button>`;
+    card.querySelector('[data-a="p"]').onclick=()=>{const q=ls(p),x=q[i]||{count:0,done:false};x.count++;if(x.count>=o.repeat)x.done=true;q[i]=x;ss(p,q);renderAdhkar(p)};
+    card.querySelector('[data-a="m"]').onclick=()=>{const q=ls(p),x=q[i]||{count:0,done:false};x.count=Math.max(0,x.count-1);if(x.count<o.repeat)x.done=false;q[i]=x;ss(p,q);renderAdhkar(p)};
+    card.querySelector(".adhAction").onclick=()=>{const q=ls(p);q[i]={count:o.repeat,done:true};ss(p,q);renderAdhkar(p)};
+    card.querySelector(".adhFav").onclick=()=>{let a=favs(),ix=a.findIndex(x=>x.key===key);if(ix>=0){a.splice(ix,1);toast("Removed from favourites")}else{a.push({key,cat:p==="morning"?"Morning Adhkar":"Evening Adhkar",deed:o.title,type:"Authentic Dhikr",arabic:o.arabic,translit:o.translit,meaning:o.meaning,ref:o.ref,repeat:o.repeat});toast("Saved to your Favourites ♡")}sf(a);renderAdhkar(p);renderMenu()};
+    c.appendChild(card);
+  });
+  const q=ls(p),n=list.filter((_,i)=>q[i]&&q[i].done).length;$("adhProgText").textContent=`${n} of ${list.length} completed`;$("adhBar").style.width=(n/list.length*100)+"%";
+}
+
+$("adhBack").onclick=()=>{renderMenu();show("choose")};
+$("adhReset").onclick=()=>{if(confirm(`Reset today's ${garden==="morning"?"Morning":"Evening"} Adhkar progress?`)){localStorage.removeItem(sessionKey(garden));renderAdhkar(garden);toast("Today's adhkar reset")}};
+$("adhAll").onclick=()=>{const p=garden,list=p==="morning"?MORNING:EVENING,q={};list.forEach((o,i)=>q[i]={count:o.repeat,done:true});ss(p,q);renderAdhkar(p);toast("All adhkar marked complete ✓")};
+
+async function share(text,title){try{if(navigator.share)await navigator.share({title,text});else if(navigator.clipboard){await navigator.clipboard.writeText(text);toast("Copied — ready to share ♡")}}catch(e){}}
+$("adhShare").onclick=()=>{const p=garden,list=p==="morning"?MORNING:EVENING,q=ls(p),n=list.filter((_,i)=>q[i]&&q[i].done).length;share(`🌸 Islamic Bloom\n${p==="morning"?"Morning":"Evening"} Adhkar: ${n}/${list.length} completed`,"Islamic Bloom")};
+$("shareBloom").onclick=()=>{const o=mode==="garden"?G[garden].blooms[bloom]:mode==="favourite"?favs()[bloom]:null;if(o)share(`🌸 Islamic Bloom — Today's Bloom\n\n${o.deed}\n\n${o.meaning}\n${o.ref}`,"Islamic Bloom")};
+$("shareProgress").onclick=()=>share(`🌸 Islamic Bloom\nOverall good-deed progress: ${total()} / 180\nFavourites saved: ${favs().length}`,"My Islamic Bloom Progress");
+
+function celebrate(t,x){$("modalTitle").textContent=t;$("modalText").innerHTML=x;$("modal").classList.remove("hidden")}
+$("modalClose").onclick=()=>{$("modal").classList.add("hidden");renderMenu()};
+
+/* ===== START FRESH / RESET THIS DEVICE ===== */
+$("resetEverything").onclick=()=>{
+  const yes=confirm(
+    "Start completely fresh?\n\nThis removes your name, chosen style, completed blooms, favourites, Adhkar progress and Kids dua progress from THIS browser/device only.\n\nOther people's Islamic Bloom data is not affected."
+  );
+  if(!yes)return;
+  const remove=[];
+  for(let i=0;i<localStorage.length;i++){
+    const key=localStorage.key(i);
+    if(key==="ibProfile"||key==="ibSeed"||key==="ibFavs"||key.startsWith("ibGarden_")||key.startsWith("ib_")){
+      remove.push(key);
+    }
+  }
+  remove.forEach(key=>localStorage.removeItem(key));
+  $("settingsModal").classList.add("hidden");
+  pendingTheme="feminine";
+  document.body.dataset.theme="feminine";
+  $("setupName").value="";
+  $("setup").classList.remove("hidden");
+  pickSetup("feminine");
+  show("choose");
+  toast("Fresh start ready 🌱");
+};
+
+applyProfile();
+if(!profile()){
+  $("setup").classList.remove("hidden");
+  pickSetup("feminine");
+}else{
+  $("setup").classList.add("hidden");
+}
 renderMenu();
-
 </script>
-
 </body>
 </html>
