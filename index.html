@@ -241,8 +241,8 @@ body[data-theme="kids"] .arabic,body[data-theme="kids"] .adhArabic{
 <div class="setup hidden" id="setup">
   <div class="setupCard">
     <div class="brandline">ISLAMIC BLOOM</div>
-    <div class="script setupTitle">Welcome to Islamic Bloom</div>
-    <div class="setupText">Your personal space to grow, remember & reflect.</div>
+    <div class="script setupTitle">Welcome to Your Daily Deen Companion</div>
+    <div class="setupText">Let’s personalise your Islamic Bloom.</div>
     <div class="kidsBanner">🌸 ⭐ 😊 🌈 ✨</div>
     <div class="settingsLabel">What should we call you?</div>
     <input class="nameInput" id="setupName" maxlength="24" placeholder="Your name" autocomplete="given-name">
@@ -466,10 +466,10 @@ function flowers(items,done,callback){
     b.className="petal"+(done&&done.includes(i)?" done":"");
     b.style.left=p[i][0]+"%";
     b.style.top=p[i][1]+"%";
-    b.style.setProperty("--duration",(2.4+rnd(USER_SEED+i*91)*2.2)+"s");
-    b.style.setProperty("--delay",(-rnd(USER_SEED+i*111)*3)+"s");
+    b.style.setProperty("--duration",(2.4+rnd(SEED+i*91)*2.2)+"s");
+    b.style.setProperty("--delay",(-rnd(SEED+i*111)*3)+"s");
     if(isKids()){
-      const emoji=kidIcons[Math.floor(rnd(USER_SEED+i*133)*kidIcons.length)];
+      const emoji=kidIcons[Math.floor(rnd(SEED+i*133)*kidIcons.length)];
       b.innerHTML=`<div class="kidBubble">${emoji}</div><span>${i+1}</span>`;
     }else{
       b.innerHTML=fsvg(i)+`<span>${i+1}</span>`;
@@ -479,18 +479,18 @@ function flowers(items,done,callback){
   });
 }
 
-function openGarden(k){mode="garden";garden=k;$("gName").textContent=G[k].name;$("gSub").textContent=G[k].sub;renderGarden();show("jarView")}
-function renderGarden(){const d=lp(garden);flowers(G[garden].blooms,d,openBloom);$("gProg").textContent=`${d.length} of 30 petals bloomed`;$("gBar").style.width=(d.length/30*100)+"%";$("surprise").classList.remove("hidden");$("resetGarden").classList.remove("hidden");renderScene(d)}
+function openGarden(k){mode="garden";garden=k;$("gName").textContent=isKids()&&k==="mixed"?"My Good Deeds":G[k].name;$("gSub").textContent=isKids()&&k==="mixed"?"Pick a smiley and do something kind 🌈":G[k].sub;renderGarden();show("jarView")}
+function renderGarden(){const d=lp(garden);flowers(G[garden].blooms,d,openBloom);$("gProg").textContent=isKids()&&garden==="mixed"?`${d.length} of 30 good deeds done`:`${d.length} of 30 petals bloomed`;$("gBar").style.width=(d.length/30*100)+"%";$("surprise").classList.remove("hidden");$("resetGarden").classList.remove("hidden");renderScene(d)}
 function renderScene(d){const s=$("scene");s.querySelectorAll(".plant").forEach(x=>x.remove());$("empty").style.display=d.length?"none":"flex";d.forEach((idx,n)=>{const p=document.createElement("div");p.className="plant";p.style.left=(3+(n%10)*9.5+(Math.floor(n/10)%2)*2)+"%";p.style.bottom=(29+Math.floor(n/10)*4)+"px";const ic=["🌸","🌷","🌼","🌺","🌹"];p.innerHTML=`<span class="stem"></span><span class="leaf l"></span><span class="leaf r"></span><span class="bloom">${ic[idx%5]}</span>`;s.appendChild(p)})}
 
 function openFavJar(){mode="favjar";garden="favourites";$("gName").textContent="My Favourites";$("gSub").textContent="Blooms you personally saved";const a=favs(),z=$("zone");z.innerHTML="";if(!a.length)z.innerHTML='<div class="empty">Your Favourites Jar is empty.<br><br>Open any bloom and tap ♡ Add to Favourites.</div>';else flowers(a,null,openFav);$("gProg").textContent=`${a.length} favourites saved`;$("gBar").style.width=a.length?"100%":"0%";$("surprise").classList.add("hidden");$("resetGarden").classList.add("hidden");renderScene([]);show("jarView")}
 function fillDetail(o){$("cat").textContent=o.cat;$("deed").textContent=o.deed;$("stype").textContent=o.type;$("arabic").textContent=o.arabic;$("meaning").textContent=o.meaning;$("ref").textContent=o.ref}
 function setFav(k){const on=favs().some(x=>x.key===k);$("favBtn").dataset.key=k;$("favBtn").textContent=on?"♥ Saved to Favourites":"♡ Add to Favourites";$("favBtn").classList.toggle("favOn",on)}
-function openBloom(i){mode="garden";bloom=i;const o=G[garden].blooms[i];$("bloomId").textContent=`BLOOM ${String(i+1).padStart(2,"0")}`;fillDetail(o);$("doneBloom").classList.remove("hidden");setFav(`g:${garden}:${i}`);show("deedView")}
+function openBloom(i){mode="garden";bloom=i;const o=G[garden].blooms[i];$("bloomId").textContent=isKids()&&garden==="mixed"?`GOOD DEED ${String(i+1).padStart(2,"0")}`:`BLOOM ${String(i+1).padStart(2,"0")}`;fillDetail(o);$("doneBloom").classList.remove("hidden");$("doneBloom").textContent=isKids()&&garden==="mixed"?"✓ I Did It!":"✓ I Bloomed This";setFav(`g:${garden}:${i}`);show("deedView")}
 function openFav(i){mode="favourite";bloom=i;const o=favs()[i];if(!o)return;$("bloomId").textContent="FAVOURITE";fillDetail(o);$("doneBloom").classList.add("hidden");setFav(o.key);show("deedView")}
 
 $("favBtn").onclick=()=>{const item=mode==="garden"?{key:`g:${garden}:${bloom}`,...G[garden].blooms[bloom]}:mode==="favourite"?favs()[bloom]:null;if(!item)return;let a=favs(),i=a.findIndex(x=>x.key===item.key);if(i>=0){a.splice(i,1);toast("Removed from favourites")}else{a.push(item);toast("Saved to your Favourites ♡")}sf(a);setFav(item.key);renderMenu()};
-$("doneBloom").onclick=()=>{let d=lp(garden);if(!d.includes(bloom)){d.push(bloom);sp(garden,d);$("doneBloom").textContent="🌸 Bloom Completed!";toast("Added to your garden 🌸");setTimeout(()=>{$("doneBloom").textContent="✓ I Bloomed This";renderGarden();show("jarView");if(d.length===30)celebrate("This Garden Has Bloomed",`You completed all 30 blooms in <strong>${G[garden].name}</strong>.<br><br>May Allah accept every sincere deed. Ameen.`);if(total()===180)celebrate("All 180 Blooms Complete","Your entire Islamic Bloom collection has blossomed.<br><br><strong>May Allah accept every sincere act of goodness. Ameen.</strong>")},800)}else{toast("Already bloomed 🌷");setTimeout(()=>{renderGarden();show("jarView")},500)}};
+$("doneBloom").onclick=()=>{let d=lp(garden);if(!d.includes(bloom)){d.push(bloom);sp(garden,d);$("doneBloom").textContent=isKids()&&garden==="mixed"?"🌈 Good Deed Done!":"🌸 Bloom Completed!";toast(isKids()&&garden==="mixed"?"Great job! Good deed saved 🌟":"Added to your garden 🌸");setTimeout(()=>{$("doneBloom").textContent=isKids()&&garden==="mixed"?"✓ I Did It!":"✓ I Bloomed This";renderGarden();show("jarView");if(d.length===30)celebrate(isKids()&&garden==="mixed"?"Amazing! All Good Deeds Done 🌈":"This Garden Has Bloomed",isKids()&&garden==="mixed"?"You completed all 30 good deeds!<br><br><strong>May Allah reward every kind thing you did. Ameen.</strong>":`You completed all 30 blooms in <strong>${G[garden].name}</strong>.<br><br>May Allah accept every sincere deed. Ameen.`);if(total()===180)celebrate("All 180 Blooms Complete","Your entire Islamic Bloom collection has blossomed.<br><br><strong>May Allah accept every sincere act of goodness. Ameen.</strong>")},800)}else{toast("Already bloomed 🌷");setTimeout(()=>{renderGarden();show("jarView")},500)}};
 $("surprise").onclick=()=>{const d=lp(garden),r=[...Array(30).keys()].filter(i=>!d.includes(i)),p=r.length?r:[...Array(30).keys()];openBloom(p[Math.floor(Math.random()*p.length)])};
 $("resetGarden").onclick=()=>{if(confirm(`Reset ${G[garden].name}?`)){localStorage.removeItem("ib_"+garden);renderGarden();renderMenu();toast("Fresh garden started 🌱")}};
 $("gardensBtn").onclick=()=>{renderMenu();show("choose")};
