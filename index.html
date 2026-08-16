@@ -466,7 +466,7 @@ function flowers(items,done,callback){
     b.className="petal"+(done&&done.includes(i)?" done":"");
     b.style.left=p[i][0]+"%";
     b.style.top=p[i][1]+"%";
-    b.style.setProperty("--duration",(2.4+rnd(SEED+i*91)*2.2)+"s");
+    b.style.setProperty("--dur",(2.4+rnd(SEED+i*91)*2.2)+"s");
     b.style.setProperty("--delay",(-rnd(SEED+i*111)*3)+"s");
     if(isKids()){
       const emoji=kidIcons[Math.floor(rnd(SEED+i*133)*kidIcons.length)];
